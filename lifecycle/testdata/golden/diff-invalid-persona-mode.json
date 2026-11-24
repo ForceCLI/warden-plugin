@@ -1,0 +1,9 @@
+{
+  "error": {
+    "name": "DefinitionError",
+    "code": "schema-invalid",
+    "message": "personas.support.queueMode: Invalid option: expected one of \"additive\"|\"sync\""
+  },
+  "queries": [],
+  "changes": []
+}

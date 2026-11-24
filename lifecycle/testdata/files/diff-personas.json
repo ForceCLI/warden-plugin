@@ -1,0 +1,26 @@
+{
+	"personas": {
+		"support": {
+			"profile": "Support Profile",
+			"role": "SupportRole",
+			"permissionSetMode": "sync",
+			"permissionSets": [
+				"KeepPerm",
+				"AddPerm"
+			],
+			"permissionSetGroupMode": "additive",
+			"permissionSetGroups": [
+				"AddGroup"
+			],
+			"publicGroupMode": "sync",
+			"publicGroups": [
+				"KeepPublic"
+			],
+			"queueMode": "additive",
+			"queues": [
+				"KeepQueue",
+				"AddQueue"
+			]
+		}
+	}
+}

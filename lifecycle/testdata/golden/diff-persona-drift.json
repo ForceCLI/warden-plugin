@@ -1,0 +1,266 @@
+{
+  "result": {
+    "summary": {
+      "total": 1,
+      "compared": 1,
+      "wouldCreate": 0,
+      "failed": 0,
+      "changed": 1
+    },
+    "users": [
+      {
+        "key": "A001",
+        "id": "005User00000001",
+        "personas": [
+          "support"
+        ],
+        "matchedBy": "FederationIdentifier",
+        "status": "compared",
+        "profile": {
+          "current": "00eProfileCurrent",
+          "intended": "00eProfileTarget1",
+          "matches": false
+        },
+        "role": {
+          "current": "00ERoleTarget001",
+          "intended": "00ERoleTarget001",
+          "matches": true
+        },
+        "assignments": {
+          "permissionSets": {
+            "adds": [
+              "0PSPermAdd0002"
+            ],
+            "removes": [
+              "0PSPermRemove"
+            ],
+            "inBoth": [
+              "0PSPermKeep0001"
+            ],
+            "onlyInOrg": [],
+            "mode": "sync"
+          },
+          "permissionSetGroups": {
+            "adds": [
+              "0PGGroupAdd0001"
+            ],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": [],
+            "mode": "additive"
+          },
+          "publicGroups": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [
+              "00GPublicKeep01"
+            ],
+            "onlyInOrg": [],
+            "mode": "sync"
+          },
+          "queues": {
+            "adds": [
+              "00GQueueAdd0002"
+            ],
+            "removes": [],
+            "inBoth": [
+              "00GQueueKeep001"
+            ],
+            "onlyInOrg": [
+              "00GQueueExtra"
+            ],
+            "mode": "additive"
+          }
+        },
+        "errors": []
+      }
+    ],
+    "rows": [
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "",
+        "username": "",
+        "category": "permissionSets",
+        "kind": "add",
+        "value": "0PSPermAdd0002",
+        "mode": "sync"
+      },
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "",
+        "username": "",
+        "category": "permissionSets",
+        "kind": "remove",
+        "value": "0PSPermRemove",
+        "mode": "sync"
+      },
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "",
+        "username": "",
+        "category": "permissionSets",
+        "kind": "inBoth",
+        "value": "0PSPermKeep0001",
+        "mode": "sync"
+      },
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "",
+        "username": "",
+        "category": "permissionSetGroups",
+        "kind": "add",
+        "value": "0PGGroupAdd0001",
+        "mode": "additive"
+      },
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "",
+        "username": "",
+        "category": "publicGroups",
+        "kind": "inBoth",
+        "value": "00GPublicKeep01",
+        "mode": "sync"
+      },
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "",
+        "username": "",
+        "category": "queues",
+        "kind": "add",
+        "value": "00GQueueAdd0002",
+        "mode": "additive"
+      },
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "",
+        "username": "",
+        "category": "queues",
+        "kind": "inBoth",
+        "value": "00GQueueKeep001",
+        "mode": "additive"
+      },
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "",
+        "username": "",
+        "category": "queues",
+        "kind": "onlyInOrg",
+        "value": "00GQueueExtra",
+        "mode": "additive"
+      },
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "",
+        "username": "",
+        "category": "profile",
+        "kind": "profile",
+        "value": "00eProfileCurrent -> 00eProfileTarget1",
+        "valueBefore": "00eProfileCurrent",
+        "valueAfter": "00eProfileTarget1"
+      }
+    ],
+    "warnings": [],
+    "labels": {
+      "00eProfileTarget1": {
+        "id": "00eProfileTarget1",
+        "apiName": "Support Profile",
+        "label": "Support Profile",
+        "type": "Profile"
+      },
+      "00ERoleTarget001": {
+        "id": "00ERoleTarget001",
+        "apiName": "SupportRole",
+        "label": "00ERoleTarget001",
+        "type": "UserRole"
+      },
+      "0PSPermKeep0001": {
+        "id": "0PSPermKeep0001",
+        "apiName": "Current_Perms",
+        "type": "PermissionSet",
+        "label": "Current Permissions"
+      },
+      "0PSPermAdd0002": {
+        "id": "0PSPermAdd0002",
+        "apiName": "AddPerm",
+        "type": "PermissionSet"
+      },
+      "0PGGroupAdd0001": {
+        "id": "0PGGroupAdd0001",
+        "apiName": "AddGroup",
+        "type": "PermissionSetGroup"
+      },
+      "00GPublicKeep01": {
+        "id": "00GPublicKeep01",
+        "apiName": "KeepPublic",
+        "type": "PublicGroup"
+      },
+      "00GQueueKeep001": {
+        "id": "00GQueueKeep001",
+        "apiName": "KeepQueue",
+        "type": "Queue"
+      },
+      "00GQueueAdd0002": {
+        "id": "00GQueueAdd0002",
+        "apiName": "AddQueue",
+        "type": "Queue"
+      },
+      "0PSPermRemove": {
+        "id": "0PSPermRemove",
+        "apiName": "Shared_Perms",
+        "label": "Shared Permissions",
+        "type": "PermissionSet"
+      },
+      "00GQueueExtra": {
+        "id": "00GQueueExtra",
+        "type": "Queue"
+      },
+      "00eProfileCurrent": {
+        "id": "00eProfileCurrent",
+        "label": "00eProfileCurrent",
+        "type": "Profile"
+      }
+    }
+  },
+  "human": "Compared 1 users: 1 with drift, 0 failed.\n\nA001 (005User00000001): compared\n  profile: 00eProfileCurrent -> Support Profile\n  permissionSets (sync):\n    + AddPerm\n    - Shared_Perms (Shared Permissions)\n  permissionSetGroups (additive):\n    + AddGroup\n  publicGroups (sync):\n  queues (additive):\n    + AddQueue\n    extra 00GQueueExtra",
+  "humanVerbose": "Compared 1 users: 1 with drift, 0 failed.\n\nA001 (005User00000001): compared\n  profile: 00eProfileCurrent -> Support Profile\n  permissionSets (sync):\n    + AddPerm\n    - Shared_Perms (Shared Permissions)\n    = Current_Perms (Current Permissions)\n  permissionSetGroups (additive):\n    + AddGroup\n  publicGroups (sync):\n    = KeepPublic\n  queues (additive):\n    + AddQueue\n    = KeepQueue\n    extra 00GQueueExtra",
+  "csv": "userKey,userId,category,kind,value,mode,userName,username,valueApiName,valueLabel,valueType,valueBefore,valueAfter\nA001,005User00000001,permissionSets,add,0PSPermAdd0002,sync,,,AddPerm,,PermissionSet,,\nA001,005User00000001,permissionSets,remove,0PSPermRemove,sync,,,Shared_Perms,Shared Permissions,PermissionSet,,\nA001,005User00000001,permissionSets,inBoth,0PSPermKeep0001,sync,,,Current_Perms,Current Permissions,PermissionSet,,\nA001,005User00000001,permissionSetGroups,add,0PGGroupAdd0001,additive,,,AddGroup,,PermissionSetGroup,,\nA001,005User00000001,publicGroups,inBoth,00GPublicKeep01,sync,,,KeepPublic,,PublicGroup,,\nA001,005User00000001,queues,add,00GQueueAdd0002,additive,,,AddQueue,,Queue,,\nA001,005User00000001,queues,inBoth,00GQueueKeep001,additive,,,KeepQueue,,Queue,,\nA001,005User00000001,queues,onlyInOrg,00GQueueExtra,additive,,,,,Queue,,\nA001,005User00000001,profile,profile,00eProfileCurrent -> 00eProfileTarget1,,,,Support Profile,Support Profile,Profile,00eProfileCurrent,00eProfileTarget1",
+  "verified": {
+    "verdicts": [
+      {
+        "key": "A001",
+        "conformant": false,
+        "violations": [
+          "profile mismatch: 00eProfileCurrent -> Support Profile",
+          "permissionSets missing: AddPerm",
+          "permissionSets extra (sync): Shared_Perms (Shared Permissions)",
+          "permissionSetGroups missing: AddGroup",
+          "queues missing: AddQueue"
+        ]
+      }
+    ],
+    "human": "Verified 1 users: 0 conformant, 1 non-conformant.\n\nA001: non-conformant\n  - profile mismatch: 00eProfileCurrent -> Support Profile\n  - permissionSets missing: AddPerm\n  - permissionSets extra (sync): Shared_Perms (Shared Permissions)\n  - permissionSetGroups missing: AddGroup\n  - queues missing: AddQueue",
+    "csv": "key,conformant,violations\nA001,false,profile mismatch: 00eProfileCurrent -> Support Profile; permissionSets missing: AddPerm; permissionSets extra (sync): Shared_Perms (Shared Permissions); permissionSetGroups missing: AddGroup; queues missing: AddQueue"
+  },
+  "queries": [
+    "SELECT Id, Name FROM Profile WHERE Name IN ('Support Profile')",
+    "SELECT Id, DeveloperName, Name FROM UserRole WHERE DeveloperName IN ('SupportRole') OR Name IN ('SupportRole')",
+    "SELECT Id, Name, Label FROM PermissionSet WHERE Name IN ('KeepPerm','AddPerm')",
+    "SELECT Id, DeveloperName, MasterLabel FROM PermissionSetGroup WHERE DeveloperName IN ('AddGroup')",
+    "SELECT Id, DeveloperName, Name FROM Group WHERE DeveloperName IN ('KeepPublic') AND Type = 'Regular'",
+    "SELECT Id, DeveloperName, Name FROM Group WHERE DeveloperName IN ('KeepQueue','AddQueue') AND Type = 'Queue'",
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name, FederationIdentifier FROM User WHERE FederationIdentifier IN ('A001')",
+    "SELECT Id, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Id IN ('005User00000001')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005User00000001')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005User00000001') AND Group.Type IN ('Regular', 'Queue')"
+  ],
+  "changes": []
+}

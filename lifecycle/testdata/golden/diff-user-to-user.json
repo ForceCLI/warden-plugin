@@ -1,0 +1,250 @@
+{
+  "result": {
+    "summary": {
+      "total": 1,
+      "compared": 1,
+      "wouldCreate": 0,
+      "failed": 0,
+      "changed": 1
+    },
+    "users": [
+      {
+        "key": "Username:new@example.test",
+        "id": "005NewUser00001",
+        "username": "new@example.test",
+        "matchedBy": "Username",
+        "status": "compared",
+        "profile": {
+          "current": "00eCurrent",
+          "intended": "00eTemplate",
+          "matches": false
+        },
+        "role": {
+          "current": null,
+          "intended": "00ETemplateRole",
+          "matches": false
+        },
+        "assignments": {
+          "permissionSets": {
+            "adds": [
+              "0PSTarget"
+            ],
+            "removes": [
+              "0PSCurrent"
+            ],
+            "inBoth": [
+              "0PSShared"
+            ],
+            "onlyInOrg": []
+          },
+          "permissionSetGroups": {
+            "adds": [
+              "0PGTemplate"
+            ],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          },
+          "publicGroups": {
+            "adds": [
+              "00GP"
+            ],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          },
+          "queues": {
+            "adds": [],
+            "removes": [
+              "00GA",
+              "00Gb"
+            ],
+            "inBoth": [],
+            "onlyInOrg": []
+          }
+        },
+        "errors": []
+      }
+    ],
+    "rows": [
+      {
+        "userKey": "Username:new@example.test",
+        "userId": "005NewUser00001",
+        "userName": "",
+        "username": "new@example.test",
+        "category": "permissionSets",
+        "kind": "add",
+        "value": "0PSTarget"
+      },
+      {
+        "userKey": "Username:new@example.test",
+        "userId": "005NewUser00001",
+        "userName": "",
+        "username": "new@example.test",
+        "category": "permissionSets",
+        "kind": "remove",
+        "value": "0PSCurrent"
+      },
+      {
+        "userKey": "Username:new@example.test",
+        "userId": "005NewUser00001",
+        "userName": "",
+        "username": "new@example.test",
+        "category": "permissionSets",
+        "kind": "inBoth",
+        "value": "0PSShared"
+      },
+      {
+        "userKey": "Username:new@example.test",
+        "userId": "005NewUser00001",
+        "userName": "",
+        "username": "new@example.test",
+        "category": "permissionSetGroups",
+        "kind": "add",
+        "value": "0PGTemplate"
+      },
+      {
+        "userKey": "Username:new@example.test",
+        "userId": "005NewUser00001",
+        "userName": "",
+        "username": "new@example.test",
+        "category": "publicGroups",
+        "kind": "add",
+        "value": "00GP"
+      },
+      {
+        "userKey": "Username:new@example.test",
+        "userId": "005NewUser00001",
+        "userName": "",
+        "username": "new@example.test",
+        "category": "queues",
+        "kind": "remove",
+        "value": "00GA"
+      },
+      {
+        "userKey": "Username:new@example.test",
+        "userId": "005NewUser00001",
+        "userName": "",
+        "username": "new@example.test",
+        "category": "queues",
+        "kind": "remove",
+        "value": "00Gb"
+      },
+      {
+        "userKey": "Username:new@example.test",
+        "userId": "005NewUser00001",
+        "userName": "",
+        "username": "new@example.test",
+        "category": "profile",
+        "kind": "profile",
+        "value": "00eCurrent -> 00eTemplate",
+        "valueBefore": "00eCurrent",
+        "valueAfter": "00eTemplate"
+      },
+      {
+        "userKey": "Username:new@example.test",
+        "userId": "005NewUser00001",
+        "userName": "",
+        "username": "new@example.test",
+        "category": "role",
+        "kind": "role",
+        "value": " -> 00ETemplateRole",
+        "valueBefore": "",
+        "valueAfter": "00ETemplateRole"
+      }
+    ],
+    "warnings": [],
+    "labels": {
+      "0PSTarget": {
+        "id": "0PSTarget",
+        "apiName": "Target_Perms",
+        "label": "Target Permissions",
+        "type": "PermissionSet"
+      },
+      "0PSShared": {
+        "id": "0PSShared",
+        "apiName": "Shared_Perms",
+        "label": "Shared Permissions",
+        "type": "PermissionSet"
+      },
+      "0PSOwned": {
+        "id": "0PSOwned",
+        "apiName": "X00e",
+        "label": "Profile Owned",
+        "type": "PermissionSet"
+      },
+      "0PGTemplate": {
+        "id": "0PGTemplate",
+        "apiName": "Template_Group",
+        "label": "Template_Group",
+        "type": "PermissionSetGroup"
+      },
+      "0PSCurrent": {
+        "id": "0PSCurrent",
+        "apiName": "Current_Perms",
+        "label": "Current Permissions",
+        "type": "PermissionSet"
+      },
+      "00Gb": {
+        "id": "00Gb",
+        "apiName": "b_queue",
+        "label": "B Queue",
+        "type": "Queue"
+      },
+      "00GA": {
+        "id": "00GA",
+        "apiName": "A_Queue",
+        "label": "A Queue",
+        "type": "Queue"
+      },
+      "00GP": {
+        "id": "00GP",
+        "apiName": "All_Staff",
+        "label": "All Staff",
+        "type": "PublicGroup"
+      },
+      "00eCurrent": {
+        "id": "00eCurrent",
+        "label": "Current Profile",
+        "type": "Profile"
+      },
+      "00eTemplate": {
+        "id": "00eTemplate",
+        "label": "Template Profile",
+        "type": "Profile"
+      },
+      "00ETemplateRole": {
+        "id": "00ETemplateRole",
+        "label": "Template Role",
+        "type": "UserRole"
+      }
+    }
+  },
+  "human": "Compared 1 users: 1 with drift, 0 failed.\n\nUsername:new@example.test (005NewUser00001): compared\n  profile: Current Profile -> Template Profile\n  role:  -> Template Role\n  permissionSets:\n    + Target_Perms (Target Permissions)\n    - Current_Perms (Current Permissions)\n  permissionSetGroups:\n    + Template_Group\n  publicGroups:\n    + All_Staff (All Staff)\n  queues:\n    - A_Queue (A Queue)\n    - b_queue (B Queue)",
+  "humanVerbose": "Compared 1 users: 1 with drift, 0 failed.\n\nUsername:new@example.test (005NewUser00001): compared\n  profile: Current Profile -> Template Profile\n  role:  -> Template Role\n  permissionSets:\n    + Target_Perms (Target Permissions)\n    - Current_Perms (Current Permissions)\n    = Shared_Perms (Shared Permissions)\n  permissionSetGroups:\n    + Template_Group\n  publicGroups:\n    + All_Staff (All Staff)\n  queues:\n    - A_Queue (A Queue)\n    - b_queue (B Queue)",
+  "csv": "userKey,userId,category,kind,value,mode,userName,username,valueApiName,valueLabel,valueType,valueBefore,valueAfter\nUsername:new@example.test,005NewUser00001,permissionSets,add,0PSTarget,,,new@example.test,Target_Perms,Target Permissions,PermissionSet,,\nUsername:new@example.test,005NewUser00001,permissionSets,remove,0PSCurrent,,,new@example.test,Current_Perms,Current Permissions,PermissionSet,,\nUsername:new@example.test,005NewUser00001,permissionSets,inBoth,0PSShared,,,new@example.test,Shared_Perms,Shared Permissions,PermissionSet,,\nUsername:new@example.test,005NewUser00001,permissionSetGroups,add,0PGTemplate,,,new@example.test,Template_Group,Template_Group,PermissionSetGroup,,\nUsername:new@example.test,005NewUser00001,publicGroups,add,00GP,,,new@example.test,All_Staff,All Staff,PublicGroup,,\nUsername:new@example.test,005NewUser00001,queues,remove,00GA,,,new@example.test,A_Queue,A Queue,Queue,,\nUsername:new@example.test,005NewUser00001,queues,remove,00Gb,,,new@example.test,b_queue,B Queue,Queue,,\nUsername:new@example.test,005NewUser00001,profile,profile,00eCurrent -> 00eTemplate,,,new@example.test,,Template Profile,Profile,00eCurrent,00eTemplate\nUsername:new@example.test,005NewUser00001,role,role, -> 00ETemplateRole,,,new@example.test,,Template Role,UserRole,,00ETemplateRole",
+  "verified": {
+    "verdicts": [
+      {
+        "key": "Username:new@example.test",
+        "conformant": false,
+        "violations": [
+          "profile mismatch: Current Profile -> Template Profile",
+          "role mismatch:  -> Template Role",
+          "permissionSets missing: Target_Perms (Target Permissions)",
+          "permissionSetGroups missing: Template_Group",
+          "publicGroups missing: All_Staff (All Staff)"
+        ]
+      }
+    ],
+    "human": "Verified 1 users: 0 conformant, 1 non-conformant.\n\nUsername:new@example.test: non-conformant\n  - profile mismatch: Current Profile -> Template Profile\n  - role mismatch:  -> Template Role\n  - permissionSets missing: Target_Perms (Target Permissions)\n  - permissionSetGroups missing: Template_Group\n  - publicGroups missing: All_Staff (All Staff)",
+    "csv": "key,conformant,violations\nUsername:new@example.test,false,profile mismatch: Current Profile -> Template Profile; role mismatch:  -> Template Role; permissionSets missing: Target_Perms (Target Permissions); permissionSetGroups missing: Template_Group; publicGroups missing: All_Staff (All Staff)"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('new@example.test','template@example.test')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005NewUser00001','005Template0001')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005NewUser00001','005Template0001') AND Group.Type IN ('Regular', 'Queue')",
+    "SELECT Id, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Id IN ('005NewUser00001','005Template0001')"
+  ],
+  "changes": []
+}

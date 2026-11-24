@@ -1,0 +1,9 @@
+{
+  "error": {
+    "name": "LifecycleError",
+    "code": "errorInvalidSnapshot",
+    "message": "Snapshot CSV testdata/files/invalid-empty-row-with-user.csv:2 empty-snapshot row must leave match empty."
+  },
+  "queries": [],
+  "changes": []
+}

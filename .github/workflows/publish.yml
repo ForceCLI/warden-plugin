@@ -1,0 +1,56 @@
+name: Publish Plugin
+
+# Builds the plugin for each platform and publishes the executables as one
+# OCI artifact that `sf plugins install warden` reads.
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+  packages: write
+
+env:
+  PLUGIN: warden
+  REFERENCE: ghcr.io/forcecli/sf-plugins/warden
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+      - name: Test
+        run: go test ./...
+      - name: Build
+        run: |
+          version="${GITHUB_REF_NAME#v}"
+          args=""
+          for platform in linux/amd64 linux/arm64 darwin/amd64 darwin/arm64 windows/amd64 windows/arm64; do
+            os="${platform%/*}"
+            arch="${platform#*/}"
+            ext=""
+            if [ "$os" = windows ]; then ext=.exe; fi
+            GOOS="$os" GOARCH="$arch" CGO_ENABLED=0 go build -trimpath \
+              -ldflags "-s -w -X github.com/ForceCLI/warden-plugin/cmd.Version=$version" \
+              -o "dist/$os-$arch/$PLUGIN$ext" .
+            args="$args --executable $platform=dist/$os-$arch/$PLUGIN$ext"
+          done
+          echo "EXECUTABLES=$args" >> "$GITHUB_ENV"
+          "dist/linux-amd64/$PLUGIN" sf-plugin-manifest > dist/manifest.json
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+      - name: Publish
+        run: |
+          go run github.com/ForceCLI/force@latest --sf plugins publish "$REFERENCE:$GITHUB_REF_NAME" \
+            --manifest dist/manifest.json $EXECUTABLES \
+            --source "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" --revision "$GITHUB_SHA"
+          go run github.com/ForceCLI/force@latest --sf plugins publish "$REFERENCE:latest" --overwrite \
+            --manifest dist/manifest.json $EXECUTABLES \
+            --source "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" --revision "$GITHUB_SHA"

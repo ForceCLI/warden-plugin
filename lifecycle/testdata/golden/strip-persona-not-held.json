@@ -1,0 +1,563 @@
+{
+  "plan": {
+    "states": [
+      {
+        "target": {
+          "key": "Username:multi@example.com",
+          "Id": "005multi",
+          "IsActive": true,
+          "name": "Multi User",
+          "username": "multi@example.com",
+          "field": "Username",
+          "value": "multi@example.com",
+          "order": 0
+        },
+        "result": {
+          "key": "Username:multi@example.com",
+          "id": "005multi",
+          "name": "Multi User",
+          "username": "multi@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [
+            {
+              "key": "alreadyAbsent",
+              "detail": "Absent Permissions"
+            },
+            {
+              "key": "keptByOtherPersona",
+              "detail": "Shared Permissions (kept by sales)"
+            },
+            {
+              "key": "keptByOtherPersona",
+              "detail": "Shared Queue (kept by sales)"
+            },
+            {
+              "key": "skippedFreeze"
+            },
+            {
+              "key": "skippedDeactivate"
+            }
+          ],
+          "warnings": [
+            "personaNotHeld: finance for Username:multi@example.com."
+          ],
+          "errors": [
+            "Unresolved PermissionSet reference \"Unknown_Perms\"."
+          ]
+        },
+        "steps": [
+          {
+            "kind": "delete",
+            "sobject": "PermissionSetAssignment",
+            "ids": [
+              "0PAsupport"
+            ],
+            "actionKey": "removedPermissionSet",
+            "items": [
+              {
+                "id": "0PSsupport",
+                "apiName": "Support_Read",
+                "label": "Support Read",
+                "type": "PermissionSet"
+              }
+            ]
+          },
+          {
+            "kind": "delete",
+            "sobject": "PermissionSetAssignment",
+            "ids": [
+              "0PAgroup"
+            ],
+            "actionKey": "removedPermissionSetGroup",
+            "items": [
+              {
+                "id": "0PGsupport",
+                "apiName": "Support_Group",
+                "label": "Support Group",
+                "type": "PermissionSetGroup"
+              }
+            ]
+          },
+          {
+            "kind": "delete",
+            "sobject": "GroupMember",
+            "ids": [
+              "0GMpublic"
+            ],
+            "actionKey": "removedPublicGroupMember",
+            "items": [
+              {
+                "id": "00Gpublic",
+                "apiName": "Support_Public",
+                "label": "Support Public",
+                "type": "PublicGroup"
+              }
+            ]
+          },
+          {
+            "kind": "delete",
+            "sobject": "GroupMember",
+            "ids": [
+              "0GMqueue"
+            ],
+            "actionKey": "removedQueueMember",
+            "items": [
+              {
+                "id": "00Gqueue",
+                "apiName": "Support_Queue",
+                "label": "Support Queue",
+                "type": "Queue"
+              }
+            ]
+          }
+        ],
+        "hasDml": true,
+        "revocationRows": [
+          {
+            "userKey": "Username:multi@example.com",
+            "userId": "005multi",
+            "category": "PermissionSet",
+            "action": "alreadyAbsent",
+            "status": "unchanged",
+            "detail": "Absent Permissions",
+            "error": ""
+          },
+          {
+            "userKey": "Username:multi@example.com",
+            "userId": "005multi",
+            "category": "PermissionSet",
+            "action": "keptByOtherPersona",
+            "status": "kept",
+            "detail": "Shared Permissions (kept by sales)",
+            "error": ""
+          },
+          {
+            "userKey": "Username:multi@example.com",
+            "userId": "005multi",
+            "category": "PermissionSet",
+            "action": "wouldRemove",
+            "status": "planned",
+            "detail": "Support Read",
+            "error": ""
+          },
+          {
+            "userKey": "Username:multi@example.com",
+            "userId": "005multi",
+            "category": "PermissionSet",
+            "action": "unresolved",
+            "status": "unmanaged",
+            "detail": "Unknown_Perms",
+            "error": "Unresolved PermissionSet reference \"Unknown_Perms\"."
+          },
+          {
+            "userKey": "Username:multi@example.com",
+            "userId": "005multi",
+            "category": "PermissionSetGroup",
+            "action": "wouldRemove",
+            "status": "planned",
+            "detail": "Support Group",
+            "error": ""
+          },
+          {
+            "userKey": "Username:multi@example.com",
+            "userId": "005multi",
+            "category": "PublicGroup",
+            "action": "wouldRemove",
+            "status": "planned",
+            "detail": "Support Public",
+            "error": ""
+          },
+          {
+            "userKey": "Username:multi@example.com",
+            "userId": "005multi",
+            "category": "Queue",
+            "action": "keptByOtherPersona",
+            "status": "kept",
+            "detail": "Shared Queue (kept by sales)",
+            "error": ""
+          },
+          {
+            "userKey": "Username:multi@example.com",
+            "userId": "005multi",
+            "category": "Queue",
+            "action": "wouldRemove",
+            "status": "planned",
+            "detail": "Support Queue",
+            "error": ""
+          }
+        ]
+      },
+      {
+        "target": {
+          "key": "Username:solo@example.com",
+          "Id": "005solo",
+          "IsActive": true,
+          "name": "Solo User",
+          "username": "solo@example.com",
+          "field": "Username",
+          "value": "solo@example.com",
+          "order": 1
+        },
+        "result": {
+          "key": "Username:solo@example.com",
+          "id": "005solo",
+          "name": "Solo User",
+          "username": "solo@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [
+            {
+              "key": "skippedFreeze"
+            },
+            {
+              "key": "skippedDeactivate"
+            }
+          ],
+          "warnings": [
+            "personaNotHeld: support for Username:solo@example.com.",
+            "personaNotHeld: finance for Username:solo@example.com."
+          ],
+          "errors": []
+        },
+        "steps": [],
+        "hasDml": false,
+        "revocationRows": []
+      }
+    ],
+    "errors": [],
+    "preview": {
+      "summary": {
+        "total": 2,
+        "changed": 1,
+        "unchanged": 1,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:multi@example.com",
+          "id": "005multi",
+          "name": "Multi User",
+          "username": "multi@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldRemovePermissionSet",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PSsupport",
+                  "apiName": "Support_Read",
+                  "label": "Support Read",
+                  "type": "PermissionSet"
+                }
+              ]
+            },
+            {
+              "key": "wouldRemovePermissionSetGroup",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PGsupport",
+                  "apiName": "Support_Group",
+                  "label": "Support Group",
+                  "type": "PermissionSetGroup"
+                }
+              ]
+            },
+            {
+              "key": "wouldRemovePublicGroupMember",
+              "count": 1,
+              "items": [
+                {
+                  "id": "00Gpublic",
+                  "apiName": "Support_Public",
+                  "label": "Support Public",
+                  "type": "PublicGroup"
+                }
+              ]
+            },
+            {
+              "key": "wouldRemoveQueueMember",
+              "count": 1,
+              "items": [
+                {
+                  "id": "00Gqueue",
+                  "apiName": "Support_Queue",
+                  "label": "Support Queue",
+                  "type": "Queue"
+                }
+              ]
+            }
+          ],
+          "skipped": [
+            {
+              "key": "alreadyAbsent",
+              "detail": "Absent Permissions"
+            },
+            {
+              "key": "keptByOtherPersona",
+              "detail": "Shared Permissions (kept by sales)"
+            },
+            {
+              "key": "keptByOtherPersona",
+              "detail": "Shared Queue (kept by sales)"
+            },
+            {
+              "key": "skippedFreeze"
+            },
+            {
+              "key": "skippedDeactivate"
+            }
+          ],
+          "warnings": [
+            "personaNotHeld: finance for Username:multi@example.com."
+          ],
+          "errors": [
+            "Unresolved PermissionSet reference \"Unknown_Perms\"."
+          ]
+        },
+        {
+          "key": "Username:solo@example.com",
+          "id": "005solo",
+          "name": "Solo User",
+          "username": "solo@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [
+            {
+              "key": "skippedFreeze"
+            },
+            {
+              "key": "skippedDeactivate"
+            }
+          ],
+          "warnings": [
+            "personaNotHeld: support for Username:solo@example.com.",
+            "personaNotHeld: finance for Username:solo@example.com."
+          ],
+          "errors": []
+        }
+      ]
+    },
+    "warnings": [
+      "PermissionSet reference \"Unknown_Perms\" was not found."
+    ],
+    "revocationRows": [
+      {
+        "userKey": "Username:multi@example.com",
+        "userId": "005multi",
+        "category": "PermissionSet",
+        "action": "alreadyAbsent",
+        "status": "unchanged",
+        "detail": "Absent Permissions",
+        "error": ""
+      },
+      {
+        "userKey": "Username:multi@example.com",
+        "userId": "005multi",
+        "category": "PermissionSet",
+        "action": "keptByOtherPersona",
+        "status": "kept",
+        "detail": "Shared Permissions (kept by sales)",
+        "error": ""
+      },
+      {
+        "userKey": "Username:multi@example.com",
+        "userId": "005multi",
+        "category": "PermissionSet",
+        "action": "wouldRemove",
+        "status": "planned",
+        "detail": "Support Read",
+        "error": ""
+      },
+      {
+        "userKey": "Username:multi@example.com",
+        "userId": "005multi",
+        "category": "PermissionSet",
+        "action": "unresolved",
+        "status": "unmanaged",
+        "detail": "Unknown_Perms",
+        "error": "Unresolved PermissionSet reference \"Unknown_Perms\"."
+      },
+      {
+        "userKey": "Username:multi@example.com",
+        "userId": "005multi",
+        "category": "PermissionSetGroup",
+        "action": "wouldRemove",
+        "status": "planned",
+        "detail": "Support Group",
+        "error": ""
+      },
+      {
+        "userKey": "Username:multi@example.com",
+        "userId": "005multi",
+        "category": "PublicGroup",
+        "action": "wouldRemove",
+        "status": "planned",
+        "detail": "Support Public",
+        "error": ""
+      },
+      {
+        "userKey": "Username:multi@example.com",
+        "userId": "005multi",
+        "category": "Queue",
+        "action": "keptByOtherPersona",
+        "status": "kept",
+        "detail": "Shared Queue (kept by sales)",
+        "error": ""
+      },
+      {
+        "userKey": "Username:multi@example.com",
+        "userId": "005multi",
+        "category": "Queue",
+        "action": "wouldRemove",
+        "status": "planned",
+        "detail": "Support Queue",
+        "error": ""
+      }
+    ]
+  },
+  "preview": {
+    "result": {
+      "summary": {
+        "total": 2,
+        "changed": 1,
+        "unchanged": 1,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:multi@example.com",
+          "id": "005multi",
+          "name": "Multi User",
+          "username": "multi@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldRemovePermissionSet",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PSsupport",
+                  "apiName": "Support_Read",
+                  "label": "Support Read",
+                  "type": "PermissionSet"
+                }
+              ]
+            },
+            {
+              "key": "wouldRemovePermissionSetGroup",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PGsupport",
+                  "apiName": "Support_Group",
+                  "label": "Support Group",
+                  "type": "PermissionSetGroup"
+                }
+              ]
+            },
+            {
+              "key": "wouldRemovePublicGroupMember",
+              "count": 1,
+              "items": [
+                {
+                  "id": "00Gpublic",
+                  "apiName": "Support_Public",
+                  "label": "Support Public",
+                  "type": "PublicGroup"
+                }
+              ]
+            },
+            {
+              "key": "wouldRemoveQueueMember",
+              "count": 1,
+              "items": [
+                {
+                  "id": "00Gqueue",
+                  "apiName": "Support_Queue",
+                  "label": "Support Queue",
+                  "type": "Queue"
+                }
+              ]
+            }
+          ],
+          "skipped": [
+            {
+              "key": "alreadyAbsent",
+              "detail": "Absent Permissions"
+            },
+            {
+              "key": "keptByOtherPersona",
+              "detail": "Shared Permissions (kept by sales)"
+            },
+            {
+              "key": "keptByOtherPersona",
+              "detail": "Shared Queue (kept by sales)"
+            },
+            {
+              "key": "skippedFreeze"
+            },
+            {
+              "key": "skippedDeactivate"
+            }
+          ],
+          "warnings": [
+            "personaNotHeld: finance for Username:multi@example.com."
+          ],
+          "errors": [
+            "Unresolved PermissionSet reference \"Unknown_Perms\"."
+          ]
+        },
+        {
+          "key": "Username:solo@example.com",
+          "id": "005solo",
+          "name": "Solo User",
+          "username": "solo@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [
+            {
+              "key": "skippedFreeze"
+            },
+            {
+              "key": "skippedDeactivate"
+            }
+          ],
+          "warnings": [
+            "personaNotHeld: support for Username:solo@example.com.",
+            "personaNotHeld: finance for Username:solo@example.com."
+          ],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 2 users: 1 changed, 1 unchanged, 0 failed.\n\nMulti User <multi@example.com> · 005multi\n  matched Username = multi@example.com · was active\n  warning: personaNotHeld: finance for Username:multi@example.com.\n  skipped: Already absent: Absent Permissions.\n  skipped: Kept Shared Permissions (kept by sales).\n  skipped: Kept Shared Queue (kept by sales).\n  skipped: Skipped freeze step.\n  skipped: Skipped deactivation step.\n  action: Would remove 1 permission set assignments.\n    · Support_Read (Support Read)\n  action: Would remove 1 permission set group assignments.\n    · Support_Group (Support Group)\n  action: Would remove 1 public group memberships.\n    · Support_Public (Support Public)\n  action: Would remove 1 queue memberships.\n    · Support_Queue (Support Queue)\n  error: Unresolved PermissionSet reference \"Unknown_Perms\".\n\nSolo User <solo@example.com> · 005solo\n  matched Username = solo@example.com · was active\n  warning: personaNotHeld: support for Username:solo@example.com.\n  warning: personaNotHeld: finance for Username:solo@example.com.\n  skipped: Skipped freeze step.\n  skipped: Skipped deactivation step.",
+    "csv": "userKey,userId,userName,username,status,action,category,itemId,itemApiName,error\nUsername:multi@example.com,005multi,Multi User,multi@example.com,planned,wouldRemovePermissionSet,PermissionSet,0PSsupport,Support_Read,\nUsername:multi@example.com,005multi,Multi User,multi@example.com,planned,wouldRemovePermissionSetGroup,PermissionSetGroup,0PGsupport,Support_Group,\nUsername:multi@example.com,005multi,Multi User,multi@example.com,planned,wouldRemovePublicGroupMember,PublicGroup,00Gpublic,Support_Public,\nUsername:multi@example.com,005multi,Multi User,multi@example.com,planned,wouldRemoveQueueMember,Queue,00Gqueue,Support_Queue,\nUsername:multi@example.com,005multi,Multi User,multi@example.com,planned,,,,,\"Unresolved PermissionSet reference \"\"Unknown_Perms\"\".\"\nUsername:solo@example.com,005solo,Solo User,solo@example.com,unchanged,,,,,"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('multi@example.com','solo@example.com')",
+    "SELECT Id, UserId, IsFrozen FROM UserLogin WHERE UserId IN ('005multi','005solo')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005multi','005solo')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005multi','005solo') AND Group.Type IN ('Regular', 'Queue')",
+    "SELECT Id, AssigneeId, PermissionSetLicenseId, PermissionSetLicense.DeveloperName, PermissionSetLicense.MasterLabel FROM PermissionSetLicenseAssign WHERE AssigneeId IN ('005multi','005solo')",
+    "SELECT Id, Name, Label FROM PermissionSet WHERE Name IN ('Support_Read','Shared_Perms','Absent_Perms','Unknown_Perms','Sales_Perms')",
+    "SELECT Id, DeveloperName, MasterLabel FROM PermissionSetGroup WHERE DeveloperName IN ('Support_Group')",
+    "SELECT Id, DeveloperName, Name FROM Group WHERE DeveloperName IN ('Support_Public') AND Type = 'Regular'",
+    "SELECT Id, DeveloperName, Name FROM Group WHERE DeveloperName IN ('Support_Queue','Shared_Queue') AND Type = 'Queue'"
+  ],
+  "changes": []
+}

@@ -1,0 +1,301 @@
+{
+  "plan": {
+    "users": [
+      {
+        "userId": "005user1",
+        "result": {
+          "key": "Username:failed-activation@example.com",
+          "id": "005user1",
+          "name": "Failed Activation",
+          "username": "failed-activation@example.com",
+          "isActive": false,
+          "isFrozen": true,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        "preview": {
+          "key": "Username:failed-activation@example.com",
+          "id": "005user1",
+          "name": "Failed Activation",
+          "username": "failed-activation@example.com",
+          "isActive": false,
+          "isFrozen": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldActivate"
+            },
+            {
+              "key": "wouldUnfreeze"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        "userUpdate": {
+          "Id": "005user1",
+          "IsActive": true
+        },
+        "loginUpdates": [
+          {
+            "Id": "0LL1",
+            "IsFrozen": false
+          }
+        ],
+        "permissionSetAdds": [],
+        "permissionSetGroupAdds": [],
+        "publicGroupAdds": [],
+        "queueAdds": [],
+        "licenseAdds": [],
+        "permissionSetItems": [],
+        "permissionSetGroupItems": [],
+        "publicGroupItems": [],
+        "queueItems": [],
+        "licenseItems": []
+      },
+      {
+        "userId": "005user2",
+        "result": {
+          "key": "Username:failed-unfreeze@example.com",
+          "id": "005user2",
+          "name": "Failed Unfreeze",
+          "username": "failed-unfreeze@example.com",
+          "isActive": true,
+          "isFrozen": true,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        "preview": {
+          "key": "Username:failed-unfreeze@example.com",
+          "id": "005user2",
+          "name": "Failed Unfreeze",
+          "username": "failed-unfreeze@example.com",
+          "isActive": true,
+          "isFrozen": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldUnfreeze"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        "loginUpdates": [
+          {
+            "Id": "0LL2",
+            "IsFrozen": false
+          }
+        ],
+        "permissionSetAdds": [],
+        "permissionSetGroupAdds": [],
+        "publicGroupAdds": [],
+        "queueAdds": [],
+        "licenseAdds": [],
+        "permissionSetItems": [],
+        "permissionSetGroupItems": [],
+        "publicGroupItems": [],
+        "queueItems": [],
+        "licenseItems": []
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "preview": {
+      "summary": {
+        "total": 2,
+        "changed": 2,
+        "unchanged": 0,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:failed-activation@example.com",
+          "id": "005user1",
+          "name": "Failed Activation",
+          "username": "failed-activation@example.com",
+          "isActive": false,
+          "isFrozen": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldActivate"
+            },
+            {
+              "key": "wouldUnfreeze"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        {
+          "key": "Username:failed-unfreeze@example.com",
+          "id": "005user2",
+          "name": "Failed Unfreeze",
+          "username": "failed-unfreeze@example.com",
+          "isActive": true,
+          "isFrozen": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldUnfreeze"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    }
+  },
+  "preview": {
+    "result": {
+      "summary": {
+        "total": 2,
+        "changed": 2,
+        "unchanged": 0,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:failed-activation@example.com",
+          "id": "005user1",
+          "name": "Failed Activation",
+          "username": "failed-activation@example.com",
+          "isActive": false,
+          "isFrozen": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldActivate"
+            },
+            {
+              "key": "wouldUnfreeze"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        {
+          "key": "Username:failed-unfreeze@example.com",
+          "id": "005user2",
+          "name": "Failed Unfreeze",
+          "username": "failed-unfreeze@example.com",
+          "isActive": true,
+          "isFrozen": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldUnfreeze"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 2 users: 2 changed, 0 unchanged, 0 failed.\n\nFailed Activation <failed-activation@example.com> · 005user1\n  matched Username = failed-activation@example.com · was frozen\n  action: Would activate.\n  action: Would unfreeze.\n\nFailed Unfreeze <failed-unfreeze@example.com> · 005user2\n  matched Username = failed-unfreeze@example.com · was frozen\n  action: Would unfreeze.",
+    "csv": "userKey,userId,userName,username,status,action,category,name,error\nUsername:failed-activation@example.com,005user1,Failed Activation,failed-activation@example.com,planned,wouldActivate,,,\nUsername:failed-activation@example.com,005user1,Failed Activation,failed-activation@example.com,planned,wouldUnfreeze,,,\nUsername:failed-unfreeze@example.com,005user2,Failed Unfreeze,failed-unfreeze@example.com,planned,wouldUnfreeze,,,"
+  },
+  "applied": {
+    "result": {
+      "summary": {
+        "total": 2,
+        "changed": 0,
+        "unchanged": 0,
+        "failed": 2
+      },
+      "users": [
+        {
+          "key": "Username:failed-activation@example.com",
+          "id": "005user1",
+          "name": "Failed Activation",
+          "username": "failed-activation@example.com",
+          "isActive": false,
+          "isFrozen": true,
+          "status": "failed",
+          "actions": [
+            {
+              "key": "unfrozen"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Activation failed"
+          ]
+        },
+        {
+          "key": "Username:failed-unfreeze@example.com",
+          "id": "005user2",
+          "name": "Failed Unfreeze",
+          "username": "failed-unfreeze@example.com",
+          "isActive": true,
+          "isFrozen": true,
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Unfreeze failed"
+          ]
+        }
+      ]
+    },
+    "human": "Processed 2 users: 0 changed, 0 unchanged, 2 failed.\n\nFailed Activation <failed-activation@example.com> · 005user1\n  matched Username = failed-activation@example.com · was frozen\n  action: Unfroze.\n  error: Activation failed\n\nFailed Unfreeze <failed-unfreeze@example.com> · 005user2\n  matched Username = failed-unfreeze@example.com · was frozen\n  error: Unfreeze failed",
+    "csv": "userKey,userId,userName,username,status,action,category,name,error\nUsername:failed-activation@example.com,005user1,Failed Activation,failed-activation@example.com,failed,unfrozen,,,\nUsername:failed-activation@example.com,005user1,Failed Activation,failed-activation@example.com,failed,,,,Activation failed\nUsername:failed-unfreeze@example.com,005user2,Failed Unfreeze,failed-unfreeze@example.com,failed,,,,Unfreeze failed"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('failed-activation@example.com','failed-unfreeze@example.com')",
+    "SELECT Id, UserId, IsFrozen FROM UserLogin WHERE UserId IN ('005user1','005user2')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005user1','005user2')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005user1','005user2') AND Group.Type IN ('Regular', 'Queue')",
+    "SELECT Id, AssigneeId, PermissionSetLicenseId, PermissionSetLicense.DeveloperName, PermissionSetLicense.MasterLabel FROM PermissionSetLicenseAssign WHERE AssigneeId IN ('005user1','005user2')"
+  ],
+  "changes": [
+    {
+      "operation": "update",
+      "sobject": "User",
+      "records": [
+        {
+          "Id": "005user1",
+          "IsActive": true
+        }
+      ],
+      "allOrNone": false
+    },
+    {
+      "operation": "update",
+      "sobject": "UserLogin",
+      "records": [
+        {
+          "Id": "0LL1",
+          "IsFrozen": false
+        }
+      ],
+      "allOrNone": false
+    },
+    {
+      "operation": "update",
+      "sobject": "UserLogin",
+      "records": [
+        {
+          "Id": "0LL2",
+          "IsFrozen": false
+        }
+      ],
+      "allOrNone": false
+    }
+  ]
+}

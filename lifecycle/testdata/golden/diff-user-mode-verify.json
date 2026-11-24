@@ -1,0 +1,9 @@
+{
+  "error": {
+    "name": "LifecycleError",
+    "code": "errorVerifyUserMode",
+    "message": "Verification is only available in persona mode."
+  },
+  "queries": [],
+  "changes": []
+}

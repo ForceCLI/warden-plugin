@@ -1,0 +1,132 @@
+{
+  "snapshot": {
+    "snapshotVersion": 1,
+    "capturedAt": "2026-07-05T12:00:00.000Z",
+    "org": "snapshotOrg@example.com",
+    "users": [
+      {
+        "match": "Username",
+        "matchValue": "snapshot@example.com",
+        "userId": "005xx0000000100AAA",
+        "username": "snapshot@example.com",
+        "IsActive": true,
+        "IsFrozen": true,
+        "permissionSets": [
+          "Sales_Perms"
+        ],
+        "permissionSetGroups": [
+          "Sales_Group"
+        ],
+        "publicGroups": [
+          "All_Sales"
+        ],
+        "queues": [
+          "Case_Queue"
+        ],
+        "permissionSetLicenses": [
+          "SalesConsoleUser"
+        ]
+      }
+    ]
+  },
+  "jsonFile": "{\n  \"snapshotVersion\": 1,\n  \"capturedAt\": \"2026-07-05T12:00:00.000Z\",\n  \"org\": \"snapshotOrg@example.com\",\n  \"users\": [\n    {\n      \"match\": \"Username\",\n      \"matchValue\": \"snapshot@example.com\",\n      \"userId\": \"005xx0000000100AAA\",\n      \"username\": \"snapshot@example.com\",\n      \"IsActive\": true,\n      \"IsFrozen\": true,\n      \"permissionSets\": [\n        \"Sales_Perms\"\n      ],\n      \"permissionSetGroups\": [\n        \"Sales_Group\"\n      ],\n      \"publicGroups\": [\n        \"All_Sales\"\n      ],\n      \"queues\": [\n        \"Case_Queue\"\n      ],\n      \"permissionSetLicenses\": [\n        \"SalesConsoleUser\"\n      ]\n    }\n  ]\n}\n",
+  "csvFile": "snapshotVersion,capturedAt,org,match,matchValue,userId,userName,username,email,profile,role,isActive,isFrozen,category,name\n1,2026-07-05T12:00:00.000Z,snapshotOrg@example.com,Username,snapshot@example.com,005xx0000000100AAA,,snapshot@example.com,,,,true,true,permissionSet,Sales_Perms\n1,2026-07-05T12:00:00.000Z,snapshotOrg@example.com,Username,snapshot@example.com,005xx0000000100AAA,,snapshot@example.com,,,,true,true,permissionSetGroup,Sales_Group\n1,2026-07-05T12:00:00.000Z,snapshotOrg@example.com,Username,snapshot@example.com,005xx0000000100AAA,,snapshot@example.com,,,,true,true,publicGroup,All_Sales\n1,2026-07-05T12:00:00.000Z,snapshotOrg@example.com,Username,snapshot@example.com,005xx0000000100AAA,,snapshot@example.com,,,,true,true,queue,Case_Queue\n1,2026-07-05T12:00:00.000Z,snapshotOrg@example.com,Username,snapshot@example.com,005xx0000000100AAA,,snapshot@example.com,,,,true,true,permissionSetLicense,SalesConsoleUser\n",
+  "readJson": {
+    "snapshotVersion": 1,
+    "capturedAt": "2026-07-05T12:00:00.000Z",
+    "org": "snapshotOrg@example.com",
+    "users": [
+      {
+        "match": "Username",
+        "matchValue": "snapshot@example.com",
+        "userId": "005xx0000000100AAA",
+        "username": "snapshot@example.com",
+        "IsActive": true,
+        "IsFrozen": true,
+        "permissionSets": [
+          "Sales_Perms"
+        ],
+        "permissionSetGroups": [
+          "Sales_Group"
+        ],
+        "publicGroups": [
+          "All_Sales"
+        ],
+        "queues": [
+          "Case_Queue"
+        ],
+        "permissionSetLicenses": [
+          "SalesConsoleUser"
+        ]
+      }
+    ]
+  },
+  "readCsv": {
+    "snapshotVersion": 1,
+    "capturedAt": "2026-07-05T12:00:00.000Z",
+    "org": "snapshotOrg@example.com",
+    "users": [
+      {
+        "match": "Username",
+        "matchValue": "snapshot@example.com",
+        "userId": "005xx0000000100AAA",
+        "username": "snapshot@example.com",
+        "IsActive": true,
+        "IsFrozen": true,
+        "permissionSets": [
+          "Sales_Perms"
+        ],
+        "permissionSetGroups": [
+          "Sales_Group"
+        ],
+        "publicGroups": [
+          "All_Sales"
+        ],
+        "queues": [
+          "Case_Queue"
+        ],
+        "permissionSetLicenses": [
+          "SalesConsoleUser"
+        ]
+      }
+    ]
+  },
+  "lifecycle": {
+    "result": {
+      "summary": {
+        "total": 1,
+        "changed": 0,
+        "unchanged": 1,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:snapshot@example.com",
+          "id": "005xx0000000100AAA",
+          "username": "snapshot@example.com",
+          "isActive": true,
+          "isFrozen": true,
+          "status": "unchanged",
+          "actions": [
+            {
+              "key": "snapshotWritten"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 1 user: 0 changed, 1 unchanged, 0 failed.\n\nUsername:snapshot@example.com (005xx0000000100AAA): unchanged\n  action: Wrote snapshot.",
+    "csv": "key,id,status,actions,skipped,warnings,errors\nUsername:snapshot@example.com,005xx0000000100AAA,unchanged,snapshotWritten,,,"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('snapshot@example.com')",
+    "SELECT Id, UserId, IsFrozen FROM UserLogin WHERE UserId IN ('005xx0000000100AAA')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005xx0000000100AAA')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005xx0000000100AAA') AND Group.Type IN ('Regular', 'Queue')",
+    "SELECT Id, AssigneeId, PermissionSetLicenseId, PermissionSetLicense.DeveloperName, PermissionSetLicense.MasterLabel FROM PermissionSetLicenseAssign WHERE AssigneeId IN ('005xx0000000100AAA')"
+  ],
+  "changes": []
+}

@@ -1,0 +1,9 @@
+{
+  "error": {
+    "name": "LifecycleError",
+    "code": "errorInvalidSnapshot",
+    "message": "Snapshot CSV testdata/files/invalid-cell-count.csv:2 must contain 15 cells but found 4."
+  },
+  "queries": [],
+  "changes": []
+}

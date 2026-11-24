@@ -1,0 +1,8 @@
+{
+  "error": {
+    "name": "Error",
+    "message": "Invalid --external-id field \"Nickname\". Must be a filterable User field."
+  },
+  "queries": [],
+  "changes": []
+}

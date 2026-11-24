@@ -1,0 +1,90 @@
+{
+	"source": "written for this port",
+	"command": "diff",
+	"options": {
+		"mode": "persona",
+		"usersDoc": {
+			"users": [
+				{
+					"personas": [
+						"support"
+					],
+					"FederationIdentifier": "A001",
+					"LastName": "User"
+				}
+			]
+		},
+		"personasDoc": {
+			"personas": {
+				"support": {
+					"profile": "Support Profile",
+					"role": "SupportRole",
+					"permissionSetMode": "sync",
+					"permissionSets": [
+						"KeepPerm",
+						"AddPerm"
+					],
+					"permissionSetGroupMode": "additive",
+					"permissionSetGroups": [
+						"AddGroup"
+					],
+					"publicGroupMode": "sync",
+					"publicGroups": [
+						"KeepPublic"
+					],
+					"queueMode": "additive",
+					"queues": [
+						"KeepQueue",
+						"AddQueue"
+					]
+				}
+			}
+		},
+		"externalId": "Nickname"
+	},
+	"describe": [
+		{
+			"name": "Username",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "FederationIdentifier",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": true
+		},
+		{
+			"name": "ProfileId",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "UserRoleId",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "LastName",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "FirstName",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		}
+	],
+	"queries": []
+}

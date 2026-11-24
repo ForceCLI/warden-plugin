@@ -1,0 +1,249 @@
+{
+  "plan": {
+    "users": [
+      {
+        "userId": "005good",
+        "result": {
+          "key": "Username:good@example.com",
+          "id": "005good",
+          "username": "good@example.com",
+          "isActive": false,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [
+            "PermissionSet reference \"Missing\" was not found."
+          ],
+          "errors": []
+        },
+        "preview": {
+          "key": "Username:good@example.com",
+          "id": "005good",
+          "username": "good@example.com",
+          "isActive": false,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldActivate"
+            }
+          ],
+          "skipped": [],
+          "warnings": [
+            "PermissionSet reference \"Missing\" was not found."
+          ],
+          "errors": []
+        },
+        "userUpdate": {
+          "Id": "005good",
+          "IsActive": true
+        },
+        "loginUpdates": [],
+        "permissionSetAdds": [],
+        "permissionSetGroupAdds": [],
+        "publicGroupAdds": [],
+        "queueAdds": [],
+        "licenseAdds": [],
+        "permissionSetItems": [],
+        "permissionSetGroupItems": [],
+        "publicGroupItems": [],
+        "queueItems": [],
+        "licenseItems": []
+      }
+    ],
+    "errors": [
+      {
+        "key": "Unknown:bad",
+        "status": "failed",
+        "actions": [],
+        "skipped": [],
+        "warnings": [],
+        "errors": [
+          "Invalid user match field \"Unknown\"."
+        ]
+      },
+      {
+        "key": "Username:missing@example.com",
+        "status": "failed",
+        "actions": [],
+        "skipped": [],
+        "warnings": [],
+        "errors": [
+          "Username=\"missing@example.com\" matched no user"
+        ]
+      }
+    ],
+    "warnings": [
+      "PermissionSet reference \"Missing\" was not found."
+    ],
+    "preview": {
+      "summary": {
+        "total": 3,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 2
+      },
+      "users": [
+        {
+          "key": "Unknown:bad",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Invalid user match field \"Unknown\"."
+          ]
+        },
+        {
+          "key": "Username:missing@example.com",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Username=\"missing@example.com\" matched no user"
+          ]
+        },
+        {
+          "key": "Username:good@example.com",
+          "id": "005good",
+          "username": "good@example.com",
+          "isActive": false,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldActivate"
+            }
+          ],
+          "skipped": [],
+          "warnings": [
+            "PermissionSet reference \"Missing\" was not found."
+          ],
+          "errors": []
+        }
+      ]
+    }
+  },
+  "preview": {
+    "result": {
+      "summary": {
+        "total": 3,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 2
+      },
+      "users": [
+        {
+          "key": "Unknown:bad",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Invalid user match field \"Unknown\"."
+          ]
+        },
+        {
+          "key": "Username:missing@example.com",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Username=\"missing@example.com\" matched no user"
+          ]
+        },
+        {
+          "key": "Username:good@example.com",
+          "id": "005good",
+          "username": "good@example.com",
+          "isActive": false,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldActivate"
+            }
+          ],
+          "skipped": [],
+          "warnings": [
+            "PermissionSet reference \"Missing\" was not found."
+          ],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 3 users: 1 changed, 0 unchanged, 2 failed.\n\nUnknown:bad: failed\n  error: Invalid user match field \"Unknown\".\n\nUsername:missing@example.com: failed\n  error: Username=\"missing@example.com\" matched no user\n\nUsername:good@example.com (005good): planned\n  warning: PermissionSet reference \"Missing\" was not found.\n  action: Would activate.",
+    "csv": "userKey,userId,userName,username,status,action,category,name,error\nUnknown:bad,,,,failed,,,,\"Invalid user match field \"\"Unknown\"\".\"\nUsername:missing@example.com,,,,failed,,,,\"Username=\"\"missing@example.com\"\" matched no user\"\nUsername:good@example.com,005good,,good@example.com,planned,wouldActivate,,,"
+  },
+  "applied": {
+    "result": {
+      "summary": {
+        "total": 3,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 2
+      },
+      "users": [
+        {
+          "key": "Unknown:bad",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Invalid user match field \"Unknown\"."
+          ]
+        },
+        {
+          "key": "Username:missing@example.com",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Username=\"missing@example.com\" matched no user"
+          ]
+        },
+        {
+          "key": "Username:good@example.com",
+          "id": "005good",
+          "username": "good@example.com",
+          "isActive": false,
+          "status": "changed",
+          "actions": [
+            {
+              "key": "activated"
+            }
+          ],
+          "skipped": [],
+          "warnings": [
+            "PermissionSet reference \"Missing\" was not found."
+          ],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 3 users: 1 changed, 0 unchanged, 2 failed.\n\nUnknown:bad: failed\n  error: Invalid user match field \"Unknown\".\n\nUsername:missing@example.com: failed\n  error: Username=\"missing@example.com\" matched no user\n\nUsername:good@example.com (005good): changed\n  warning: PermissionSet reference \"Missing\" was not found.\n  action: Activated.",
+    "csv": "userKey,userId,userName,username,status,action,category,name,error\nUnknown:bad,,,,failed,,,,\"Invalid user match field \"\"Unknown\"\".\"\nUsername:missing@example.com,,,,failed,,,,\"Username=\"\"missing@example.com\"\" matched no user\"\nUsername:good@example.com,005good,,good@example.com,changed,activated,,,"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('good@example.com','missing@example.com')",
+    "SELECT Id, UserId, IsFrozen FROM UserLogin WHERE UserId IN ('005good')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005good')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005good') AND Group.Type IN ('Regular', 'Queue')",
+    "SELECT Id, AssigneeId, PermissionSetLicenseId, PermissionSetLicense.DeveloperName, PermissionSetLicense.MasterLabel FROM PermissionSetLicenseAssign WHERE AssigneeId IN ('005good')",
+    "SELECT Id, Name FROM PermissionSet WHERE Name IN ('Missing')"
+  ],
+  "changes": [
+    {
+      "operation": "update",
+      "sobject": "User",
+      "records": [
+        {
+          "Id": "005good",
+          "IsActive": true
+        }
+      ],
+      "allOrNone": false
+    }
+  ]
+}

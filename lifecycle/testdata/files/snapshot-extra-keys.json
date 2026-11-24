@@ -1,0 +1,28 @@
+{
+	"note": "kept",
+	"users": [
+		{
+			"queues": [
+				"Q2",
+				"Q1",
+				"Q2"
+			],
+			"ticket": "T-1",
+			"permissionSetLicenses": [],
+			"publicGroups": [],
+			"permissionSetGroups": [],
+			"permissionSets": [
+				"B",
+				"A"
+			],
+			"IsFrozen": true,
+			"IsActive": false,
+			"role": "CEO",
+			"userId": "005x",
+			"matchValue": "x@example.com",
+			"match": "Username"
+		}
+	],
+	"capturedAt": "2026-01-02T03:04:05.000Z",
+	"snapshotVersion": 1
+}

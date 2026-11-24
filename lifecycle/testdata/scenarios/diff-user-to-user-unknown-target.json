@@ -1,0 +1,65 @@
+{
+	"source": "process.test.ts: keeps the unknown diff target golden stable",
+	"command": "diff",
+	"options": {
+		"mode": "user",
+		"user": "Username:new@example.test",
+		"against": "Id:005Nobody"
+	},
+	"describe": [
+		{
+			"name": "Username",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "FederationIdentifier",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": true
+		},
+		{
+			"name": "ProfileId",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "UserRoleId",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "LastName",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "FirstName",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		}
+	],
+	"queries": [
+		{
+			"contains": "FROM User WHERE Username IN",
+			"records": [
+				{
+					"Id": "005NewUser00001",
+					"IsActive": true,
+					"Username": "new@example.test"
+				}
+			]
+		}
+	]
+}

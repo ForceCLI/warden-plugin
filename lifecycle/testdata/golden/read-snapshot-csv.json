@@ -1,0 +1,47 @@
+{
+  "snapshot": {
+    "snapshotVersion": 1,
+    "capturedAt": "2026-01-02T03:04:05.000Z",
+    "org": "org@example.com",
+    "users": [
+      {
+        "match": "Username",
+        "matchValue": "a@example.com",
+        "userId": "005a",
+        "name": "User, A",
+        "username": "a@example.com",
+        "email": "a@mail.example.com",
+        "profile": "Standard User",
+        "IsActive": true,
+        "IsFrozen": false,
+        "permissionSets": [
+          "=Formula_Perms"
+        ],
+        "permissionSetGroups": [],
+        "publicGroups": [],
+        "queues": [
+          "Alpha",
+          "Zeta"
+        ],
+        "permissionSetLicenses": []
+      },
+      {
+        "match": "Username",
+        "matchValue": "b@example.com",
+        "userId": "005b",
+        "name": "'Quoted",
+        "IsActive": false,
+        "IsFrozen": true,
+        "permissionSets": [],
+        "permissionSetGroups": [],
+        "publicGroups": [],
+        "queues": [],
+        "permissionSetLicenses": []
+      }
+    ]
+  },
+  "json": "{\n  \"snapshotVersion\": 1,\n  \"capturedAt\": \"2026-01-02T03:04:05.000Z\",\n  \"org\": \"org@example.com\",\n  \"users\": [\n    {\n      \"match\": \"Username\",\n      \"matchValue\": \"a@example.com\",\n      \"userId\": \"005a\",\n      \"name\": \"User, A\",\n      \"username\": \"a@example.com\",\n      \"email\": \"a@mail.example.com\",\n      \"profile\": \"Standard User\",\n      \"IsActive\": true,\n      \"IsFrozen\": false,\n      \"permissionSets\": [\n        \"=Formula_Perms\"\n      ],\n      \"permissionSetGroups\": [],\n      \"publicGroups\": [],\n      \"queues\": [\n        \"Alpha\",\n        \"Zeta\"\n      ],\n      \"permissionSetLicenses\": []\n    },\n    {\n      \"match\": \"Username\",\n      \"matchValue\": \"b@example.com\",\n      \"userId\": \"005b\",\n      \"name\": \"'Quoted\",\n      \"IsActive\": false,\n      \"IsFrozen\": true,\n      \"permissionSets\": [],\n      \"permissionSetGroups\": [],\n      \"publicGroups\": [],\n      \"queues\": [],\n      \"permissionSetLicenses\": []\n    }\n  ]\n}\n",
+  "csv": "snapshotVersion,capturedAt,org,match,matchValue,userId,userName,username,email,profile,role,isActive,isFrozen,category,name\n1,2026-01-02T03:04:05.000Z,org@example.com,Username,a@example.com,005a,\"User, A\",a@example.com,a@mail.example.com,Standard User,,true,false,permissionSet,'=Formula_Perms\n1,2026-01-02T03:04:05.000Z,org@example.com,Username,a@example.com,005a,\"User, A\",a@example.com,a@mail.example.com,Standard User,,true,false,queue,Alpha\n1,2026-01-02T03:04:05.000Z,org@example.com,Username,a@example.com,005a,\"User, A\",a@example.com,a@mail.example.com,Standard User,,true,false,queue,Zeta\n1,2026-01-02T03:04:05.000Z,org@example.com,Username,b@example.com,005b,''Quoted,,,,,false,true,none,",
+  "queries": [],
+  "changes": []
+}

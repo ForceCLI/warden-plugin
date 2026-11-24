@@ -1,0 +1,8 @@
+{
+	"source": "written for this port",
+	"command": "freeze",
+	"options": {
+		"user": "Nickname:x"
+	},
+	"queries": []
+}

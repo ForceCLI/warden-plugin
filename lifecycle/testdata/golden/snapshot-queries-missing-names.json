@@ -1,0 +1,275 @@
+{
+  "snapshot": {
+    "snapshotVersion": 1,
+    "capturedAt": "2026-07-05T12:00:00.000Z",
+    "users": [
+      {
+        "match": "Username",
+        "matchValue": "b@example.com",
+        "userId": "005b",
+        "name": "'Quoted \"B\"",
+        "username": "b@example.com",
+        "profile": "00eB",
+        "IsActive": false,
+        "IsFrozen": false,
+        "permissionSets": [
+          "Zeta_Perms"
+        ],
+        "permissionSetGroups": [],
+        "publicGroups": [],
+        "queues": [
+          "Escalations"
+        ],
+        "permissionSetLicenses": [
+          "LicenseA"
+        ]
+      },
+      {
+        "match": "Username",
+        "matchValue": "a@example.com",
+        "userId": "005a",
+        "name": "User A",
+        "username": "a@example.com",
+        "email": "a@mail.example.com",
+        "profile": "Standard User",
+        "role": "Sales, West",
+        "IsActive": true,
+        "IsFrozen": false,
+        "permissionSets": [
+          "=Formula_Perms",
+          "Zeta_Perms"
+        ],
+        "permissionSetGroups": [
+          "Queried_Group"
+        ],
+        "publicGroups": [
+          "Alpha",
+          "Beta"
+        ],
+        "queues": [],
+        "permissionSetLicenses": []
+      },
+      {
+        "match": "Username",
+        "matchValue": "empty@example.com",
+        "userId": "005e",
+        "username": "empty@example.com",
+        "IsActive": true,
+        "IsFrozen": false,
+        "permissionSets": [],
+        "permissionSetGroups": [],
+        "publicGroups": [],
+        "queues": [],
+        "permissionSetLicenses": []
+      }
+    ]
+  },
+  "jsonFile": "{\n  \"snapshotVersion\": 1,\n  \"capturedAt\": \"2026-07-05T12:00:00.000Z\",\n  \"users\": [\n    {\n      \"match\": \"Username\",\n      \"matchValue\": \"b@example.com\",\n      \"userId\": \"005b\",\n      \"name\": \"'Quoted \\\"B\\\"\",\n      \"username\": \"b@example.com\",\n      \"profile\": \"00eB\",\n      \"IsActive\": false,\n      \"IsFrozen\": false,\n      \"permissionSets\": [\n        \"Zeta_Perms\"\n      ],\n      \"permissionSetGroups\": [],\n      \"publicGroups\": [],\n      \"queues\": [\n        \"Escalations\"\n      ],\n      \"permissionSetLicenses\": [\n        \"LicenseA\"\n      ]\n    },\n    {\n      \"match\": \"Username\",\n      \"matchValue\": \"a@example.com\",\n      \"userId\": \"005a\",\n      \"name\": \"User A\",\n      \"username\": \"a@example.com\",\n      \"email\": \"a@mail.example.com\",\n      \"profile\": \"Standard User\",\n      \"role\": \"Sales, West\",\n      \"IsActive\": true,\n      \"IsFrozen\": false,\n      \"permissionSets\": [\n        \"=Formula_Perms\",\n        \"Zeta_Perms\"\n      ],\n      \"permissionSetGroups\": [\n        \"Queried_Group\"\n      ],\n      \"publicGroups\": [\n        \"Alpha\",\n        \"Beta\"\n      ],\n      \"queues\": [],\n      \"permissionSetLicenses\": []\n    },\n    {\n      \"match\": \"Username\",\n      \"matchValue\": \"empty@example.com\",\n      \"userId\": \"005e\",\n      \"username\": \"empty@example.com\",\n      \"IsActive\": true,\n      \"IsFrozen\": false,\n      \"permissionSets\": [],\n      \"permissionSetGroups\": [],\n      \"publicGroups\": [],\n      \"queues\": [],\n      \"permissionSetLicenses\": []\n    }\n  ]\n}\n",
+  "csvFile": "snapshotVersion,capturedAt,org,match,matchValue,userId,userName,username,email,profile,role,isActive,isFrozen,category,name\n1,2026-07-05T12:00:00.000Z,,Username,b@example.com,005b,\"''Quoted \"\"B\"\"\",b@example.com,,00eB,,false,false,permissionSet,Zeta_Perms\n1,2026-07-05T12:00:00.000Z,,Username,b@example.com,005b,\"''Quoted \"\"B\"\"\",b@example.com,,00eB,,false,false,queue,Escalations\n1,2026-07-05T12:00:00.000Z,,Username,b@example.com,005b,\"''Quoted \"\"B\"\"\",b@example.com,,00eB,,false,false,permissionSetLicense,LicenseA\n1,2026-07-05T12:00:00.000Z,,Username,a@example.com,005a,User A,a@example.com,a@mail.example.com,Standard User,\"Sales, West\",true,false,permissionSet,'=Formula_Perms\n1,2026-07-05T12:00:00.000Z,,Username,a@example.com,005a,User A,a@example.com,a@mail.example.com,Standard User,\"Sales, West\",true,false,permissionSet,Zeta_Perms\n1,2026-07-05T12:00:00.000Z,,Username,a@example.com,005a,User A,a@example.com,a@mail.example.com,Standard User,\"Sales, West\",true,false,permissionSetGroup,Queried_Group\n1,2026-07-05T12:00:00.000Z,,Username,a@example.com,005a,User A,a@example.com,a@mail.example.com,Standard User,\"Sales, West\",true,false,publicGroup,Alpha\n1,2026-07-05T12:00:00.000Z,,Username,a@example.com,005a,User A,a@example.com,a@mail.example.com,Standard User,\"Sales, West\",true,false,publicGroup,Beta\n1,2026-07-05T12:00:00.000Z,,Username,empty@example.com,005e,,empty@example.com,,,,true,false,none,\n",
+  "readJson": {
+    "snapshotVersion": 1,
+    "capturedAt": "2026-07-05T12:00:00.000Z",
+    "users": [
+      {
+        "match": "Username",
+        "matchValue": "b@example.com",
+        "userId": "005b",
+        "name": "'Quoted \"B\"",
+        "username": "b@example.com",
+        "profile": "00eB",
+        "IsActive": false,
+        "IsFrozen": false,
+        "permissionSets": [
+          "Zeta_Perms"
+        ],
+        "permissionSetGroups": [],
+        "publicGroups": [],
+        "queues": [
+          "Escalations"
+        ],
+        "permissionSetLicenses": [
+          "LicenseA"
+        ]
+      },
+      {
+        "match": "Username",
+        "matchValue": "a@example.com",
+        "userId": "005a",
+        "name": "User A",
+        "username": "a@example.com",
+        "email": "a@mail.example.com",
+        "profile": "Standard User",
+        "role": "Sales, West",
+        "IsActive": true,
+        "IsFrozen": false,
+        "permissionSets": [
+          "=Formula_Perms",
+          "Zeta_Perms"
+        ],
+        "permissionSetGroups": [
+          "Queried_Group"
+        ],
+        "publicGroups": [
+          "Alpha",
+          "Beta"
+        ],
+        "queues": [],
+        "permissionSetLicenses": []
+      },
+      {
+        "match": "Username",
+        "matchValue": "empty@example.com",
+        "userId": "005e",
+        "username": "empty@example.com",
+        "IsActive": true,
+        "IsFrozen": false,
+        "permissionSets": [],
+        "permissionSetGroups": [],
+        "publicGroups": [],
+        "queues": [],
+        "permissionSetLicenses": []
+      }
+    ]
+  },
+  "readCsv": {
+    "snapshotVersion": 1,
+    "capturedAt": "2026-07-05T12:00:00.000Z",
+    "users": [
+      {
+        "match": "Username",
+        "matchValue": "b@example.com",
+        "userId": "005b",
+        "name": "'Quoted \"B\"",
+        "username": "b@example.com",
+        "profile": "00eB",
+        "IsActive": false,
+        "IsFrozen": false,
+        "permissionSets": [
+          "Zeta_Perms"
+        ],
+        "permissionSetGroups": [],
+        "publicGroups": [],
+        "queues": [
+          "Escalations"
+        ],
+        "permissionSetLicenses": [
+          "LicenseA"
+        ]
+      },
+      {
+        "match": "Username",
+        "matchValue": "a@example.com",
+        "userId": "005a",
+        "name": "User A",
+        "username": "a@example.com",
+        "email": "a@mail.example.com",
+        "profile": "Standard User",
+        "role": "Sales, West",
+        "IsActive": true,
+        "IsFrozen": false,
+        "permissionSets": [
+          "=Formula_Perms",
+          "Zeta_Perms"
+        ],
+        "permissionSetGroups": [
+          "Queried_Group"
+        ],
+        "publicGroups": [
+          "Alpha",
+          "Beta"
+        ],
+        "queues": [],
+        "permissionSetLicenses": []
+      },
+      {
+        "match": "Username",
+        "matchValue": "empty@example.com",
+        "userId": "005e",
+        "username": "empty@example.com",
+        "IsActive": true,
+        "IsFrozen": false,
+        "permissionSets": [],
+        "permissionSetGroups": [],
+        "publicGroups": [],
+        "queues": [],
+        "permissionSetLicenses": []
+      }
+    ]
+  },
+  "lifecycle": {
+    "result": {
+      "summary": {
+        "total": 3,
+        "changed": 0,
+        "unchanged": 3,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:b@example.com",
+          "id": "005b",
+          "name": "'Quoted \"B\"",
+          "username": "b@example.com",
+          "isActive": false,
+          "isFrozen": false,
+          "status": "unchanged",
+          "actions": [
+            {
+              "key": "snapshotWritten"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        {
+          "key": "Username:a@example.com",
+          "id": "005a",
+          "name": "User A",
+          "username": "a@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "unchanged",
+          "actions": [
+            {
+              "key": "snapshotWritten"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        {
+          "key": "Username:empty@example.com",
+          "id": "005e",
+          "username": "empty@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "unchanged",
+          "actions": [
+            {
+              "key": "snapshotWritten"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 3 users: 0 changed, 3 unchanged, 0 failed.\n\n'Quoted \"B\" <b@example.com> · 005b\n  matched Username = b@example.com · was inactive\n  action: Wrote snapshot.\n\nUser A <a@example.com> · 005a\n  matched Username = a@example.com · was active\n  action: Wrote snapshot.\n\nUsername:empty@example.com (005e): unchanged\n  action: Wrote snapshot.",
+    "csv": "key,id,status,actions,skipped,warnings,errors\nUsername:b@example.com,005b,unchanged,snapshotWritten,,,\nUsername:a@example.com,005a,unchanged,snapshotWritten,,,\nUsername:empty@example.com,005e,unchanged,snapshotWritten,,,"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('b@example.com','a@example.com','empty@example.com')",
+    "SELECT Id, UserId, IsFrozen FROM UserLogin WHERE UserId IN ('005b','005a','005e')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005b','005a','005e')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005b','005a','005e') AND Group.Type IN ('Regular', 'Queue')",
+    "SELECT Id, AssigneeId, PermissionSetLicenseId, PermissionSetLicense.DeveloperName, PermissionSetLicense.MasterLabel FROM PermissionSetLicenseAssign WHERE AssigneeId IN ('005b','005a','005e')",
+    "SELECT Id, Name FROM PermissionSet WHERE Id IN ('0PSgone','0PSz')",
+    "SELECT Id, DeveloperName FROM PermissionSetGroup WHERE Id IN ('0PGq')",
+    "SELECT Id, DeveloperName FROM Group WHERE Id IN ('00Gb','00Gq')",
+    "SELECT Id, DeveloperName FROM PermissionSetLicense WHERE Id IN ('0PLicA')"
+  ],
+  "changes": []
+}

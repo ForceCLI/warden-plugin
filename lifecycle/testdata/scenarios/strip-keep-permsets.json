@@ -1,0 +1,115 @@
+{
+	"source": "written for this port",
+	"command": "strip",
+	"options": {
+		"user": "username:strip@example.com",
+		"keepPermsets": true
+	},
+	"queries": [
+		{
+			"contains": "FROM User WHERE Username IN ('strip@example.com')",
+			"records": [
+				{
+					"Id": "005xx0000000003AAA",
+					"IsActive": true,
+					"Username": "strip@example.com"
+				}
+			]
+		},
+		{
+			"contains": "FROM UserLogin",
+			"records": [
+				{
+					"Id": "0LLxx0000000003AAA",
+					"UserId": "005xx0000000003AAA",
+					"IsFrozen": false
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSetAssignment",
+			"records": [
+				{
+					"Id": "0PSA1",
+					"AssigneeId": "005xx0000000003AAA",
+					"PermissionSetGroupId": null,
+					"PermissionSetId": "0PS1",
+					"PermissionSet": {
+						"IsOwnedByProfile": false,
+						"Name": "Sales_Perms",
+						"Label": "Sales Permissions"
+					}
+				},
+				{
+					"Id": "0PSA2",
+					"AssigneeId": "005xx0000000003AAA",
+					"PermissionSetGroupId": null,
+					"PermissionSetId": "0PS2",
+					"PermissionSet": {
+						"IsOwnedByProfile": true
+					}
+				},
+				{
+					"Id": "0PSA3",
+					"AssigneeId": "005xx0000000003AAA",
+					"PermissionSetGroupId": "0PG1",
+					"PermissionSetGroup": {
+						"DeveloperName": "Sales_Group",
+						"MasterLabel": "Sales Group"
+					}
+				},
+				{
+					"Id": "0PSA4",
+					"AssigneeId": "005xx0000000003AAA",
+					"PermissionSetGroupId": null,
+					"PermissionSetId": "0PS4",
+					"PermissionSet": {
+						"IsOwnedByProfile": false,
+						"Name": "admin_perms",
+						"Label": "admin_perms"
+					}
+				}
+			]
+		},
+		{
+			"contains": "FROM GroupMember",
+			"records": [
+				{
+					"Id": "0GM1",
+					"GroupId": "00G1",
+					"UserOrGroupId": "005xx0000000003AAA",
+					"Group": {
+						"Type": "Regular",
+						"DeveloperName": "Public_Group",
+						"Name": "Public Group"
+					}
+				},
+				{
+					"Id": "0GM2",
+					"GroupId": "00G2",
+					"UserOrGroupId": "005xx0000000003AAA",
+					"Group": {
+						"Type": "Queue",
+						"DeveloperName": "Case_Queue",
+						"Name": "Case Queue"
+					}
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSetLicenseAssign",
+			"records": [
+				{
+					"Id": "0PL1",
+					"AssigneeId": "005xx0000000003AAA",
+					"PermissionSetLicenseId": "0PLic1",
+					"PermissionSetLicense": {
+						"DeveloperName": "SalesConsoleUser",
+						"MasterLabel": "Sales Console User"
+					}
+				}
+			]
+		}
+	],
+	"apply": true
+}

@@ -1,0 +1,102 @@
+{
+	"source": "lifecycle.test.ts: snapshots assignment state with portable names and excludes profile-owned permission sets",
+	"command": "snapshot",
+	"options": {
+		"user": "username:snapshot@example.com",
+		"org": "snapshotOrg@example.com"
+	},
+	"queries": [
+		{
+			"contains": "FROM User WHERE Username IN ('snapshot@example.com')",
+			"records": [
+				{
+					"Id": "005xx0000000100AAA",
+					"IsActive": true,
+					"Username": "snapshot@example.com"
+				}
+			]
+		},
+		{
+			"contains": "FROM UserLogin",
+			"records": [
+				{
+					"Id": "0LL100",
+					"UserId": "005xx0000000100AAA",
+					"IsFrozen": true
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSetAssignment",
+			"records": [
+				{
+					"Id": "0Pa100",
+					"AssigneeId": "005xx0000000100AAA",
+					"PermissionSetId": "0PS100",
+					"PermissionSetGroupId": null,
+					"PermissionSet": {
+						"IsOwnedByProfile": false,
+						"Name": "Sales_Perms",
+						"Label": "Sales Permissions"
+					}
+				},
+				{
+					"Id": "0Pa101",
+					"AssigneeId": "005xx0000000100AAA",
+					"PermissionSetId": "0PS101",
+					"PermissionSetGroupId": null,
+					"PermissionSet": {
+						"IsOwnedByProfile": true
+					}
+				},
+				{
+					"Id": "0Pa102",
+					"AssigneeId": "005xx0000000100AAA",
+					"PermissionSetId": null,
+					"PermissionSetGroupId": "0PG100",
+					"PermissionSetGroup": {
+						"DeveloperName": "Sales_Group",
+						"MasterLabel": "Sales Group"
+					}
+				}
+			]
+		},
+		{
+			"contains": "FROM GroupMember",
+			"records": [
+				{
+					"Id": "0GM100",
+					"GroupId": "00G100",
+					"UserOrGroupId": "005xx0000000100AAA",
+					"Group": {
+						"Type": "Regular",
+						"DeveloperName": "All_Sales"
+					}
+				},
+				{
+					"Id": "0GM101",
+					"GroupId": "00G101",
+					"UserOrGroupId": "005xx0000000100AAA",
+					"Group": {
+						"Type": "Queue",
+						"DeveloperName": "Case_Queue"
+					}
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSetLicenseAssign",
+			"records": [
+				{
+					"Id": "0PL100",
+					"AssigneeId": "005xx0000000100AAA",
+					"PermissionSetLicenseId": "0PLic100",
+					"PermissionSetLicense": {
+						"DeveloperName": "SalesConsoleUser",
+						"MasterLabel": "Sales Console User"
+					}
+				}
+			]
+		}
+	]
+}

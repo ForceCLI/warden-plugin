@@ -1,0 +1,11 @@
+{
+	"users": [
+		{
+			"match": "Username",
+			"Username": "persona@example.com",
+			"personas": [
+				"support"
+			]
+		}
+	]
+}

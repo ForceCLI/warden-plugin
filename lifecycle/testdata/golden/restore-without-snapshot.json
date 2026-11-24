@@ -1,0 +1,8 @@
+{
+  "error": {
+    "name": "Error",
+    "message": "A snapshot document or path is required."
+  },
+  "queries": [],
+  "changes": []
+}

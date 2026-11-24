@@ -1,0 +1,29 @@
+{
+	"source": "lifecycle.test.ts: unfreezes a matching user in dry-run without DML",
+	"command": "unfreeze",
+	"options": {
+		"user": "username:unfreeze@example.com"
+	},
+	"queries": [
+		{
+			"contains": "FROM User WHERE Username IN ('unfreeze@example.com')",
+			"records": [
+				{
+					"Id": "005xx0000000002AAA",
+					"IsActive": true,
+					"Username": "unfreeze@example.com"
+				}
+			]
+		},
+		{
+			"contains": "FROM UserLogin",
+			"records": [
+				{
+					"Id": "0LLxx0000000002AAA",
+					"UserId": "005xx0000000002AAA",
+					"IsFrozen": true
+				}
+			]
+		}
+	]
+}

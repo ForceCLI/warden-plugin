@@ -1,0 +1,6 @@
+snapshotVersion,capturedAt,org,match,matchValue,userId,userName,username,email,profile,role,isActive,isFrozen,category,name
+1,2026-01-02T03:04:05.000Z,org@example.com,Username,a@example.com,005a,,a@example.com,,,,true,0,queue,Zeta
+1,2026-01-02T03:04:05.000Z,org@example.com,Username,a@example.com,005a,"User, A",,a@mail.example.com,Standard User,,1,false,permissionSet,'=Formula_Perms
+1,2026-01-02T03:04:05.000Z,org@example.com,Username,a@example.com,005a,,,,,,true,false,queue,Alpha
+1,2026-01-02T03:04:05.000Z,org@example.com,Username,a@example.com,005a,,,,,,true,false,queue,Zeta
+1,2026-01-02T03:04:05.000Z,org@example.com,Username,b@example.com,005b,''Quoted,,,,,false,true,none,

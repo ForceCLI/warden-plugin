@@ -1,0 +1,86 @@
+{
+	"source": "written for this port",
+	"command": "unfreeze",
+	"options": {
+		"usersDoc": {
+			"users": [
+				{
+					"match": "Username",
+					"Username": "frozen@example.com"
+				},
+				{
+					"match": "Username",
+					"Username": "nologin@example.com"
+				},
+				{
+					"match": "Username",
+					"Username": "missing@example.com"
+				},
+				{
+					"match": "Username",
+					"Username": "first@example.com"
+				},
+				{
+					"match": "Username",
+					"Username": "second@example.com"
+				},
+				{
+					"Username": "nomatch@example.com"
+				}
+			]
+		},
+		"externalId": "Username"
+	},
+	"queries": [
+		{
+			"contains": "FROM User WHERE Username IN",
+			"records": [
+				{
+					"Id": "005A",
+					"IsActive": true,
+					"Name": "Already Frozen",
+					"Username": "frozen@example.com"
+				},
+				{
+					"Id": "005B",
+					"IsActive": false,
+					"Name": "No Login",
+					"Username": "nologin@example.com"
+				},
+				{
+					"Id": "005C",
+					"IsActive": true,
+					"Name": "First User",
+					"Username": "first@example.com"
+				},
+				{
+					"Id": "005D",
+					"IsActive": true,
+					"Name": "Second User",
+					"Username": "second@example.com"
+				}
+			]
+		},
+		{
+			"contains": "FROM UserLogin",
+			"records": [
+				{
+					"Id": "0LLA",
+					"UserId": "005A",
+					"IsFrozen": true
+				},
+				{
+					"Id": "0LLC",
+					"UserId": "005C",
+					"IsFrozen": false
+				},
+				{
+					"Id": "0LLD",
+					"UserId": "005D",
+					"IsFrozen": false
+				}
+			]
+		}
+	],
+	"apply": true
+}

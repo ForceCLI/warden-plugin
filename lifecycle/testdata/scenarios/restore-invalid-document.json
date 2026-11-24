@@ -1,0 +1,15 @@
+{
+	"source": "written for this port",
+	"command": "restore",
+	"options": {
+		"snapshotDoc": {
+			"snapshotVersion": 1,
+			"users": [
+				{
+					"match": "Username"
+				}
+			]
+		}
+	},
+	"queries": []
+}

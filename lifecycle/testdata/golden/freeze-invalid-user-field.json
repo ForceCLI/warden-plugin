@@ -1,0 +1,8 @@
+{
+  "error": {
+    "name": "Error",
+    "message": "Invalid user match field \"Nickname\"."
+  },
+  "queries": [],
+  "changes": []
+}

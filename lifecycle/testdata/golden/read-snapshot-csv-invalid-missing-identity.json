@@ -1,0 +1,9 @@
+{
+  "error": {
+    "name": "LifecycleError",
+    "code": "errorInvalidSnapshot",
+    "message": "Snapshot CSV testdata/files/invalid-missing-identity.csv:2 must include match, matchValue, and userId."
+  },
+  "queries": [],
+  "changes": []
+}

@@ -1,0 +1,18 @@
+{
+	"source": "written for this port",
+	"command": "snapshot",
+	"options": {
+		"usersDoc": {
+			"users": [
+				{
+					"match": "Username",
+					"Username": "missing@example.com"
+				},
+				{
+					"Email": "x@example.com"
+				}
+			]
+		}
+	},
+	"queries": []
+}

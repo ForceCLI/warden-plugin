@@ -1,0 +1,11 @@
+{
+  "snapshot": {
+    "snapshotVersion": 1,
+    "capturedAt": "2026-01-02T03:04:05.000Z",
+    "users": []
+  },
+  "json": "{\n  \"snapshotVersion\": 1,\n  \"capturedAt\": \"2026-01-02T03:04:05.000Z\",\n  \"users\": []\n}\n",
+  "csv": "snapshotVersion,capturedAt,org,match,matchValue,userId,userName,username,email,profile,role,isActive,isFrozen,category,name\n1,2026-01-02T03:04:05.000Z,,,,,,,,,,,,emptySnapshot,",
+  "queries": [],
+  "changes": []
+}

@@ -1,0 +1,199 @@
+{
+	"source": "written for this port",
+	"command": "snapshot",
+	"options": {
+		"usersDoc": {
+			"users": [
+				{
+					"match": "Username",
+					"Username": "b@example.com"
+				},
+				{
+					"match": "Username",
+					"Username": "a@example.com"
+				},
+				{
+					"match": "Username",
+					"Username": "empty@example.com"
+				}
+			]
+		}
+	},
+	"queries": [
+		{
+			"contains": "FROM User WHERE Username IN",
+			"records": [
+				{
+					"Id": "005a",
+					"IsActive": true,
+					"Name": "User A",
+					"Username": "a@example.com",
+					"Email": "a@mail.example.com",
+					"ProfileId": "00eA",
+					"Profile": {
+						"Name": "Standard User"
+					},
+					"UserRoleId": "00EA",
+					"UserRole": {
+						"Name": "Sales, West"
+					}
+				},
+				{
+					"Id": "005b",
+					"IsActive": false,
+					"Name": "'Quoted \"B\"",
+					"Username": "b@example.com",
+					"ProfileId": "00eB",
+					"UserRoleId": null
+				},
+				{
+					"Id": "005e",
+					"IsActive": true,
+					"Username": "empty@example.com"
+				}
+			]
+		},
+		{
+			"contains": "FROM UserLogin",
+			"records": [
+				{
+					"Id": "0LLa",
+					"UserId": "005a",
+					"IsFrozen": false
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSetAssignment",
+			"records": [
+				{
+					"Id": "0Pa1",
+					"AssigneeId": "005b",
+					"PermissionSetId": "0PSz",
+					"PermissionSetGroupId": null,
+					"PermissionSet": {
+						"IsOwnedByProfile": false
+					}
+				},
+				{
+					"Id": "0Pa2",
+					"AssigneeId": "005a",
+					"PermissionSetId": "0PSz",
+					"PermissionSetGroupId": null
+				},
+				{
+					"Id": "0Pa3",
+					"AssigneeId": "005a",
+					"PermissionSetId": "0PSy",
+					"PermissionSetGroupId": null,
+					"PermissionSet": {
+						"IsOwnedByProfile": false,
+						"Name": "=Formula_Perms"
+					}
+				},
+				{
+					"Id": "0Pa4",
+					"AssigneeId": "005a",
+					"PermissionSetId": "0PSgone",
+					"PermissionSetGroupId": null
+				},
+				{
+					"Id": "0Pa5",
+					"AssigneeId": "005a",
+					"PermissionSetId": "0PSgp",
+					"PermissionSetGroupId": "0PGq"
+				},
+				{
+					"Id": "0Pa6",
+					"AssigneeId": "005a",
+					"PermissionSetId": "0PSy",
+					"PermissionSetGroupId": null,
+					"PermissionSet": {
+						"IsOwnedByProfile": false,
+						"Name": "=Formula_Perms"
+					}
+				}
+			]
+		},
+		{
+			"contains": "FROM GroupMember",
+			"records": [
+				{
+					"Id": "0GMa",
+					"GroupId": "00Gb",
+					"UserOrGroupId": "005a",
+					"Group": {
+						"Type": "Regular"
+					}
+				},
+				{
+					"Id": "0GMb",
+					"GroupId": "00Ga",
+					"UserOrGroupId": "005a",
+					"Group": {
+						"Type": "Regular",
+						"DeveloperName": "Alpha"
+					}
+				},
+				{
+					"Id": "0GMc",
+					"GroupId": "00Gq",
+					"UserOrGroupId": "005b",
+					"Group": {
+						"Type": "Queue"
+					}
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSetLicenseAssign",
+			"records": [
+				{
+					"Id": "0PLa",
+					"AssigneeId": "005b",
+					"PermissionSetLicenseId": "0PLicA"
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSet WHERE Id IN",
+			"records": [
+				{
+					"Id": "0PSz",
+					"Name": "Zeta_Perms"
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSetGroup WHERE Id IN",
+			"records": [
+				{
+					"Id": "0PGq",
+					"DeveloperName": "Queried_Group"
+				}
+			]
+		},
+		{
+			"contains": "FROM Group WHERE Id IN",
+			"records": [
+				{
+					"Id": "00Gb",
+					"DeveloperName": "Beta"
+				},
+				{
+					"Id": "00Gq",
+					"DeveloperName": "Escalations"
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSetLicense WHERE Id IN",
+			"records": [
+				{
+					"Id": "0PLicA",
+					"DeveloperName": "LicenseA"
+				}
+			]
+		}
+	]
+}

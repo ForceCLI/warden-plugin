@@ -1,0 +1,9 @@
+{
+  "error": {
+    "name": "LifecycleError",
+    "code": "errorInvalidUserValue",
+    "message": "Invalid --user value \"novalue\". Expected field:value."
+  },
+  "queries": [],
+  "changes": []
+}

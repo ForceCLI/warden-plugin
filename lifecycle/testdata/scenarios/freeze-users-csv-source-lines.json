@@ -1,0 +1,42 @@
+{
+	"source": "lifecycle.test.ts: keeps CSV source lines on unmatched and ambiguous lifecycle targets",
+	"command": "freeze",
+	"options": {
+		"usersPath": "testdata/files/users.csv",
+		"inputFormat": "csv"
+	},
+	"queries": [
+		{
+			"contains": "FROM User WHERE Username IN",
+			"records": [
+				{
+					"Id": "005good",
+					"IsActive": true,
+					"Name": "Good User",
+					"Username": "good@example.com"
+				},
+				{
+					"Id": "005dup1",
+					"IsActive": true,
+					"Username": "dup@example.com"
+				},
+				{
+					"Id": "005dup2",
+					"IsActive": true,
+					"Username": "DUP@example.com"
+				}
+			]
+		},
+		{
+			"contains": "FROM UserLogin",
+			"records": [
+				{
+					"Id": "0LLgood",
+					"UserId": "005good",
+					"IsFrozen": false
+				}
+			]
+		}
+	],
+	"apply": true
+}

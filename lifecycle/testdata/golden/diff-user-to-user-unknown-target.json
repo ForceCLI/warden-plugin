@@ -1,0 +1,89 @@
+{
+  "result": {
+    "summary": {
+      "total": 1,
+      "compared": 0,
+      "wouldCreate": 0,
+      "failed": 1,
+      "changed": 0
+    },
+    "users": [
+      {
+        "key": "Id:005Nobody",
+        "userName": "",
+        "username": "",
+        "matchedBy": "Id",
+        "status": "failed",
+        "profile": {
+          "matches": true
+        },
+        "role": {
+          "matches": true
+        },
+        "assignments": {
+          "permissionSets": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          },
+          "permissionSetGroups": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          },
+          "publicGroups": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          },
+          "queues": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          }
+        },
+        "errors": [
+          "Id=\"005Nobody\" matched no user"
+        ]
+      }
+    ],
+    "rows": [
+      {
+        "userName": "",
+        "username": "",
+        "userKey": "Id:005Nobody",
+        "userId": "",
+        "category": "error",
+        "kind": "error",
+        "value": "Id=\"005Nobody\" matched no user"
+      }
+    ],
+    "warnings": [],
+    "labels": {}
+  },
+  "human": "Compared 1 users: 0 with drift, 1 failed.\n\nId:005Nobody: failed\n  error: Id=\"005Nobody\" matched no user",
+  "humanVerbose": "Compared 1 users: 0 with drift, 1 failed.\n\nId:005Nobody: failed\n  error: Id=\"005Nobody\" matched no user",
+  "csv": "userKey,userId,category,kind,value,mode,userName,username,valueApiName,valueLabel,valueType,valueBefore,valueAfter\nId:005Nobody,,error,error,\"Id=\"\"005Nobody\"\" matched no user\",,,,,,,,",
+  "verified": {
+    "verdicts": [
+      {
+        "key": "Id:005Nobody",
+        "conformant": false,
+        "violations": [
+          "error: Id=\"005Nobody\" matched no user"
+        ]
+      }
+    ],
+    "human": "Verified 1 users: 0 conformant, 1 non-conformant.\n\nId:005Nobody: non-conformant\n  - error: Id=\"005Nobody\" matched no user",
+    "csv": "key,conformant,violations\nId:005Nobody,false,\"error: Id=\"\"005Nobody\"\" matched no user\""
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('new@example.test')",
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Id IN ('005Nobody')"
+  ],
+  "changes": []
+}

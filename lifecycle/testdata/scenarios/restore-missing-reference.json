@@ -1,0 +1,39 @@
+{
+	"source": "lifecycle.test.ts: warns and skips missing restore references while continuing the batch",
+	"command": "restore",
+	"options": {
+		"snapshotDoc": {
+			"snapshotVersion": 1,
+			"capturedAt": "2026-07-05T12:00:00.000Z",
+			"users": [
+				{
+					"userId": "005old",
+					"IsActive": true,
+					"IsFrozen": false,
+					"permissionSets": [
+						"Missing_Perms"
+					],
+					"permissionSetGroups": [],
+					"publicGroups": [],
+					"queues": [],
+					"permissionSetLicenses": [],
+					"match": "Username",
+					"matchValue": "missing-ref@example.com"
+				}
+			]
+		}
+	},
+	"queries": [
+		{
+			"contains": "FROM User WHERE Username IN ('missing-ref@example.com')",
+			"records": [
+				{
+					"Id": "005xx0000000500AAA",
+					"IsActive": true,
+					"Username": "missing-ref@example.com"
+				}
+			]
+		}
+	],
+	"apply": true
+}

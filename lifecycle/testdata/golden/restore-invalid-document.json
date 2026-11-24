@@ -1,0 +1,9 @@
+{
+  "error": {
+    "name": "DefinitionError",
+    "code": "schema-invalid",
+    "message": "users.0.matchValue: Invalid input: expected string, received undefined\nusers.0.userId: Invalid input: expected string, received undefined\nusers.0.IsActive: Invalid input: expected boolean, received undefined\nusers.0.IsFrozen: Invalid input: expected boolean, received undefined\nusers.0.permissionSets: Invalid input: expected array, received undefined\nusers.0.permissionSetGroups: Invalid input: expected array, received undefined\nusers.0.publicGroups: Invalid input: expected array, received undefined\nusers.0.queues: Invalid input: expected array, received undefined\nusers.0.permissionSetLicenses: Invalid input: expected array, received undefined"
+  },
+  "queries": [],
+  "changes": []
+}

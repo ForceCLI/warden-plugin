@@ -1,0 +1,9 @@
+{
+  "error": {
+    "name": "LifecycleError",
+    "code": "errorInvalidSnapshot",
+    "message": "testdata/files/invalid-unterminated-quote.csv:3 — Unterminated quoted cell."
+  },
+  "queries": [],
+  "changes": []
+}

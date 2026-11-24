@@ -1,0 +1,559 @@
+{
+  "plan": {
+    "users": [
+      {
+        "userId": "005a2",
+        "result": {
+          "key": "Username:a@example.com",
+          "id": "005a2",
+          "name": "User, A",
+          "username": "a@example.com",
+          "isActive": true,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [
+            "Snapshot email \"a@mail.example.com\" differs from org \"other@mail.example.com\".",
+            "Snapshot profile \"Standard User\" differs from org \"(missing)\"."
+          ],
+          "errors": [],
+          "identityReview": {
+            "snapshot": {
+              "name": "User, A",
+              "username": "a@example.com",
+              "email": "a@mail.example.com",
+              "profile": "Standard User"
+            },
+            "org": {
+              "name": "User, A",
+              "username": "a@example.com",
+              "email": "other@mail.example.com",
+              "userId": "005a2"
+            },
+            "match": {
+              "field": "Username",
+              "value": "a@example.com"
+            }
+          }
+        },
+        "preview": {
+          "key": "Username:a@example.com",
+          "id": "005a2",
+          "name": "User, A",
+          "username": "a@example.com",
+          "isActive": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldAssignPermissionSet",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PSf",
+                  "apiName": "=Formula_Perms",
+                  "type": "PermissionSet"
+                }
+              ]
+            },
+            {
+              "key": "wouldAddQueueMember",
+              "count": 2,
+              "items": [
+                {
+                  "id": "00GAlpha",
+                  "apiName": "Alpha",
+                  "type": "Queue"
+                },
+                {
+                  "id": "00GZeta",
+                  "apiName": "Zeta",
+                  "type": "Queue"
+                }
+              ]
+            }
+          ],
+          "skipped": [],
+          "warnings": [
+            "Snapshot email \"a@mail.example.com\" differs from org \"other@mail.example.com\".",
+            "Snapshot profile \"Standard User\" differs from org \"(missing)\"."
+          ],
+          "errors": [],
+          "identityReview": {
+            "snapshot": {
+              "name": "User, A",
+              "username": "a@example.com",
+              "email": "a@mail.example.com",
+              "profile": "Standard User"
+            },
+            "org": {
+              "name": "User, A",
+              "username": "a@example.com",
+              "email": "other@mail.example.com",
+              "userId": "005a2"
+            },
+            "match": {
+              "field": "Username",
+              "value": "a@example.com"
+            }
+          }
+        },
+        "loginUpdates": [],
+        "permissionSetAdds": [
+          "0PSf"
+        ],
+        "permissionSetGroupAdds": [],
+        "publicGroupAdds": [],
+        "queueAdds": [
+          "00GAlpha",
+          "00GZeta"
+        ],
+        "licenseAdds": [],
+        "permissionSetItems": [
+          {
+            "id": "0PSf",
+            "apiName": "=Formula_Perms",
+            "type": "PermissionSet"
+          }
+        ],
+        "permissionSetGroupItems": [],
+        "publicGroupItems": [],
+        "queueItems": [
+          {
+            "id": "00GAlpha",
+            "apiName": "Alpha",
+            "type": "Queue"
+          },
+          {
+            "id": "00GZeta",
+            "apiName": "Zeta",
+            "type": "Queue"
+          }
+        ],
+        "licenseItems": []
+      },
+      {
+        "userId": "005b2",
+        "result": {
+          "key": "Username:b@example.com",
+          "id": "005b2",
+          "name": "B",
+          "username": "b@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [
+            "Snapshot name \"'Quoted\" differs from org \"B\"."
+          ],
+          "errors": [],
+          "identityReview": {
+            "snapshot": {
+              "name": "'Quoted"
+            },
+            "org": {
+              "name": "B",
+              "username": "b@example.com",
+              "userId": "005b2"
+            },
+            "match": {
+              "field": "Username",
+              "value": "b@example.com"
+            }
+          }
+        },
+        "preview": {
+          "key": "Username:b@example.com",
+          "id": "005b2",
+          "name": "B",
+          "username": "b@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [
+            "Snapshot name \"'Quoted\" differs from org \"B\"."
+          ],
+          "errors": [],
+          "identityReview": {
+            "snapshot": {
+              "name": "'Quoted"
+            },
+            "org": {
+              "name": "B",
+              "username": "b@example.com",
+              "userId": "005b2"
+            },
+            "match": {
+              "field": "Username",
+              "value": "b@example.com"
+            }
+          }
+        },
+        "loginUpdates": [],
+        "permissionSetAdds": [],
+        "permissionSetGroupAdds": [],
+        "publicGroupAdds": [],
+        "queueAdds": [],
+        "licenseAdds": [],
+        "permissionSetItems": [],
+        "permissionSetGroupItems": [],
+        "publicGroupItems": [],
+        "queueItems": [],
+        "licenseItems": []
+      }
+    ],
+    "errors": [],
+    "warnings": [
+      "Snapshot email \"a@mail.example.com\" differs from org \"other@mail.example.com\".",
+      "Snapshot profile \"Standard User\" differs from org \"(missing)\".",
+      "Snapshot name \"'Quoted\" differs from org \"B\"."
+    ],
+    "preview": {
+      "summary": {
+        "total": 2,
+        "changed": 1,
+        "unchanged": 1,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:a@example.com",
+          "id": "005a2",
+          "name": "User, A",
+          "username": "a@example.com",
+          "isActive": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldAssignPermissionSet",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PSf",
+                  "apiName": "=Formula_Perms",
+                  "type": "PermissionSet"
+                }
+              ]
+            },
+            {
+              "key": "wouldAddQueueMember",
+              "count": 2,
+              "items": [
+                {
+                  "id": "00GAlpha",
+                  "apiName": "Alpha",
+                  "type": "Queue"
+                },
+                {
+                  "id": "00GZeta",
+                  "apiName": "Zeta",
+                  "type": "Queue"
+                }
+              ]
+            }
+          ],
+          "skipped": [],
+          "warnings": [
+            "Snapshot email \"a@mail.example.com\" differs from org \"other@mail.example.com\".",
+            "Snapshot profile \"Standard User\" differs from org \"(missing)\"."
+          ],
+          "errors": [],
+          "identityReview": {
+            "snapshot": {
+              "name": "User, A",
+              "username": "a@example.com",
+              "email": "a@mail.example.com",
+              "profile": "Standard User"
+            },
+            "org": {
+              "name": "User, A",
+              "username": "a@example.com",
+              "email": "other@mail.example.com",
+              "userId": "005a2"
+            },
+            "match": {
+              "field": "Username",
+              "value": "a@example.com"
+            }
+          }
+        },
+        {
+          "key": "Username:b@example.com",
+          "id": "005b2",
+          "name": "B",
+          "username": "b@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [
+            "Snapshot name \"'Quoted\" differs from org \"B\"."
+          ],
+          "errors": [],
+          "identityReview": {
+            "snapshot": {
+              "name": "'Quoted"
+            },
+            "org": {
+              "name": "B",
+              "username": "b@example.com",
+              "userId": "005b2"
+            },
+            "match": {
+              "field": "Username",
+              "value": "b@example.com"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "preview": {
+    "result": {
+      "summary": {
+        "total": 2,
+        "changed": 1,
+        "unchanged": 1,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:a@example.com",
+          "id": "005a2",
+          "name": "User, A",
+          "username": "a@example.com",
+          "isActive": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldAssignPermissionSet",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PSf",
+                  "apiName": "=Formula_Perms",
+                  "type": "PermissionSet"
+                }
+              ]
+            },
+            {
+              "key": "wouldAddQueueMember",
+              "count": 2,
+              "items": [
+                {
+                  "id": "00GAlpha",
+                  "apiName": "Alpha",
+                  "type": "Queue"
+                },
+                {
+                  "id": "00GZeta",
+                  "apiName": "Zeta",
+                  "type": "Queue"
+                }
+              ]
+            }
+          ],
+          "skipped": [],
+          "warnings": [
+            "Snapshot email \"a@mail.example.com\" differs from org \"other@mail.example.com\".",
+            "Snapshot profile \"Standard User\" differs from org \"(missing)\"."
+          ],
+          "errors": [],
+          "identityReview": {
+            "snapshot": {
+              "name": "User, A",
+              "username": "a@example.com",
+              "email": "a@mail.example.com",
+              "profile": "Standard User"
+            },
+            "org": {
+              "name": "User, A",
+              "username": "a@example.com",
+              "email": "other@mail.example.com",
+              "userId": "005a2"
+            },
+            "match": {
+              "field": "Username",
+              "value": "a@example.com"
+            }
+          }
+        },
+        {
+          "key": "Username:b@example.com",
+          "id": "005b2",
+          "name": "B",
+          "username": "b@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [
+            "Snapshot name \"'Quoted\" differs from org \"B\"."
+          ],
+          "errors": [],
+          "identityReview": {
+            "snapshot": {
+              "name": "'Quoted"
+            },
+            "org": {
+              "name": "B",
+              "username": "b@example.com",
+              "userId": "005b2"
+            },
+            "match": {
+              "field": "Username",
+              "value": "b@example.com"
+            }
+          }
+        }
+      ]
+    },
+    "human": "Processed 2 users: 1 changed, 1 unchanged, 0 failed.\n\nUser, A <a@example.com> · 005a2\n  matched Username = a@example.com · was active\n  snapshot: User, A <a@example.com>  (Username = a@example.com)\n  org:      User, A <a@example.com>  005a2\n  profile: Standard User → (missing)  (reported, not applied)\n  warning: Snapshot email \"a@mail.example.com\" differs from org \"other@mail.example.com\".\n  warning: Snapshot profile \"Standard User\" differs from org \"(missing)\".\n  action: Would assign 1 permission sets.\n    · =Formula_Perms\n  action: Would add 2 queue memberships.\n    · Alpha\n    · Zeta\n\nB <b@example.com> · 005b2\n  matched Username = b@example.com · was active\n  snapshot: 'Quoted  (Username = b@example.com)\n  org:      B <b@example.com>  005b2\n  warning: Snapshot name \"'Quoted\" differs from org \"B\".",
+    "csv": "userKey,userId,userName,username,status,action,category,name,error\nUsername:a@example.com,005a2,\"User, A\",a@example.com,planned,wouldAssignPermissionSet,PermissionSet,'=Formula_Perms,\nUsername:a@example.com,005a2,\"User, A\",a@example.com,planned,wouldAddQueueMember,Queue,Alpha,\nUsername:a@example.com,005a2,\"User, A\",a@example.com,planned,wouldAddQueueMember,Queue,Zeta,\nUsername:b@example.com,005b2,B,b@example.com,unchanged,,,,"
+  },
+  "applied": {
+    "result": {
+      "summary": {
+        "total": 2,
+        "changed": 1,
+        "unchanged": 1,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:a@example.com",
+          "id": "005a2",
+          "name": "User, A",
+          "username": "a@example.com",
+          "isActive": true,
+          "status": "changed",
+          "actions": [
+            {
+              "key": "assignedPermissionSet",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PSf",
+                  "apiName": "=Formula_Perms",
+                  "type": "PermissionSet"
+                }
+              ]
+            },
+            {
+              "key": "addedQueueMember",
+              "count": 2,
+              "items": [
+                {
+                  "id": "00GAlpha",
+                  "apiName": "Alpha",
+                  "type": "Queue"
+                },
+                {
+                  "id": "00GZeta",
+                  "apiName": "Zeta",
+                  "type": "Queue"
+                }
+              ]
+            }
+          ],
+          "skipped": [],
+          "warnings": [
+            "Snapshot email \"a@mail.example.com\" differs from org \"other@mail.example.com\".",
+            "Snapshot profile \"Standard User\" differs from org \"(missing)\"."
+          ],
+          "errors": [],
+          "identityReview": {
+            "snapshot": {
+              "name": "User, A",
+              "username": "a@example.com",
+              "email": "a@mail.example.com",
+              "profile": "Standard User"
+            },
+            "org": {
+              "name": "User, A",
+              "username": "a@example.com",
+              "email": "other@mail.example.com",
+              "userId": "005a2"
+            },
+            "match": {
+              "field": "Username",
+              "value": "a@example.com"
+            }
+          }
+        },
+        {
+          "key": "Username:b@example.com",
+          "id": "005b2",
+          "name": "B",
+          "username": "b@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [
+            "Snapshot name \"'Quoted\" differs from org \"B\"."
+          ],
+          "errors": [],
+          "identityReview": {
+            "snapshot": {
+              "name": "'Quoted"
+            },
+            "org": {
+              "name": "B",
+              "username": "b@example.com",
+              "userId": "005b2"
+            },
+            "match": {
+              "field": "Username",
+              "value": "b@example.com"
+            }
+          }
+        }
+      ]
+    },
+    "human": "Processed 2 users: 1 changed, 1 unchanged, 0 failed.\n\nUser, A <a@example.com> · 005a2\n  matched Username = a@example.com · was active\n  snapshot: User, A <a@example.com>  (Username = a@example.com)\n  org:      User, A <a@example.com>  005a2\n  profile: Standard User → (missing)  (reported, not applied)\n  warning: Snapshot email \"a@mail.example.com\" differs from org \"other@mail.example.com\".\n  warning: Snapshot profile \"Standard User\" differs from org \"(missing)\".\n  action: Assigned 1 permission sets.\n    · =Formula_Perms\n  action: Added 2 queue memberships.\n    · Alpha\n    · Zeta\n\nB <b@example.com> · 005b2\n  matched Username = b@example.com · was active\n  snapshot: 'Quoted  (Username = b@example.com)\n  org:      B <b@example.com>  005b2\n  warning: Snapshot name \"'Quoted\" differs from org \"B\".",
+    "csv": "userKey,userId,userName,username,status,action,category,name,error\nUsername:a@example.com,005a2,\"User, A\",a@example.com,changed,assignedPermissionSet,PermissionSet,'=Formula_Perms,\nUsername:a@example.com,005a2,\"User, A\",a@example.com,changed,addedQueueMember,Queue,Alpha,\nUsername:a@example.com,005a2,\"User, A\",a@example.com,changed,addedQueueMember,Queue,Zeta,\nUsername:b@example.com,005b2,B,b@example.com,unchanged,,,,"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('a@example.com','b@example.com')",
+    "SELECT Id, UserId, IsFrozen FROM UserLogin WHERE UserId IN ('005a2','005b2')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005a2','005b2')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005a2','005b2') AND Group.Type IN ('Regular', 'Queue')",
+    "SELECT Id, AssigneeId, PermissionSetLicenseId, PermissionSetLicense.DeveloperName, PermissionSetLicense.MasterLabel FROM PermissionSetLicenseAssign WHERE AssigneeId IN ('005a2','005b2')",
+    "SELECT Id, Name FROM PermissionSet WHERE Name IN ('=Formula_Perms')",
+    "SELECT Id, DeveloperName FROM Group WHERE DeveloperName IN ('Alpha','Zeta') AND Type = 'Queue'"
+  ],
+  "changes": [
+    {
+      "operation": "create",
+      "sobject": "PermissionSetAssignment",
+      "records": [
+        {
+          "AssigneeId": "005a2",
+          "PermissionSetId": "0PSf"
+        }
+      ],
+      "allOrNone": false
+    },
+    {
+      "operation": "create",
+      "sobject": "GroupMember",
+      "records": [
+        {
+          "GroupId": "00GAlpha",
+          "UserOrGroupId": "005a2"
+        },
+        {
+          "GroupId": "00GZeta",
+          "UserOrGroupId": "005a2"
+        }
+      ],
+      "allOrNone": false
+    }
+  ]
+}

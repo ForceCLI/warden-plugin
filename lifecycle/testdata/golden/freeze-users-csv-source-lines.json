@@ -1,0 +1,174 @@
+{
+  "plan": {
+    "direction": "freeze",
+    "users": [
+      {
+        "key": "Username:missing@example.com",
+        "status": "failed",
+        "actions": [],
+        "skipped": [],
+        "warnings": [],
+        "errors": [
+          "testdata/files/users.csv:2 — Username=\"missing@example.com\" matched no user"
+        ]
+      },
+      {
+        "key": "Username:dup@example.com",
+        "status": "failed",
+        "actions": [],
+        "skipped": [],
+        "warnings": [],
+        "errors": [
+          "testdata/files/users.csv:4 — Username=\"dup@example.com\" matched multiple users"
+        ]
+      },
+      {
+        "key": "Username:good@example.com",
+        "id": "005good",
+        "name": "Good User",
+        "username": "good@example.com",
+        "isActive": true,
+        "isFrozen": false,
+        "status": "planned",
+        "actions": [
+          {
+            "key": "wouldFreeze"
+          }
+        ],
+        "skipped": [],
+        "warnings": [],
+        "errors": []
+      }
+    ],
+    "updates": [
+      {
+        "resultIndex": 2,
+        "row": {
+          "Id": "0LLgood",
+          "IsFrozen": true
+        },
+        "actionKey": "frozen"
+      }
+    ],
+    "warnings": []
+  },
+  "preview": {
+    "result": {
+      "summary": {
+        "total": 3,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 2
+      },
+      "users": [
+        {
+          "key": "Username:missing@example.com",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "testdata/files/users.csv:2 — Username=\"missing@example.com\" matched no user"
+          ]
+        },
+        {
+          "key": "Username:dup@example.com",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "testdata/files/users.csv:4 — Username=\"dup@example.com\" matched multiple users"
+          ]
+        },
+        {
+          "key": "Username:good@example.com",
+          "id": "005good",
+          "name": "Good User",
+          "username": "good@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldFreeze"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 3 users: 1 changed, 0 unchanged, 2 failed.\n\nUsername:missing@example.com: failed\n  error: testdata/files/users.csv:2 — Username=\"missing@example.com\" matched no user\n\nUsername:dup@example.com: failed\n  error: testdata/files/users.csv:4 — Username=\"dup@example.com\" matched multiple users\n\nGood User <good@example.com> · 005good\n  matched Username = good@example.com · was active\n  action: Would freeze.",
+    "csv": "userKey,userId,userName,username,wasFrozen,status,action,error\nUsername:missing@example.com,,,,,failed,,\"testdata/files/users.csv:2 — Username=\"\"missing@example.com\"\" matched no user\"\nUsername:dup@example.com,,,,,failed,,\"testdata/files/users.csv:4 — Username=\"\"dup@example.com\"\" matched multiple users\"\nUsername:good@example.com,005good,Good User,good@example.com,false,planned,wouldFreeze,"
+  },
+  "applied": {
+    "result": {
+      "summary": {
+        "total": 3,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 2
+      },
+      "users": [
+        {
+          "key": "Username:missing@example.com",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "testdata/files/users.csv:2 — Username=\"missing@example.com\" matched no user"
+          ]
+        },
+        {
+          "key": "Username:dup@example.com",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "testdata/files/users.csv:4 — Username=\"dup@example.com\" matched multiple users"
+          ]
+        },
+        {
+          "key": "Username:good@example.com",
+          "id": "005good",
+          "name": "Good User",
+          "username": "good@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "changed",
+          "actions": [
+            {
+              "key": "frozen"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 3 users: 1 changed, 0 unchanged, 2 failed.\n\nUsername:missing@example.com: failed\n  error: testdata/files/users.csv:2 — Username=\"missing@example.com\" matched no user\n\nUsername:dup@example.com: failed\n  error: testdata/files/users.csv:4 — Username=\"dup@example.com\" matched multiple users\n\nGood User <good@example.com> · 005good\n  matched Username = good@example.com · was active\n  action: Froze.",
+    "csv": "userKey,userId,userName,username,wasFrozen,status,action,error\nUsername:missing@example.com,,,,,failed,,\"testdata/files/users.csv:2 — Username=\"\"missing@example.com\"\" matched no user\"\nUsername:dup@example.com,,,,,failed,,\"testdata/files/users.csv:4 — Username=\"\"dup@example.com\"\" matched multiple users\"\nUsername:good@example.com,005good,Good User,good@example.com,false,changed,frozen,"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('missing@example.com','good@example.com','dup@example.com')",
+    "SELECT Id, UserId, IsFrozen FROM UserLogin WHERE UserId IN ('005good')"
+  ],
+  "changes": [
+    {
+      "operation": "update",
+      "sobject": "UserLogin",
+      "records": [
+        {
+          "Id": "0LLgood",
+          "IsFrozen": true
+        }
+      ],
+      "allOrNone": false
+    }
+  ]
+}

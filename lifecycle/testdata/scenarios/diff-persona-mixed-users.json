@@ -1,0 +1,354 @@
+{
+	"source": "written for this port",
+	"command": "diff",
+	"options": {
+		"mode": "persona",
+		"usersDoc": {
+			"users": [
+				{
+					"personas": [
+						"support"
+					],
+					"match": "Username",
+					"Username": "new.hire@example.com",
+					"FirstName": "New",
+					"LastName": "Hire"
+				},
+				{
+					"match": "Username",
+					"Username": "nopersonas@example.com",
+					"LastName": "NoPersonas"
+				},
+				{
+					"personas": [
+						"unknown"
+					],
+					"FederationIdentifier": "A404",
+					"LastName": "Unknown"
+				},
+				{
+					"personas": [
+						"sales"
+					],
+					"FederationIdentifier": "A002",
+					"LastName": "Sales"
+				},
+				{
+					"personas": [
+						"support"
+					],
+					"FederationIdentifier": "A001",
+					"LastName": "User"
+				},
+				{
+					"personas": [
+						"support"
+					],
+					"FederationIdentifier": "DUP1",
+					"LastName": "Dup"
+				},
+				{
+					"personas": [
+						"conformant"
+					],
+					"match": "Username",
+					"Username": "ok@example.com"
+				}
+			]
+		},
+		"personasDoc": {
+			"personas": {
+				"support": {
+					"profile": "Support Profile",
+					"role": "SupportRole",
+					"permissionSetMode": "sync",
+					"permissionSets": [
+						"KeepPerm",
+						"AddPerm"
+					],
+					"permissionSetGroupMode": "additive",
+					"permissionSetGroups": [
+						"AddGroup"
+					],
+					"publicGroupMode": "sync",
+					"publicGroups": [
+						"KeepPublic"
+					],
+					"queueMode": "additive",
+					"queues": [
+						"KeepQueue",
+						"AddQueue"
+					]
+				},
+				"sales": {
+					"profile": "Missing Profile",
+					"permissionSets": [
+						"Nonexistent_Perms"
+					]
+				},
+				"conformant": {
+					"permissionSets": [
+						"KeepPerm"
+					]
+				}
+			}
+		},
+		"externalId": "FederationIdentifier"
+	},
+	"describe": [
+		{
+			"name": "Username",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "FederationIdentifier",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": true
+		},
+		{
+			"name": "ProfileId",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "UserRoleId",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "LastName",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "FirstName",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		}
+	],
+	"queries": [
+		{
+			"contains": "FROM Profile",
+			"records": [
+				{
+					"Id": "00eProfileTarget1",
+					"Name": "Support Profile"
+				}
+			]
+		},
+		{
+			"contains": "FROM UserRole",
+			"records": [
+				{
+					"Id": "00ERoleTarget001",
+					"DeveloperName": "SupportRole",
+					"Name": "Support Role"
+				}
+			]
+		},
+		{
+			"contains": "FROM Group WHERE DeveloperName IN ('KeepPublic')",
+			"records": [
+				{
+					"Id": "00GPublicKeep01",
+					"DeveloperName": "KeepPublic",
+					"Name": "Keep Public"
+				}
+			]
+		},
+		{
+			"contains": "FROM Group WHERE DeveloperName IN ('KeepQueue','AddQueue')",
+			"records": [
+				{
+					"Id": "00GQueueKeep001",
+					"DeveloperName": "KeepQueue",
+					"Name": "KeepQueue"
+				},
+				{
+					"Id": "00GQueueAdd0002",
+					"DeveloperName": "AddQueue",
+					"Name": "Add Queue"
+				}
+			]
+		},
+		{
+			"contains": "FROM User WHERE FederationIdentifier IN",
+			"records": [
+				{
+					"Id": "005User00000001",
+					"IsActive": true,
+					"Name": "Existing User",
+					"Username": "existing@example.com",
+					"FederationIdentifier": "A001"
+				},
+				{
+					"Id": "005Dup000000001",
+					"IsActive": true,
+					"Name": "Dup One",
+					"Username": "dup1@example.com",
+					"FederationIdentifier": "DUP1"
+				},
+				{
+					"Id": "005Dup000000002",
+					"IsActive": true,
+					"Name": "Dup Two",
+					"Username": "dup2@example.com",
+					"FederationIdentifier": "dup1"
+				},
+				{
+					"Id": "005Sales0000001",
+					"IsActive": true,
+					"Name": "Sales User",
+					"Username": "sales@example.com",
+					"FederationIdentifier": "A002"
+				}
+			]
+		},
+		{
+			"contains": "FROM User WHERE Username IN",
+			"records": [
+				{
+					"Id": "005Ok0000000001",
+					"IsActive": true,
+					"Name": "Ok User",
+					"Username": "ok@example.com"
+				}
+			]
+		},
+		{
+			"contains": "SELECT Id, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Id IN",
+			"records": [
+				{
+					"Id": "005User00000001",
+					"ProfileId": "00eProfileCurrent",
+					"Profile": {
+						"Name": "Current Profile"
+					},
+					"UserRoleId": "00ERoleTarget001",
+					"UserRole": {
+						"Name": "Support Role"
+					}
+				},
+				{
+					"Id": "005Ok0000000001",
+					"ProfileId": "00eProfileCurrent",
+					"Profile": {
+						"Name": "Current Profile"
+					},
+					"UserRoleId": null
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSetAssignment",
+			"records": [
+				{
+					"Id": "0PaOk",
+					"AssigneeId": "005Ok0000000001",
+					"PermissionSetId": "0PSPermKeep0001",
+					"PermissionSetGroupId": null,
+					"PermissionSet": {
+						"IsOwnedByProfile": false,
+						"Name": "KeepPerm",
+						"Label": "Keep Perm"
+					}
+				},
+				{
+					"Id": "0PaKeep",
+					"AssigneeId": "005User00000001",
+					"PermissionSetId": "0PSPermKeep0001",
+					"PermissionSetGroupId": null,
+					"PermissionSet": {
+						"IsOwnedByProfile": false,
+						"Name": "KeepPerm",
+						"Label": "Keep Perm"
+					}
+				},
+				{
+					"Id": "0PaRemove",
+					"AssigneeId": "005User00000001",
+					"PermissionSetId": "0PSPermRemove",
+					"PermissionSetGroupId": null,
+					"PermissionSet": {
+						"IsOwnedByProfile": false,
+						"Name": "Shared_Perms",
+						"Label": "Shared Permissions"
+					}
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSetGroup",
+			"records": [
+				{
+					"Id": "0PGGroupAdd0001",
+					"DeveloperName": "AddGroup",
+					"MasterLabel": "Add Group"
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSet",
+			"records": [
+				{
+					"Id": "0PSPermKeep0001",
+					"Name": "KeepPerm",
+					"Label": "Keep Perm"
+				},
+				{
+					"Id": "0PSPermAdd0002",
+					"Name": "AddPerm",
+					"Label": "Add Perm"
+				}
+			]
+		},
+		{
+			"contains": "FROM GroupMember",
+			"records": [
+				{
+					"Id": "0GMKeepPublic",
+					"GroupId": "00GPublicKeep01",
+					"UserOrGroupId": "005User00000001",
+					"Group": {
+						"Type": "Regular",
+						"DeveloperName": "KeepPublic",
+						"Name": "Keep Public"
+					}
+				},
+				{
+					"Id": "0GMExtraPublic",
+					"GroupId": "00GPublicExtra",
+					"UserOrGroupId": "005User00000001",
+					"Group": {
+						"Type": "Regular",
+						"DeveloperName": "ExtraPublic",
+						"Name": "Extra Public"
+					}
+				},
+				{
+					"Id": "0GMExtraQueue",
+					"GroupId": "00GQueueExtra",
+					"UserOrGroupId": "005User00000001",
+					"Group": {
+						"Type": "Queue",
+						"DeveloperName": "ExtraQueue",
+						"Name": "Extra Queue"
+					}
+				}
+			]
+		}
+	]
+}

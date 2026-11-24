@@ -1,0 +1,8 @@
+{
+	"source": "written for this port",
+	"command": "readSnapshot",
+	"options": {
+		"path": "testdata/files/invalid-empty-row-not-alone.csv"
+	},
+	"queries": []
+}

@@ -1,0 +1,9 @@
+{
+  "error": {
+    "name": "LifecycleError",
+    "code": "errorInvalidSnapshot",
+    "message": "Snapshot CSV row 2 must contain isActive as true or false."
+  },
+  "queries": [],
+  "changes": []
+}

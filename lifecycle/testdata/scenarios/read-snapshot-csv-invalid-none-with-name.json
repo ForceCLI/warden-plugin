@@ -1,0 +1,8 @@
+{
+	"source": "written for this port",
+	"command": "readSnapshot",
+	"options": {
+		"path": "testdata/files/invalid-none-with-name.csv"
+	},
+	"queries": []
+}

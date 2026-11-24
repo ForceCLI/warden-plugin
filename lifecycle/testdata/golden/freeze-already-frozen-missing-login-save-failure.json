@@ -1,0 +1,328 @@
+{
+  "plan": {
+    "direction": "freeze",
+    "users": [
+      {
+        "key": "user[6]",
+        "status": "failed",
+        "actions": [],
+        "skipped": [],
+        "warnings": [],
+        "errors": [
+          "Each users-def entry must specify a match field or the --external-id flag must be set."
+        ]
+      },
+      {
+        "key": "Username:missing@example.com",
+        "status": "failed",
+        "actions": [],
+        "skipped": [],
+        "warnings": [],
+        "errors": [
+          "Username=\"missing@example.com\" matched no user"
+        ]
+      },
+      {
+        "key": "Username:frozen@example.com",
+        "id": "005A",
+        "name": "Already Frozen",
+        "username": "frozen@example.com",
+        "isActive": true,
+        "isFrozen": true,
+        "status": "unchanged",
+        "actions": [
+          {
+            "key": "alreadyFrozen"
+          }
+        ],
+        "skipped": [],
+        "warnings": [],
+        "errors": []
+      },
+      {
+        "key": "Username:nologin@example.com",
+        "id": "005B",
+        "name": "No Login",
+        "username": "nologin@example.com",
+        "isActive": false,
+        "status": "unchanged",
+        "actions": [],
+        "skipped": [],
+        "warnings": [
+          "No UserLogin row was found for this user."
+        ],
+        "errors": []
+      },
+      {
+        "key": "Username:first@example.com",
+        "id": "005C",
+        "name": "First User",
+        "username": "first@example.com",
+        "isActive": true,
+        "isFrozen": false,
+        "status": "planned",
+        "actions": [
+          {
+            "key": "wouldFreeze"
+          }
+        ],
+        "skipped": [],
+        "warnings": [],
+        "errors": []
+      },
+      {
+        "key": "Username:second@example.com",
+        "id": "005D",
+        "name": "Second User",
+        "username": "second@example.com",
+        "isActive": true,
+        "isFrozen": false,
+        "status": "planned",
+        "actions": [
+          {
+            "key": "wouldFreeze"
+          }
+        ],
+        "skipped": [],
+        "warnings": [],
+        "errors": []
+      }
+    ],
+    "updates": [
+      {
+        "resultIndex": 4,
+        "row": {
+          "Id": "0LLC",
+          "IsFrozen": true
+        },
+        "actionKey": "frozen"
+      },
+      {
+        "resultIndex": 5,
+        "row": {
+          "Id": "0LLD",
+          "IsFrozen": true
+        },
+        "actionKey": "frozen"
+      }
+    ],
+    "warnings": []
+  },
+  "preview": {
+    "result": {
+      "summary": {
+        "total": 6,
+        "changed": 2,
+        "unchanged": 2,
+        "failed": 2
+      },
+      "users": [
+        {
+          "key": "user[6]",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Each users-def entry must specify a match field or the --external-id flag must be set."
+          ]
+        },
+        {
+          "key": "Username:missing@example.com",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Username=\"missing@example.com\" matched no user"
+          ]
+        },
+        {
+          "key": "Username:frozen@example.com",
+          "id": "005A",
+          "name": "Already Frozen",
+          "username": "frozen@example.com",
+          "isActive": true,
+          "isFrozen": true,
+          "status": "unchanged",
+          "actions": [
+            {
+              "key": "alreadyFrozen"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        {
+          "key": "Username:nologin@example.com",
+          "id": "005B",
+          "name": "No Login",
+          "username": "nologin@example.com",
+          "isActive": false,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [
+            "No UserLogin row was found for this user."
+          ],
+          "errors": []
+        },
+        {
+          "key": "Username:first@example.com",
+          "id": "005C",
+          "name": "First User",
+          "username": "first@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldFreeze"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        {
+          "key": "Username:second@example.com",
+          "id": "005D",
+          "name": "Second User",
+          "username": "second@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldFreeze"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 6 users: 2 changed, 2 unchanged, 2 failed.\n\nuser[6]: failed\n  error: Each users-def entry must specify a match field or the --external-id flag must be set.\n\nUsername:missing@example.com: failed\n  error: Username=\"missing@example.com\" matched no user\n\nAlready Frozen <frozen@example.com> · 005A\n  matched Username = frozen@example.com · was frozen\n  action: Already frozen.\n\nNo Login <nologin@example.com> · 005B\n  matched Username = nologin@example.com · was inactive\n  warning: No UserLogin row was found for this user.\n\nFirst User <first@example.com> · 005C\n  matched Username = first@example.com · was active\n  action: Would freeze.\n\nSecond User <second@example.com> · 005D\n  matched Username = second@example.com · was active\n  action: Would freeze.",
+    "csv": "userKey,userId,userName,username,wasFrozen,status,action,error\nuser[6],,,,,failed,,Each users-def entry must specify a match field or the --external-id flag must be set.\nUsername:missing@example.com,,,,,failed,,\"Username=\"\"missing@example.com\"\" matched no user\"\nUsername:frozen@example.com,005A,Already Frozen,frozen@example.com,true,unchanged,alreadyFrozen,\nUsername:nologin@example.com,005B,No Login,nologin@example.com,,unchanged,,\nUsername:first@example.com,005C,First User,first@example.com,false,planned,wouldFreeze,\nUsername:second@example.com,005D,Second User,second@example.com,false,planned,wouldFreeze,"
+  },
+  "applied": {
+    "result": {
+      "summary": {
+        "total": 6,
+        "changed": 1,
+        "unchanged": 2,
+        "failed": 3
+      },
+      "users": [
+        {
+          "key": "user[6]",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Each users-def entry must specify a match field or the --external-id flag must be set."
+          ]
+        },
+        {
+          "key": "Username:missing@example.com",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Username=\"missing@example.com\" matched no user"
+          ]
+        },
+        {
+          "key": "Username:frozen@example.com",
+          "id": "005A",
+          "name": "Already Frozen",
+          "username": "frozen@example.com",
+          "isActive": true,
+          "isFrozen": true,
+          "status": "unchanged",
+          "actions": [
+            {
+              "key": "alreadyFrozen"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        {
+          "key": "Username:nologin@example.com",
+          "id": "005B",
+          "name": "No Login",
+          "username": "nologin@example.com",
+          "isActive": false,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [
+            "No UserLogin row was found for this user."
+          ],
+          "errors": []
+        },
+        {
+          "key": "Username:first@example.com",
+          "id": "005C",
+          "name": "First User",
+          "username": "first@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "changed",
+          "actions": [
+            {
+              "key": "frozen"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        {
+          "key": "Username:second@example.com",
+          "id": "005D",
+          "name": "Second User",
+          "username": "second@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Login is locked"
+          ]
+        }
+      ]
+    },
+    "human": "Processed 6 users: 1 changed, 2 unchanged, 3 failed.\n\nuser[6]: failed\n  error: Each users-def entry must specify a match field or the --external-id flag must be set.\n\nUsername:missing@example.com: failed\n  error: Username=\"missing@example.com\" matched no user\n\nAlready Frozen <frozen@example.com> · 005A\n  matched Username = frozen@example.com · was frozen\n  action: Already frozen.\n\nNo Login <nologin@example.com> · 005B\n  matched Username = nologin@example.com · was inactive\n  warning: No UserLogin row was found for this user.\n\nFirst User <first@example.com> · 005C\n  matched Username = first@example.com · was active\n  action: Froze.\n\nSecond User <second@example.com> · 005D\n  matched Username = second@example.com · was active\n  error: Login is locked",
+    "csv": "userKey,userId,userName,username,wasFrozen,status,action,error\nuser[6],,,,,failed,,Each users-def entry must specify a match field or the --external-id flag must be set.\nUsername:missing@example.com,,,,,failed,,\"Username=\"\"missing@example.com\"\" matched no user\"\nUsername:frozen@example.com,005A,Already Frozen,frozen@example.com,true,unchanged,alreadyFrozen,\nUsername:nologin@example.com,005B,No Login,nologin@example.com,,unchanged,,\nUsername:first@example.com,005C,First User,first@example.com,false,changed,frozen,\nUsername:second@example.com,005D,Second User,second@example.com,false,failed,,Login is locked"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('frozen@example.com','nologin@example.com','missing@example.com','first@example.com','second@example.com')",
+    "SELECT Id, UserId, IsFrozen FROM UserLogin WHERE UserId IN ('005A','005B','005C','005D')"
+  ],
+  "changes": [
+    {
+      "operation": "update",
+      "sobject": "UserLogin",
+      "records": [
+        {
+          "Id": "0LLC",
+          "IsFrozen": true
+        },
+        {
+          "Id": "0LLD",
+          "IsFrozen": true
+        }
+      ],
+      "allOrNone": false
+    }
+  ]
+}

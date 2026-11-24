@@ -1,0 +1,59 @@
+{
+	"source": "written for this port",
+	"command": "strip",
+	"options": {
+		"user": "username:persona@example.com",
+		"personas": [
+			"support"
+		],
+		"personaSource": "org"
+	},
+	"queries": [
+		{
+			"contains": "FROM User WHERE Username IN ('persona@example.com')",
+			"records": [
+				{
+					"Id": "005-persona",
+					"IsActive": true,
+					"Username": "persona@example.com"
+				}
+			]
+		},
+		{
+			"contains": "FROM UserLogin",
+			"records": [
+				{
+					"Id": "0LL-persona",
+					"UserId": "005-persona",
+					"IsFrozen": false
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSet WHERE Name IN",
+			"records": [
+				{
+					"Id": "0PS-support",
+					"Name": "Support_Read",
+					"Label": "Support Read"
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSetAssignment",
+			"records": [
+				{
+					"Id": "0PA-support",
+					"AssigneeId": "005-persona",
+					"PermissionSetId": "0PS-support",
+					"PermissionSetGroupId": null,
+					"PermissionSet": {
+						"IsOwnedByProfile": false,
+						"Name": "Support_Read",
+						"Label": "Support Read"
+					}
+				}
+			]
+		}
+	]
+}

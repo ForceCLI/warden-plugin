@@ -1,0 +1,69 @@
+{
+  "plan": {
+    "direction": "unfreeze",
+    "users": [
+      {
+        "key": "Username:unfreeze@example.com",
+        "id": "005xx0000000002AAA",
+        "username": "unfreeze@example.com",
+        "isActive": true,
+        "isFrozen": true,
+        "status": "planned",
+        "actions": [
+          {
+            "key": "wouldUnfreeze"
+          }
+        ],
+        "skipped": [],
+        "warnings": [],
+        "errors": []
+      }
+    ],
+    "updates": [
+      {
+        "resultIndex": 0,
+        "row": {
+          "Id": "0LLxx0000000002AAA",
+          "IsFrozen": false
+        },
+        "actionKey": "unfrozen"
+      }
+    ],
+    "warnings": []
+  },
+  "preview": {
+    "result": {
+      "summary": {
+        "total": 1,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:unfreeze@example.com",
+          "id": "005xx0000000002AAA",
+          "username": "unfreeze@example.com",
+          "isActive": true,
+          "isFrozen": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldUnfreeze"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 1 user: 1 changed, 0 unchanged, 0 failed.\n\nUsername:unfreeze@example.com (005xx0000000002AAA): planned\n  action: Would unfreeze.",
+    "csv": "userKey,userId,userName,username,wasFrozen,status,action,error\nUsername:unfreeze@example.com,005xx0000000002AAA,,unfreeze@example.com,true,planned,wouldUnfreeze,"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('unfreeze@example.com')",
+    "SELECT Id, UserId, IsFrozen FROM UserLogin WHERE UserId IN ('005xx0000000002AAA')"
+  ],
+  "changes": []
+}

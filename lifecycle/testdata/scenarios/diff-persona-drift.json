@@ -1,0 +1,199 @@
+{
+	"source": "diff.test.ts: reports user-vs-persona drift and does not perform DML",
+	"command": "diff",
+	"options": {
+		"mode": "persona",
+		"usersPath": "testdata/files/diff-users.json",
+		"personasPath": "testdata/files/diff-personas.json",
+		"externalId": "FederationIdentifier"
+	},
+	"describe": [
+		{
+			"name": "Username",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "FederationIdentifier",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": true
+		},
+		{
+			"name": "ProfileId",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "UserRoleId",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "LastName",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "FirstName",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		}
+	],
+	"queries": [
+		{
+			"contains": "FROM Profile",
+			"records": [
+				{
+					"Id": "00eProfileTarget1",
+					"Name": "Support Profile"
+				}
+			]
+		},
+		{
+			"contains": "FROM UserRole",
+			"records": [
+				{
+					"Id": "00ERoleTarget001",
+					"DeveloperName": "SupportRole",
+					"Name": "Support Role"
+				}
+			]
+		},
+		{
+			"contains": "FROM Group WHERE DeveloperName IN ('KeepPublic')",
+			"records": [
+				{
+					"Id": "00GPublicKeep01",
+					"DeveloperName": "KeepPublic"
+				}
+			]
+		},
+		{
+			"contains": "FROM Group WHERE DeveloperName IN ('KeepQueue','AddQueue')",
+			"records": [
+				{
+					"Id": "00GQueueKeep001",
+					"DeveloperName": "KeepQueue"
+				},
+				{
+					"Id": "00GQueueAdd0002",
+					"DeveloperName": "AddQueue"
+				}
+			]
+		},
+		{
+			"contains": "FROM User WHERE FederationIdentifier IN",
+			"records": [
+				{
+					"Id": "005User00000001",
+					"IsActive": true,
+					"FederationIdentifier": "A001"
+				}
+			]
+		},
+		{
+			"contains": "SELECT Id, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Id IN",
+			"records": [
+				{
+					"Id": "005User00000001",
+					"ProfileId": "00eProfileCurrent",
+					"UserRoleId": "00ERoleTarget001"
+				}
+			]
+		},
+		{
+			"contains": "FROM UserLogin",
+			"records": []
+		},
+		{
+			"contains": "FROM PermissionSetAssignment",
+			"records": [
+				{
+					"Id": "0PaKeep",
+					"AssigneeId": "005User00000001",
+					"PermissionSetId": "0PSPermKeep0001",
+					"PermissionSetGroupId": null,
+					"PermissionSet": {
+						"IsOwnedByProfile": false,
+						"Name": "Current_Perms",
+						"Label": "Current Permissions"
+					}
+				},
+				{
+					"Id": "0PaRemove",
+					"AssigneeId": "005User00000001",
+					"PermissionSetId": "0PSPermRemove",
+					"PermissionSetGroupId": null,
+					"PermissionSet": {
+						"IsOwnedByProfile": false,
+						"Name": "Shared_Perms",
+						"Label": "Shared Permissions"
+					}
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSetGroup",
+			"records": [
+				{
+					"Id": "0PGGroupAdd0001",
+					"DeveloperName": "AddGroup"
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSet",
+			"records": [
+				{
+					"Id": "0PSPermKeep0001",
+					"Name": "KeepPerm"
+				},
+				{
+					"Id": "0PSPermAdd0002",
+					"Name": "AddPerm"
+				}
+			]
+		},
+		{
+			"contains": "FROM GroupMember",
+			"records": [
+				{
+					"Id": "0GMKeepPublic",
+					"GroupId": "00GPublicKeep01",
+					"UserOrGroupId": "005User00000001",
+					"Group": {
+						"Type": "Regular"
+					}
+				},
+				{
+					"Id": "0GMKeepQueue",
+					"GroupId": "00GQueueKeep001",
+					"UserOrGroupId": "005User00000001",
+					"Group": {
+						"Type": "Queue"
+					}
+				},
+				{
+					"Id": "0GMExtraQueue",
+					"GroupId": "00GQueueExtra",
+					"UserOrGroupId": "005User00000001",
+					"Group": {
+						"Type": "Queue"
+					}
+				}
+			]
+		}
+	]
+}

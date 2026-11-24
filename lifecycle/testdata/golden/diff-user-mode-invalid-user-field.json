@@ -1,0 +1,9 @@
+{
+  "error": {
+    "name": "LifecycleError",
+    "code": "errorInvalidUserMatchField",
+    "message": "Invalid user match field \"Nickname\"."
+  },
+  "queries": [],
+  "changes": []
+}

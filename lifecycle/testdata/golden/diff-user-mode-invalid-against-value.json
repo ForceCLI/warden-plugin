@@ -1,0 +1,9 @@
+{
+  "error": {
+    "name": "LifecycleError",
+    "code": "errorInvalidAgainstValue",
+    "message": "Invalid --against value \":b\". Expected field:value."
+  },
+  "queries": [],
+  "changes": []
+}

@@ -1,0 +1,31 @@
+{
+	"source": "written for this port",
+	"command": "strip",
+	"options": {
+		"user": "username:gone@example.com"
+	},
+	"queries": [
+		{
+			"contains": "FROM User WHERE Username IN",
+			"records": [
+				{
+					"Id": "005gone",
+					"IsActive": false,
+					"Name": "Gone User",
+					"Username": "gone@example.com"
+				}
+			]
+		},
+		{
+			"contains": "FROM UserLogin",
+			"records": [
+				{
+					"Id": "0LLgone",
+					"UserId": "005gone",
+					"IsFrozen": true
+				}
+			]
+		}
+	],
+	"apply": true
+}

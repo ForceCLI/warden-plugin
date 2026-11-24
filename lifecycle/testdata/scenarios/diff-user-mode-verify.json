@@ -1,0 +1,55 @@
+{
+	"source": "diff.test.ts: rejects verify in user-vs-user mode",
+	"command": "diff",
+	"options": {
+		"mode": "user",
+		"verify": true,
+		"user": "Username:a",
+		"against": "Username:b"
+	},
+	"describe": [
+		{
+			"name": "Username",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "FederationIdentifier",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": true
+		},
+		{
+			"name": "ProfileId",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "UserRoleId",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "LastName",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "FirstName",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		}
+	],
+	"queries": []
+}

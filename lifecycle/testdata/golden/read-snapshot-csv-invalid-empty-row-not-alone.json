@@ -1,0 +1,9 @@
+{
+  "error": {
+    "name": "LifecycleError",
+    "code": "errorInvalidSnapshot",
+    "message": "Snapshot CSV testdata/files/invalid-empty-row-not-alone.csv:2 empty-snapshot row must be the only data row."
+  },
+  "queries": [],
+  "changes": []
+}

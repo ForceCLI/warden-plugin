@@ -1,0 +1,136 @@
+{
+  "plan": {
+    "users": [
+      {
+        "userId": "005xx0000000500AAA",
+        "result": {
+          "key": "Username:missing-ref@example.com",
+          "id": "005xx0000000500AAA",
+          "username": "missing-ref@example.com",
+          "isActive": true,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [
+            "PermissionSet reference \"Missing_Perms\" was not found."
+          ],
+          "errors": []
+        },
+        "preview": {
+          "key": "Username:missing-ref@example.com",
+          "id": "005xx0000000500AAA",
+          "username": "missing-ref@example.com",
+          "isActive": true,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [
+            "PermissionSet reference \"Missing_Perms\" was not found."
+          ],
+          "errors": []
+        },
+        "loginUpdates": [],
+        "permissionSetAdds": [],
+        "permissionSetGroupAdds": [],
+        "publicGroupAdds": [],
+        "queueAdds": [],
+        "licenseAdds": [],
+        "permissionSetItems": [],
+        "permissionSetGroupItems": [],
+        "publicGroupItems": [],
+        "queueItems": [],
+        "licenseItems": []
+      }
+    ],
+    "errors": [],
+    "warnings": [
+      "PermissionSet reference \"Missing_Perms\" was not found."
+    ],
+    "preview": {
+      "summary": {
+        "total": 1,
+        "changed": 0,
+        "unchanged": 1,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:missing-ref@example.com",
+          "id": "005xx0000000500AAA",
+          "username": "missing-ref@example.com",
+          "isActive": true,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [
+            "PermissionSet reference \"Missing_Perms\" was not found."
+          ],
+          "errors": []
+        }
+      ]
+    }
+  },
+  "preview": {
+    "result": {
+      "summary": {
+        "total": 1,
+        "changed": 0,
+        "unchanged": 1,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:missing-ref@example.com",
+          "id": "005xx0000000500AAA",
+          "username": "missing-ref@example.com",
+          "isActive": true,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [
+            "PermissionSet reference \"Missing_Perms\" was not found."
+          ],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 1 user: 0 changed, 1 unchanged, 0 failed.\n\nUsername:missing-ref@example.com (005xx0000000500AAA): unchanged\n  warning: PermissionSet reference \"Missing_Perms\" was not found.",
+    "csv": "userKey,userId,userName,username,status,action,category,name,error\nUsername:missing-ref@example.com,005xx0000000500AAA,,missing-ref@example.com,unchanged,,,,"
+  },
+  "applied": {
+    "result": {
+      "summary": {
+        "total": 1,
+        "changed": 0,
+        "unchanged": 1,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:missing-ref@example.com",
+          "id": "005xx0000000500AAA",
+          "username": "missing-ref@example.com",
+          "isActive": true,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [
+            "PermissionSet reference \"Missing_Perms\" was not found."
+          ],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 1 user: 0 changed, 1 unchanged, 0 failed.\n\nUsername:missing-ref@example.com (005xx0000000500AAA): unchanged\n  warning: PermissionSet reference \"Missing_Perms\" was not found.",
+    "csv": "userKey,userId,userName,username,status,action,category,name,error\nUsername:missing-ref@example.com,005xx0000000500AAA,,missing-ref@example.com,unchanged,,,,"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('missing-ref@example.com')",
+    "SELECT Id, UserId, IsFrozen FROM UserLogin WHERE UserId IN ('005xx0000000500AAA')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005xx0000000500AAA')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005xx0000000500AAA') AND Group.Type IN ('Regular', 'Queue')",
+    "SELECT Id, AssigneeId, PermissionSetLicenseId, PermissionSetLicense.DeveloperName, PermissionSetLicense.MasterLabel FROM PermissionSetLicenseAssign WHERE AssigneeId IN ('005xx0000000500AAA')",
+    "SELECT Id, Name FROM PermissionSet WHERE Name IN ('Missing_Perms')"
+  ],
+  "changes": []
+}

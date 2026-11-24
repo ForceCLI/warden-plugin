@@ -1,0 +1,203 @@
+{
+  "plan": {
+    "states": [
+      {
+        "target": {
+          "key": "Username:good@example.com",
+          "Id": "005xx0000000005AAA",
+          "IsActive": true,
+          "username": "good@example.com",
+          "field": "Username",
+          "value": "good@example.com",
+          "order": 1
+        },
+        "result": {
+          "key": "Username:good@example.com",
+          "id": "005xx0000000005AAA",
+          "username": "good@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [
+            {
+              "key": "skippedDeactivate"
+            }
+          ],
+          "warnings": [],
+          "errors": []
+        },
+        "steps": [
+          {
+            "kind": "update",
+            "sobject": "UserLogin",
+            "row": {
+              "Id": "0LLxx0000000005AAA",
+              "IsFrozen": true
+            },
+            "actionKey": "frozen"
+          }
+        ],
+        "hasDml": true
+      }
+    ],
+    "errors": [
+      {
+        "key": "Username:missing@example.com",
+        "field": "Username",
+        "value": "missing@example.com",
+        "message": "Username=\"missing@example.com\" matched no user",
+        "order": 0
+      }
+    ],
+    "preview": {
+      "summary": {
+        "total": 2,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 1
+      },
+      "users": [
+        {
+          "key": "Username:missing@example.com",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Username=\"missing@example.com\" matched no user"
+          ]
+        },
+        {
+          "key": "Username:good@example.com",
+          "id": "005xx0000000005AAA",
+          "username": "good@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldFreeze"
+            }
+          ],
+          "skipped": [
+            {
+              "key": "skippedDeactivate"
+            }
+          ],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "warnings": []
+  },
+  "preview": {
+    "result": {
+      "summary": {
+        "total": 2,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 1
+      },
+      "users": [
+        {
+          "key": "Username:missing@example.com",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Username=\"missing@example.com\" matched no user"
+          ]
+        },
+        {
+          "key": "Username:good@example.com",
+          "id": "005xx0000000005AAA",
+          "username": "good@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldFreeze"
+            }
+          ],
+          "skipped": [
+            {
+              "key": "skippedDeactivate"
+            }
+          ],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 2 users: 1 changed, 0 unchanged, 1 failed.\n\nUsername:missing@example.com: failed\n  error: Username=\"missing@example.com\" matched no user\n\nUsername:good@example.com (005xx0000000005AAA): planned\n  skipped: Skipped deactivation step.\n  action: Would freeze.",
+    "csv": "userKey,userId,userName,username,status,action,category,itemId,itemApiName,error\nUsername:missing@example.com,,,,failed,,,,,\"Username=\"\"missing@example.com\"\" matched no user\"\nUsername:good@example.com,005xx0000000005AAA,,good@example.com,planned,wouldFreeze,,,,"
+  },
+  "applied": {
+    "result": {
+      "summary": {
+        "total": 2,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 1
+      },
+      "users": [
+        {
+          "key": "Username:missing@example.com",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Username=\"missing@example.com\" matched no user"
+          ]
+        },
+        {
+          "key": "Username:good@example.com",
+          "id": "005xx0000000005AAA",
+          "username": "good@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "changed",
+          "actions": [
+            {
+              "key": "frozen"
+            }
+          ],
+          "skipped": [
+            {
+              "key": "skippedDeactivate"
+            }
+          ],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 2 users: 1 changed, 0 unchanged, 1 failed.\n\nUsername:missing@example.com: failed\n  error: Username=\"missing@example.com\" matched no user\n\nUsername:good@example.com (005xx0000000005AAA): changed\n  skipped: Skipped deactivation step.\n  action: Froze.",
+    "csv": "userKey,userId,userName,username,status,action,category,itemId,itemApiName,error\nUsername:missing@example.com,,,,failed,,,,,\"Username=\"\"missing@example.com\"\" matched no user\"\nUsername:good@example.com,005xx0000000005AAA,,good@example.com,changed,frozen,,,,"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('missing@example.com','good@example.com')",
+    "SELECT Id, UserId, IsFrozen FROM UserLogin WHERE UserId IN ('005xx0000000005AAA')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005xx0000000005AAA')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005xx0000000005AAA') AND Group.Type IN ('Regular', 'Queue')",
+    "SELECT Id, AssigneeId, PermissionSetLicenseId, PermissionSetLicense.DeveloperName, PermissionSetLicense.MasterLabel FROM PermissionSetLicenseAssign WHERE AssigneeId IN ('005xx0000000005AAA')"
+  ],
+  "changes": [
+    {
+      "operation": "update",
+      "sobject": "UserLogin",
+      "records": [
+        {
+          "Id": "0LLxx0000000005AAA",
+          "IsFrozen": true
+        }
+      ],
+      "allOrNone": false
+    }
+  ]
+}

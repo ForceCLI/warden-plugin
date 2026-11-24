@@ -1,0 +1,8 @@
+{
+	"source": "lifecycle.test.ts: preserves the legacy Error name for an invalid --user value",
+	"command": "freeze",
+	"options": {
+		"user": "novalue"
+	},
+	"queries": []
+}

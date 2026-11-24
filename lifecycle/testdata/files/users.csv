@@ -1,0 +1,4 @@
+Username,match
+missing@example.com,Username
+good@example.com,Username
+dup@example.com,Username

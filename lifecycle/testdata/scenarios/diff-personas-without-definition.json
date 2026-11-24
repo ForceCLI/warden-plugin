@@ -1,0 +1,63 @@
+{
+	"source": "diff.test.ts: rejects personas in users-def when diff has no persona definition",
+	"command": "diff",
+	"options": {
+		"mode": "persona",
+		"usersDoc": {
+			"users": [
+				{
+					"personas": [
+						"support"
+					],
+					"FederationIdentifier": "A001",
+					"LastName": "User"
+				}
+			]
+		}
+	},
+	"describe": [
+		{
+			"name": "Username",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "FederationIdentifier",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": true
+		},
+		{
+			"name": "ProfileId",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "UserRoleId",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "LastName",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "FirstName",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		}
+	],
+	"queries": []
+}

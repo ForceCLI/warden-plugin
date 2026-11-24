@@ -1,0 +1,72 @@
+{
+  "verdicts": [
+    {
+      "key": "new.hire@example.com",
+      "conformant": false,
+      "violations": [
+        "user not found"
+      ]
+    },
+    {
+      "key": "nopersonas@example.com",
+      "conformant": false,
+      "violations": [
+        "error: errorNoPersonas"
+      ]
+    },
+    {
+      "key": "A404",
+      "conformant": false,
+      "violations": [
+        "error: errorUnknownPersona"
+      ]
+    },
+    {
+      "key": "A002",
+      "conformant": false,
+      "violations": [
+        "error: Required Profile reference \"Missing Profile\" was not found."
+      ]
+    },
+    {
+      "key": "A001",
+      "conformant": false,
+      "violations": [
+        "profile mismatch: Current Profile -> Support Profile",
+        "permissionSets missing: AddPerm (Add Perm)",
+        "permissionSets extra (sync): Shared_Perms (Shared Permissions)",
+        "permissionSetGroups missing: AddGroup (Add Group)",
+        "publicGroups extra (sync): ExtraPublic (Extra Public)",
+        "queues missing: KeepQueue, AddQueue (Add Queue)"
+      ]
+    },
+    {
+      "key": "DUP1",
+      "conformant": false,
+      "violations": [
+        "error: Multiple users matched FederationIdentifier=\"DUP1\"."
+      ]
+    },
+    {
+      "key": "ok@example.com",
+      "conformant": true,
+      "violations": []
+    }
+  ],
+  "human": "Verified 7 users: 1 conformant, 6 non-conformant.\n\nnew.hire@example.com: non-conformant\n  - user not found\n\nnopersonas@example.com: non-conformant\n  - error: errorNoPersonas\n\nA404: non-conformant\n  - error: errorUnknownPersona\n\nA002: non-conformant\n  - error: Required Profile reference \"Missing Profile\" was not found.\n\nA001: non-conformant\n  - profile mismatch: Current Profile -> Support Profile\n  - permissionSets missing: AddPerm (Add Perm)\n  - permissionSets extra (sync): Shared_Perms (Shared Permissions)\n  - permissionSetGroups missing: AddGroup (Add Group)\n  - publicGroups extra (sync): ExtraPublic (Extra Public)\n  - queues missing: KeepQueue, AddQueue (Add Queue)\n\nDUP1: non-conformant\n  - error: Multiple users matched FederationIdentifier=\"DUP1\".",
+  "csv": "key,conformant,violations\nnew.hire@example.com,false,user not found\nnopersonas@example.com,false,error: errorNoPersonas\nA404,false,error: errorUnknownPersona\nA002,false,\"error: Required Profile reference \"\"Missing Profile\"\" was not found.\"\nA001,false,\"profile mismatch: Current Profile -> Support Profile; permissionSets missing: AddPerm (Add Perm); permissionSets extra (sync): Shared_Perms (Shared Permissions); permissionSetGroups missing: AddGroup (Add Group); publicGroups extra (sync): ExtraPublic (Extra Public); queues missing: KeepQueue, AddQueue (Add Queue)\"\nDUP1,false,\"error: Multiple users matched FederationIdentifier=\"\"DUP1\"\".\"\nok@example.com,true,",
+  "queries": [
+    "SELECT Id, Name FROM Profile WHERE Name IN ('Support Profile','Missing Profile')",
+    "SELECT Id, DeveloperName, Name FROM UserRole WHERE DeveloperName IN ('SupportRole') OR Name IN ('SupportRole')",
+    "SELECT Id, Name, Label FROM PermissionSet WHERE Name IN ('KeepPerm','AddPerm','Nonexistent_Perms')",
+    "SELECT Id, DeveloperName, MasterLabel FROM PermissionSetGroup WHERE DeveloperName IN ('AddGroup')",
+    "SELECT Id, DeveloperName, Name FROM Group WHERE DeveloperName IN ('KeepPublic') AND Type = 'Regular'",
+    "SELECT Id, DeveloperName, Name FROM Group WHERE DeveloperName IN ('KeepQueue','AddQueue') AND Type = 'Queue'",
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('new.hire@example.com','ok@example.com')",
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name, FederationIdentifier FROM User WHERE FederationIdentifier IN ('A002','A001','DUP1')",
+    "SELECT Id, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Id IN ('005Ok0000000001','005Sales0000001','005User00000001')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005Ok0000000001','005Sales0000001','005User00000001')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005Ok0000000001','005Sales0000001','005User00000001') AND Group.Type IN ('Regular', 'Queue')"
+  ],
+  "changes": []
+}

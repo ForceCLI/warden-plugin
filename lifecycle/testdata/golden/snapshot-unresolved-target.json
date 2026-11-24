@@ -1,0 +1,10 @@
+{
+  "error": {
+    "name": "Error",
+    "message": "Each users-def entry must specify a match field or the --external-id flag must be set.; Username=\"missing@example.com\" matched no user"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('missing@example.com')"
+  ],
+  "changes": []
+}

@@ -1,0 +1,9 @@
+{
+  "error": {
+    "name": "LifecycleError",
+    "code": "errorInvalidSnapshot",
+    "message": "Snapshot CSV testdata/files/invalid-metadata-conflict.csv:3 conflicts with metadata from row 2 for capturedAt."
+  },
+  "queries": [],
+  "changes": []
+}

@@ -1,0 +1,74 @@
+{
+	"source": "lifecycle.test.ts: reports only successful restore items when assignment DML is partially successful",
+	"command": "restore",
+	"options": {
+		"snapshotDoc": {
+			"snapshotVersion": 1,
+			"capturedAt": "2026-07-05T12:00:00.000Z",
+			"users": [
+				{
+					"userId": "005old",
+					"IsActive": true,
+					"IsFrozen": false,
+					"permissionSets": [
+						"First_Perms",
+						"Second_Perms"
+					],
+					"permissionSetGroups": [],
+					"publicGroups": [],
+					"queues": [],
+					"permissionSetLicenses": [],
+					"match": "Username",
+					"matchValue": "partial-restore@example.com"
+				}
+			]
+		}
+	},
+	"queries": [
+		{
+			"contains": "FROM User WHERE Username IN ('partial-restore@example.com')",
+			"records": [
+				{
+					"Id": "005xx0000000600AAA",
+					"IsActive": true,
+					"Username": "partial-restore@example.com"
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSet WHERE Name IN",
+			"records": [
+				{
+					"Id": "0PSFirst",
+					"Name": "First_Perms"
+				},
+				{
+					"Id": "0PSSecond",
+					"Name": "Second_Perms"
+				}
+			]
+		}
+	],
+	"saves": [
+		{
+			"operation": "create",
+			"sobject": "PermissionSetAssignment",
+			"results": [
+				{
+					"success": true,
+					"id": "0PSAFirst",
+					"errors": []
+				},
+				{
+					"success": false,
+					"errors": [
+						{
+							"message": "Second assignment failed"
+						}
+					]
+				}
+			]
+		}
+	],
+	"apply": true
+}

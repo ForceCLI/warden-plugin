@@ -1,0 +1,34 @@
+{
+  "snapshot": {
+    "snapshotVersion": 1,
+    "capturedAt": "2026-01-02T03:04:05.000Z",
+    "users": [
+      {
+        "match": "Username",
+        "matchValue": "x@example.com",
+        "userId": "005x",
+        "role": "CEO",
+        "IsActive": false,
+        "IsFrozen": true,
+        "permissionSets": [
+          "B",
+          "A"
+        ],
+        "permissionSetGroups": [],
+        "publicGroups": [],
+        "queues": [
+          "Q2",
+          "Q1",
+          "Q2"
+        ],
+        "permissionSetLicenses": [],
+        "ticket": "T-1"
+      }
+    ],
+    "note": "kept"
+  },
+  "json": "{\n  \"snapshotVersion\": 1,\n  \"capturedAt\": \"2026-01-02T03:04:05.000Z\",\n  \"users\": [\n    {\n      \"match\": \"Username\",\n      \"matchValue\": \"x@example.com\",\n      \"userId\": \"005x\",\n      \"role\": \"CEO\",\n      \"IsActive\": false,\n      \"IsFrozen\": true,\n      \"permissionSets\": [\n        \"B\",\n        \"A\"\n      ],\n      \"permissionSetGroups\": [],\n      \"publicGroups\": [],\n      \"queues\": [\n        \"Q2\",\n        \"Q1\",\n        \"Q2\"\n      ],\n      \"permissionSetLicenses\": [],\n      \"ticket\": \"T-1\"\n    }\n  ],\n  \"note\": \"kept\"\n}\n",
+  "csv": "snapshotVersion,capturedAt,org,match,matchValue,userId,userName,username,email,profile,role,isActive,isFrozen,category,name\n1,2026-01-02T03:04:05.000Z,,Username,x@example.com,005x,,,,,CEO,false,true,permissionSet,A\n1,2026-01-02T03:04:05.000Z,,Username,x@example.com,005x,,,,,CEO,false,true,permissionSet,B\n1,2026-01-02T03:04:05.000Z,,Username,x@example.com,005x,,,,,CEO,false,true,queue,Q1\n1,2026-01-02T03:04:05.000Z,,Username,x@example.com,005x,,,,,CEO,false,true,queue,Q2",
+  "queries": [],
+  "changes": []
+}

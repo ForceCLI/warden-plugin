@@ -1,0 +1,12 @@
+{
+	"users": [
+		{
+			"match": "Username",
+			"Username": "missing@example.com"
+		},
+		{
+			"match": "Username",
+			"Username": "good@example.com"
+		}
+	]
+}

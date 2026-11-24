@@ -1,0 +1,9 @@
+{
+  "error": {
+    "name": "LifecycleError",
+    "code": "errorInvalidSnapshot",
+    "message": "Snapshot CSV testdata/files/invalid-repeated-column.csv:1 repeats column \"email\"."
+  },
+  "queries": [],
+  "changes": []
+}

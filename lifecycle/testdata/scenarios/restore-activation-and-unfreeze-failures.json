@@ -1,0 +1,114 @@
+{
+	"source": "lifecycle.test.ts: reports restore activation and unfreeze only when their DML succeeds",
+	"command": "restore",
+	"options": {
+		"snapshotDoc": {
+			"snapshotVersion": 1,
+			"capturedAt": "2026-07-05T12:00:00.000Z",
+			"users": [
+				{
+					"userId": "005old1",
+					"IsActive": true,
+					"IsFrozen": false,
+					"permissionSets": [],
+					"permissionSetGroups": [],
+					"publicGroups": [],
+					"queues": [],
+					"permissionSetLicenses": [],
+					"match": "Username",
+					"matchValue": "failed-activation@example.com"
+				},
+				{
+					"userId": "005old2",
+					"IsActive": true,
+					"IsFrozen": false,
+					"permissionSets": [],
+					"permissionSetGroups": [],
+					"publicGroups": [],
+					"queues": [],
+					"permissionSetLicenses": [],
+					"match": "Username",
+					"matchValue": "failed-unfreeze@example.com"
+				}
+			]
+		}
+	},
+	"queries": [
+		{
+			"contains": "FROM User WHERE",
+			"records": [
+				{
+					"Id": "005user1",
+					"IsActive": false,
+					"Name": "Failed Activation",
+					"Username": "failed-activation@example.com"
+				},
+				{
+					"Id": "005user2",
+					"IsActive": true,
+					"Name": "Failed Unfreeze",
+					"Username": "failed-unfreeze@example.com"
+				}
+			]
+		},
+		{
+			"contains": "FROM UserLogin",
+			"records": [
+				{
+					"Id": "0LL1",
+					"UserId": "005user1",
+					"IsFrozen": true
+				},
+				{
+					"Id": "0LL2",
+					"UserId": "005user2",
+					"IsFrozen": true
+				}
+			]
+		}
+	],
+	"saves": [
+		{
+			"operation": "update",
+			"sobject": "User",
+			"results": [
+				{
+					"success": false,
+					"errors": [
+						{
+							"message": "Activation failed"
+						}
+					],
+					"id": "005user1"
+				}
+			]
+		},
+		{
+			"operation": "update",
+			"sobject": "UserLogin",
+			"results": [
+				{
+					"success": true,
+					"id": "0LL1",
+					"errors": []
+				}
+			]
+		},
+		{
+			"operation": "update",
+			"sobject": "UserLogin",
+			"results": [
+				{
+					"success": false,
+					"errors": [
+						{
+							"message": "Unfreeze failed"
+						}
+					],
+					"id": "0LL2"
+				}
+			]
+		}
+	],
+	"apply": true
+}

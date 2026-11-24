@@ -1,0 +1,66 @@
+{
+	"source": "lifecycle.test.ts: preserves restore error ordering and missing reference text",
+	"command": "restore",
+	"options": {
+		"snapshotDoc": {
+			"snapshotVersion": 1,
+			"users": [
+				{
+					"userId": "005old",
+					"IsActive": false,
+					"IsFrozen": true,
+					"permissionSets": [
+						"Missing"
+					],
+					"permissionSetGroups": [],
+					"publicGroups": [],
+					"queues": [],
+					"permissionSetLicenses": [],
+					"match": "Username",
+					"matchValue": "good@example.com"
+				},
+				{
+					"userId": "005old",
+					"IsActive": false,
+					"IsFrozen": true,
+					"permissionSets": [
+						"Missing"
+					],
+					"permissionSetGroups": [],
+					"publicGroups": [],
+					"queues": [],
+					"permissionSetLicenses": [],
+					"match": "Unknown",
+					"matchValue": "bad"
+				},
+				{
+					"userId": "005old",
+					"IsActive": false,
+					"IsFrozen": true,
+					"permissionSets": [
+						"Missing"
+					],
+					"permissionSetGroups": [],
+					"publicGroups": [],
+					"queues": [],
+					"permissionSetLicenses": [],
+					"match": "Username",
+					"matchValue": "missing@example.com"
+				}
+			]
+		}
+	},
+	"queries": [
+		{
+			"contains": "FROM User WHERE",
+			"records": [
+				{
+					"Id": "005good",
+					"IsActive": false,
+					"Username": "good@example.com"
+				}
+			]
+		}
+	],
+	"apply": true
+}

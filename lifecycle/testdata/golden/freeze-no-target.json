@@ -1,0 +1,8 @@
+{
+  "error": {
+    "name": "Error",
+    "message": "A user or users definition is required."
+  },
+  "queries": [],
+  "changes": []
+}

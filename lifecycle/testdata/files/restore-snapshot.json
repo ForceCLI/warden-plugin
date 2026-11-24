@@ -1,0 +1,35 @@
+{
+	"snapshotVersion": 1,
+	"capturedAt": "2026-07-05T12:00:00.000Z",
+	"users": [
+		{
+			"match": "Username",
+			"matchValue": "restore@example.com",
+			"userId": "005old",
+			"name": "Snapshot User",
+			"username": "restore@example.com",
+			"email": "restore@example.com",
+			"profile": "Old Profile",
+			"role": "Support",
+			"IsActive": true,
+			"IsFrozen": false,
+			"permissionSets": [
+				"Existing_Perms",
+				"Missing_Perms"
+			],
+			"permissionSetGroups": [
+				"Missing_Group"
+			],
+			"publicGroups": [
+				"Existing_Public",
+				"Missing_Public"
+			],
+			"queues": [
+				"Missing_Queue"
+			],
+			"permissionSetLicenses": [
+				"MissingLicense"
+			]
+		}
+	]
+}

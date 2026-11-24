@@ -1,0 +1,219 @@
+{
+  "plan": {
+    "users": [
+      {
+        "userId": "005xx0000000600AAA",
+        "result": {
+          "key": "Username:partial-restore@example.com",
+          "id": "005xx0000000600AAA",
+          "username": "partial-restore@example.com",
+          "isActive": true,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        "preview": {
+          "key": "Username:partial-restore@example.com",
+          "id": "005xx0000000600AAA",
+          "username": "partial-restore@example.com",
+          "isActive": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldAssignPermissionSet",
+              "count": 2,
+              "items": [
+                {
+                  "id": "0PSFirst",
+                  "apiName": "First_Perms",
+                  "type": "PermissionSet"
+                },
+                {
+                  "id": "0PSSecond",
+                  "apiName": "Second_Perms",
+                  "type": "PermissionSet"
+                }
+              ]
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        "loginUpdates": [],
+        "permissionSetAdds": [
+          "0PSFirst",
+          "0PSSecond"
+        ],
+        "permissionSetGroupAdds": [],
+        "publicGroupAdds": [],
+        "queueAdds": [],
+        "licenseAdds": [],
+        "permissionSetItems": [
+          {
+            "id": "0PSFirst",
+            "apiName": "First_Perms",
+            "type": "PermissionSet"
+          },
+          {
+            "id": "0PSSecond",
+            "apiName": "Second_Perms",
+            "type": "PermissionSet"
+          }
+        ],
+        "permissionSetGroupItems": [],
+        "publicGroupItems": [],
+        "queueItems": [],
+        "licenseItems": []
+      }
+    ],
+    "errors": [],
+    "warnings": [],
+    "preview": {
+      "summary": {
+        "total": 1,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:partial-restore@example.com",
+          "id": "005xx0000000600AAA",
+          "username": "partial-restore@example.com",
+          "isActive": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldAssignPermissionSet",
+              "count": 2,
+              "items": [
+                {
+                  "id": "0PSFirst",
+                  "apiName": "First_Perms",
+                  "type": "PermissionSet"
+                },
+                {
+                  "id": "0PSSecond",
+                  "apiName": "Second_Perms",
+                  "type": "PermissionSet"
+                }
+              ]
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    }
+  },
+  "preview": {
+    "result": {
+      "summary": {
+        "total": 1,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:partial-restore@example.com",
+          "id": "005xx0000000600AAA",
+          "username": "partial-restore@example.com",
+          "isActive": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldAssignPermissionSet",
+              "count": 2,
+              "items": [
+                {
+                  "id": "0PSFirst",
+                  "apiName": "First_Perms",
+                  "type": "PermissionSet"
+                },
+                {
+                  "id": "0PSSecond",
+                  "apiName": "Second_Perms",
+                  "type": "PermissionSet"
+                }
+              ]
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 1 user: 1 changed, 0 unchanged, 0 failed.\n\nUsername:partial-restore@example.com (005xx0000000600AAA): planned\n  action: Would assign 2 permission sets.\n    · First_Perms\n    · Second_Perms",
+    "csv": "userKey,userId,userName,username,status,action,category,name,error\nUsername:partial-restore@example.com,005xx0000000600AAA,,partial-restore@example.com,planned,wouldAssignPermissionSet,PermissionSet,First_Perms,\nUsername:partial-restore@example.com,005xx0000000600AAA,,partial-restore@example.com,planned,wouldAssignPermissionSet,PermissionSet,Second_Perms,"
+  },
+  "applied": {
+    "result": {
+      "summary": {
+        "total": 1,
+        "changed": 0,
+        "unchanged": 0,
+        "failed": 1
+      },
+      "users": [
+        {
+          "key": "Username:partial-restore@example.com",
+          "id": "005xx0000000600AAA",
+          "username": "partial-restore@example.com",
+          "isActive": true,
+          "status": "failed",
+          "actions": [
+            {
+              "key": "assignedPermissionSet",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PSFirst",
+                  "apiName": "First_Perms",
+                  "type": "PermissionSet"
+                }
+              ]
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Second assignment failed"
+          ]
+        }
+      ]
+    },
+    "human": "Processed 1 user: 0 changed, 0 unchanged, 1 failed.\n\nUsername:partial-restore@example.com (005xx0000000600AAA): failed\n  action: Assigned 1 permission sets.\n    · First_Perms\n  error: Second assignment failed",
+    "csv": "userKey,userId,userName,username,status,action,category,name,error\nUsername:partial-restore@example.com,005xx0000000600AAA,,partial-restore@example.com,failed,assignedPermissionSet,PermissionSet,First_Perms,\nUsername:partial-restore@example.com,005xx0000000600AAA,,partial-restore@example.com,failed,,,,Second assignment failed"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('partial-restore@example.com')",
+    "SELECT Id, UserId, IsFrozen FROM UserLogin WHERE UserId IN ('005xx0000000600AAA')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005xx0000000600AAA')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005xx0000000600AAA') AND Group.Type IN ('Regular', 'Queue')",
+    "SELECT Id, AssigneeId, PermissionSetLicenseId, PermissionSetLicense.DeveloperName, PermissionSetLicense.MasterLabel FROM PermissionSetLicenseAssign WHERE AssigneeId IN ('005xx0000000600AAA')",
+    "SELECT Id, Name FROM PermissionSet WHERE Name IN ('First_Perms','Second_Perms')"
+  ],
+  "changes": [
+    {
+      "operation": "create",
+      "sobject": "PermissionSetAssignment",
+      "records": [
+        {
+          "AssigneeId": "005xx0000000600AAA",
+          "PermissionSetId": "0PSFirst"
+        },
+        {
+          "AssigneeId": "005xx0000000600AAA",
+          "PermissionSetId": "0PSSecond"
+        }
+      ],
+      "allOrNone": false
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "verdicts": [
+    {
+      "key": "A001",
+      "conformant": false,
+      "violations": [
+        "profile mismatch: 00eProfileCurrent -> Support Profile",
+        "permissionSets missing: AddPerm",
+        "permissionSets extra (sync): Shared_Perms (Shared Permissions)",
+        "permissionSetGroups missing: AddGroup",
+        "queues missing: AddQueue"
+      ]
+    }
+  ],
+  "human": "Verified 1 users: 0 conformant, 1 non-conformant.\n\nA001: non-conformant\n  - profile mismatch: 00eProfileCurrent -> Support Profile\n  - permissionSets missing: AddPerm\n  - permissionSets extra (sync): Shared_Perms (Shared Permissions)\n  - permissionSetGroups missing: AddGroup\n  - queues missing: AddQueue",
+  "csv": "key,conformant,violations\nA001,false,profile mismatch: 00eProfileCurrent -> Support Profile; permissionSets missing: AddPerm; permissionSets extra (sync): Shared_Perms (Shared Permissions); permissionSetGroups missing: AddGroup; queues missing: AddQueue",
+  "queries": [
+    "SELECT Id, Name FROM Profile WHERE Name IN ('Support Profile')",
+    "SELECT Id, DeveloperName, Name FROM UserRole WHERE DeveloperName IN ('SupportRole') OR Name IN ('SupportRole')",
+    "SELECT Id, Name, Label FROM PermissionSet WHERE Name IN ('KeepPerm','AddPerm')",
+    "SELECT Id, DeveloperName, MasterLabel FROM PermissionSetGroup WHERE DeveloperName IN ('AddGroup')",
+    "SELECT Id, DeveloperName, Name FROM Group WHERE DeveloperName IN ('KeepPublic') AND Type = 'Regular'",
+    "SELECT Id, DeveloperName, Name FROM Group WHERE DeveloperName IN ('KeepQueue','AddQueue') AND Type = 'Queue'",
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name, FederationIdentifier FROM User WHERE FederationIdentifier IN ('A001')",
+    "SELECT Id, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Id IN ('005User00000001')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005User00000001')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005User00000001') AND Group.Type IN ('Regular', 'Queue')"
+  ],
+  "changes": []
+}

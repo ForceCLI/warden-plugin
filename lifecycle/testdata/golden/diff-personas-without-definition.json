@@ -1,0 +1,9 @@
+{
+  "error": {
+    "name": "DefinitionError",
+    "code": "errorPersonasWithoutDefinition",
+    "message": "User \"A001\" lists personas but no --personas-def was supplied."
+  },
+  "queries": [],
+  "changes": []
+}

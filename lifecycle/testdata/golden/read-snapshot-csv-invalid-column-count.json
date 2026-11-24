@@ -1,0 +1,9 @@
+{
+  "error": {
+    "name": "LifecycleError",
+    "code": "errorInvalidSnapshot",
+    "message": "Snapshot CSV testdata/files/invalid-column-count.csv:1 must contain 15 columns in the snapshot format."
+  },
+  "queries": [],
+  "changes": []
+}

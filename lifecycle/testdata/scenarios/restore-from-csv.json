@@ -1,0 +1,73 @@
+{
+	"source": "written for this port",
+	"command": "restore",
+	"options": {
+		"snapshotPath": "testdata/files/snapshot.csv"
+	},
+	"queries": [
+		{
+			"contains": "FROM User WHERE Username IN",
+			"records": [
+				{
+					"Id": "005a2",
+					"IsActive": true,
+					"Name": "User, A",
+					"Username": "a@example.com",
+					"Email": "other@mail.example.com"
+				},
+				{
+					"Id": "005b2",
+					"IsActive": true,
+					"Name": "B",
+					"Username": "b@example.com"
+				}
+			]
+		},
+		{
+			"contains": "FROM UserLogin",
+			"records": [
+				{
+					"Id": "0LLb2",
+					"UserId": "005b2",
+					"IsFrozen": false
+				}
+			]
+		},
+		{
+			"contains": "FROM GroupMember",
+			"records": [
+				{
+					"Id": "0GMz",
+					"GroupId": "00GZeta",
+					"UserOrGroupId": "005a2",
+					"Group": {
+						"Type": "Regular"
+					}
+				}
+			]
+		},
+		{
+			"contains": "Type = 'Queue'",
+			"records": [
+				{
+					"Id": "00GZeta",
+					"DeveloperName": "Zeta"
+				},
+				{
+					"Id": "00GAlpha",
+					"DeveloperName": "Alpha"
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSet WHERE Name IN",
+			"records": [
+				{
+					"Id": "0PSf",
+					"Name": "=Formula_Perms"
+				}
+			]
+		}
+	],
+	"apply": true
+}

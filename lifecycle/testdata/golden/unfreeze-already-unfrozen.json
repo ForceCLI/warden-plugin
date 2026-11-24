@@ -1,0 +1,318 @@
+{
+  "plan": {
+    "direction": "unfreeze",
+    "users": [
+      {
+        "key": "Username:missing@example.com",
+        "status": "failed",
+        "actions": [],
+        "skipped": [],
+        "warnings": [],
+        "errors": [
+          "Username=\"missing@example.com\" matched no user"
+        ]
+      },
+      {
+        "key": "Username:nomatch@example.com",
+        "status": "failed",
+        "actions": [],
+        "skipped": [],
+        "warnings": [],
+        "errors": [
+          "Username=\"nomatch@example.com\" matched no user"
+        ]
+      },
+      {
+        "key": "Username:frozen@example.com",
+        "id": "005A",
+        "name": "Already Frozen",
+        "username": "frozen@example.com",
+        "isActive": true,
+        "isFrozen": true,
+        "status": "planned",
+        "actions": [
+          {
+            "key": "wouldUnfreeze"
+          }
+        ],
+        "skipped": [],
+        "warnings": [],
+        "errors": []
+      },
+      {
+        "key": "Username:nologin@example.com",
+        "id": "005B",
+        "name": "No Login",
+        "username": "nologin@example.com",
+        "isActive": false,
+        "status": "unchanged",
+        "actions": [],
+        "skipped": [],
+        "warnings": [
+          "No UserLogin row was found for this user."
+        ],
+        "errors": []
+      },
+      {
+        "key": "Username:first@example.com",
+        "id": "005C",
+        "name": "First User",
+        "username": "first@example.com",
+        "isActive": true,
+        "isFrozen": false,
+        "status": "unchanged",
+        "actions": [
+          {
+            "key": "alreadyUnfrozen"
+          }
+        ],
+        "skipped": [],
+        "warnings": [],
+        "errors": []
+      },
+      {
+        "key": "Username:second@example.com",
+        "id": "005D",
+        "name": "Second User",
+        "username": "second@example.com",
+        "isActive": true,
+        "isFrozen": false,
+        "status": "unchanged",
+        "actions": [
+          {
+            "key": "alreadyUnfrozen"
+          }
+        ],
+        "skipped": [],
+        "warnings": [],
+        "errors": []
+      }
+    ],
+    "updates": [
+      {
+        "resultIndex": 2,
+        "row": {
+          "Id": "0LLA",
+          "IsFrozen": false
+        },
+        "actionKey": "unfrozen"
+      }
+    ],
+    "warnings": []
+  },
+  "preview": {
+    "result": {
+      "summary": {
+        "total": 6,
+        "changed": 1,
+        "unchanged": 3,
+        "failed": 2
+      },
+      "users": [
+        {
+          "key": "Username:missing@example.com",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Username=\"missing@example.com\" matched no user"
+          ]
+        },
+        {
+          "key": "Username:nomatch@example.com",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Username=\"nomatch@example.com\" matched no user"
+          ]
+        },
+        {
+          "key": "Username:frozen@example.com",
+          "id": "005A",
+          "name": "Already Frozen",
+          "username": "frozen@example.com",
+          "isActive": true,
+          "isFrozen": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldUnfreeze"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        {
+          "key": "Username:nologin@example.com",
+          "id": "005B",
+          "name": "No Login",
+          "username": "nologin@example.com",
+          "isActive": false,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [
+            "No UserLogin row was found for this user."
+          ],
+          "errors": []
+        },
+        {
+          "key": "Username:first@example.com",
+          "id": "005C",
+          "name": "First User",
+          "username": "first@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "unchanged",
+          "actions": [
+            {
+              "key": "alreadyUnfrozen"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        {
+          "key": "Username:second@example.com",
+          "id": "005D",
+          "name": "Second User",
+          "username": "second@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "unchanged",
+          "actions": [
+            {
+              "key": "alreadyUnfrozen"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 6 users: 1 changed, 3 unchanged, 2 failed.\n\nUsername:missing@example.com: failed\n  error: Username=\"missing@example.com\" matched no user\n\nUsername:nomatch@example.com: failed\n  error: Username=\"nomatch@example.com\" matched no user\n\nAlready Frozen <frozen@example.com> · 005A\n  matched Username = frozen@example.com · was frozen\n  action: Would unfreeze.\n\nNo Login <nologin@example.com> · 005B\n  matched Username = nologin@example.com · was inactive\n  warning: No UserLogin row was found for this user.\n\nFirst User <first@example.com> · 005C\n  matched Username = first@example.com · was active\n  action: Already unfrozen.\n\nSecond User <second@example.com> · 005D\n  matched Username = second@example.com · was active\n  action: Already unfrozen.",
+    "csv": "userKey,userId,userName,username,wasFrozen,status,action,error\nUsername:missing@example.com,,,,,failed,,\"Username=\"\"missing@example.com\"\" matched no user\"\nUsername:nomatch@example.com,,,,,failed,,\"Username=\"\"nomatch@example.com\"\" matched no user\"\nUsername:frozen@example.com,005A,Already Frozen,frozen@example.com,true,planned,wouldUnfreeze,\nUsername:nologin@example.com,005B,No Login,nologin@example.com,,unchanged,,\nUsername:first@example.com,005C,First User,first@example.com,false,unchanged,alreadyUnfrozen,\nUsername:second@example.com,005D,Second User,second@example.com,false,unchanged,alreadyUnfrozen,"
+  },
+  "applied": {
+    "result": {
+      "summary": {
+        "total": 6,
+        "changed": 1,
+        "unchanged": 3,
+        "failed": 2
+      },
+      "users": [
+        {
+          "key": "Username:missing@example.com",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Username=\"missing@example.com\" matched no user"
+          ]
+        },
+        {
+          "key": "Username:nomatch@example.com",
+          "status": "failed",
+          "actions": [],
+          "skipped": [],
+          "warnings": [],
+          "errors": [
+            "Username=\"nomatch@example.com\" matched no user"
+          ]
+        },
+        {
+          "key": "Username:frozen@example.com",
+          "id": "005A",
+          "name": "Already Frozen",
+          "username": "frozen@example.com",
+          "isActive": true,
+          "isFrozen": true,
+          "status": "changed",
+          "actions": [
+            {
+              "key": "unfrozen"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        {
+          "key": "Username:nologin@example.com",
+          "id": "005B",
+          "name": "No Login",
+          "username": "nologin@example.com",
+          "isActive": false,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [
+            "No UserLogin row was found for this user."
+          ],
+          "errors": []
+        },
+        {
+          "key": "Username:first@example.com",
+          "id": "005C",
+          "name": "First User",
+          "username": "first@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "unchanged",
+          "actions": [
+            {
+              "key": "alreadyUnfrozen"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        {
+          "key": "Username:second@example.com",
+          "id": "005D",
+          "name": "Second User",
+          "username": "second@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "unchanged",
+          "actions": [
+            {
+              "key": "alreadyUnfrozen"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 6 users: 1 changed, 3 unchanged, 2 failed.\n\nUsername:missing@example.com: failed\n  error: Username=\"missing@example.com\" matched no user\n\nUsername:nomatch@example.com: failed\n  error: Username=\"nomatch@example.com\" matched no user\n\nAlready Frozen <frozen@example.com> · 005A\n  matched Username = frozen@example.com · was frozen\n  action: Unfroze.\n\nNo Login <nologin@example.com> · 005B\n  matched Username = nologin@example.com · was inactive\n  warning: No UserLogin row was found for this user.\n\nFirst User <first@example.com> · 005C\n  matched Username = first@example.com · was active\n  action: Already unfrozen.\n\nSecond User <second@example.com> · 005D\n  matched Username = second@example.com · was active\n  action: Already unfrozen.",
+    "csv": "userKey,userId,userName,username,wasFrozen,status,action,error\nUsername:missing@example.com,,,,,failed,,\"Username=\"\"missing@example.com\"\" matched no user\"\nUsername:nomatch@example.com,,,,,failed,,\"Username=\"\"nomatch@example.com\"\" matched no user\"\nUsername:frozen@example.com,005A,Already Frozen,frozen@example.com,true,changed,unfrozen,\nUsername:nologin@example.com,005B,No Login,nologin@example.com,,unchanged,,\nUsername:first@example.com,005C,First User,first@example.com,false,unchanged,alreadyUnfrozen,\nUsername:second@example.com,005D,Second User,second@example.com,false,unchanged,alreadyUnfrozen,"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('frozen@example.com','nologin@example.com','missing@example.com','first@example.com','second@example.com','nomatch@example.com')",
+    "SELECT Id, UserId, IsFrozen FROM UserLogin WHERE UserId IN ('005A','005B','005C','005D')"
+  ],
+  "changes": [
+    {
+      "operation": "update",
+      "sobject": "UserLogin",
+      "records": [
+        {
+          "Id": "0LLA",
+          "IsFrozen": false
+        }
+      ],
+      "allOrNone": false
+    }
+  ]
+}

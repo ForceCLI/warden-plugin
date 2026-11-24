@@ -1,0 +1,148 @@
+{
+  "plan": {
+    "states": [
+      {
+        "target": {
+          "key": "Username:gone@example.com",
+          "Id": "005gone",
+          "IsActive": false,
+          "name": "Gone User",
+          "username": "gone@example.com",
+          "field": "Username",
+          "value": "gone@example.com",
+          "order": 0
+        },
+        "result": {
+          "key": "Username:gone@example.com",
+          "id": "005gone",
+          "name": "Gone User",
+          "username": "gone@example.com",
+          "isActive": false,
+          "isFrozen": true,
+          "status": "unchanged",
+          "actions": [
+            {
+              "key": "alreadyFrozen"
+            },
+            {
+              "key": "alreadyInactive"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        },
+        "steps": [],
+        "hasDml": false
+      }
+    ],
+    "errors": [],
+    "preview": {
+      "summary": {
+        "total": 1,
+        "changed": 0,
+        "unchanged": 1,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:gone@example.com",
+          "id": "005gone",
+          "name": "Gone User",
+          "username": "gone@example.com",
+          "isActive": false,
+          "isFrozen": true,
+          "status": "unchanged",
+          "actions": [
+            {
+              "key": "alreadyFrozen"
+            },
+            {
+              "key": "alreadyInactive"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "warnings": []
+  },
+  "preview": {
+    "result": {
+      "summary": {
+        "total": 1,
+        "changed": 0,
+        "unchanged": 1,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:gone@example.com",
+          "id": "005gone",
+          "name": "Gone User",
+          "username": "gone@example.com",
+          "isActive": false,
+          "isFrozen": true,
+          "status": "unchanged",
+          "actions": [
+            {
+              "key": "alreadyFrozen"
+            },
+            {
+              "key": "alreadyInactive"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 1 user: 0 changed, 1 unchanged, 0 failed.\n\nGone User <gone@example.com> · 005gone\n  matched Username = gone@example.com · was frozen\n  action: Already frozen.\n  action: Already inactive.",
+    "csv": "userKey,userId,userName,username,status,action,category,itemId,itemApiName,error\nUsername:gone@example.com,005gone,Gone User,gone@example.com,unchanged,alreadyFrozen,,,,\nUsername:gone@example.com,005gone,Gone User,gone@example.com,unchanged,alreadyInactive,,,,"
+  },
+  "applied": {
+    "result": {
+      "summary": {
+        "total": 1,
+        "changed": 0,
+        "unchanged": 1,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:gone@example.com",
+          "id": "005gone",
+          "name": "Gone User",
+          "username": "gone@example.com",
+          "isActive": false,
+          "isFrozen": true,
+          "status": "unchanged",
+          "actions": [
+            {
+              "key": "alreadyFrozen"
+            },
+            {
+              "key": "alreadyInactive"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 1 user: 0 changed, 1 unchanged, 0 failed.\n\nGone User <gone@example.com> · 005gone\n  matched Username = gone@example.com · was frozen\n  action: Already frozen.\n  action: Already inactive.",
+    "csv": "userKey,userId,userName,username,status,action,category,itemId,itemApiName,error\nUsername:gone@example.com,005gone,Gone User,gone@example.com,unchanged,alreadyFrozen,,,,\nUsername:gone@example.com,005gone,Gone User,gone@example.com,unchanged,alreadyInactive,,,,"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('gone@example.com')",
+    "SELECT Id, UserId, IsFrozen FROM UserLogin WHERE UserId IN ('005gone')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005gone')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005gone') AND Group.Type IN ('Regular', 'Queue')",
+    "SELECT Id, AssigneeId, PermissionSetLicenseId, PermissionSetLicense.DeveloperName, PermissionSetLicense.MasterLabel FROM PermissionSetLicenseAssign WHERE AssigneeId IN ('005gone')"
+  ],
+  "changes": []
+}

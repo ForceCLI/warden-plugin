@@ -1,0 +1,128 @@
+{
+  "result": {
+    "summary": {
+      "total": 1,
+      "compared": 1,
+      "wouldCreate": 0,
+      "failed": 0,
+      "changed": 1
+    },
+    "users": [
+      {
+        "key": "plain@example.com",
+        "id": "005Plain0000001",
+        "userName": "Plain User",
+        "username": "plain@example.com",
+        "personas": [],
+        "matchedBy": "Username",
+        "status": "compared",
+        "profile": {
+          "current": "00eProfileOld",
+          "intended": "00eProfileTarget1",
+          "matches": false
+        },
+        "role": {
+          "current": null,
+          "intended": "00ERoleTarget001",
+          "matches": false
+        },
+        "assignments": {
+          "permissionSets": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": [],
+            "mode": "additive"
+          },
+          "permissionSetGroups": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": [],
+            "mode": "additive"
+          },
+          "publicGroups": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": [],
+            "mode": "additive"
+          },
+          "queues": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": [],
+            "mode": "additive"
+          }
+        },
+        "errors": []
+      }
+    ],
+    "rows": [
+      {
+        "userKey": "plain@example.com",
+        "userId": "005Plain0000001",
+        "userName": "Plain User",
+        "username": "plain@example.com",
+        "category": "profile",
+        "kind": "profile",
+        "value": "00eProfileOld -> 00eProfileTarget1",
+        "valueBefore": "00eProfileOld",
+        "valueAfter": "00eProfileTarget1"
+      },
+      {
+        "userKey": "plain@example.com",
+        "userId": "005Plain0000001",
+        "userName": "Plain User",
+        "username": "plain@example.com",
+        "category": "role",
+        "kind": "role",
+        "value": " -> 00ERoleTarget001",
+        "valueBefore": "",
+        "valueAfter": "00ERoleTarget001"
+      }
+    ],
+    "warnings": [],
+    "labels": {
+      "00eProfileTarget1": {
+        "id": "00eProfileTarget1",
+        "apiName": "Support Profile",
+        "label": "Support Profile",
+        "type": "Profile"
+      },
+      "00ERoleTarget001": {
+        "id": "00ERoleTarget001",
+        "apiName": "SupportRole",
+        "label": "Support Role",
+        "type": "UserRole"
+      }
+    }
+  },
+  "human": "Compared 1 users: 1 with drift, 0 failed.\n\nplain@example.com (005Plain0000001): compared\n  profile: 00eProfileOld -> Support Profile\n  role:  -> SupportRole (Support Role)",
+  "humanVerbose": "Compared 1 users: 1 with drift, 0 failed.\n\nplain@example.com (005Plain0000001): compared\n  profile: 00eProfileOld -> Support Profile\n  role:  -> SupportRole (Support Role)",
+  "csv": "userKey,userId,category,kind,value,mode,userName,username,valueApiName,valueLabel,valueType,valueBefore,valueAfter\nplain@example.com,005Plain0000001,profile,profile,00eProfileOld -> 00eProfileTarget1,,Plain User,plain@example.com,Support Profile,Support Profile,Profile,00eProfileOld,00eProfileTarget1\nplain@example.com,005Plain0000001,role,role, -> 00ERoleTarget001,,Plain User,plain@example.com,SupportRole,Support Role,UserRole,,00ERoleTarget001",
+  "verified": {
+    "verdicts": [
+      {
+        "key": "plain@example.com",
+        "conformant": false,
+        "violations": [
+          "profile mismatch: 00eProfileOld -> Support Profile",
+          "role mismatch:  -> SupportRole (Support Role)"
+        ]
+      }
+    ],
+    "human": "Verified 1 users: 0 conformant, 1 non-conformant.\n\nplain@example.com: non-conformant\n  - profile mismatch: 00eProfileOld -> Support Profile\n  - role mismatch:  -> SupportRole (Support Role)",
+    "csv": "key,conformant,violations\nplain@example.com,false,profile mismatch: 00eProfileOld -> Support Profile; role mismatch:  -> SupportRole (Support Role)"
+  },
+  "queries": [
+    "SELECT Id, Name FROM Profile WHERE Name IN ('Support Profile')",
+    "SELECT Id, DeveloperName, Name FROM UserRole WHERE DeveloperName IN ('SupportRole') OR Name IN ('SupportRole')",
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('plain@example.com')",
+    "SELECT Id, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Id IN ('005Plain0000001')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005Plain0000001')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005Plain0000001') AND Group.Type IN ('Regular', 'Queue')"
+  ],
+  "changes": []
+}

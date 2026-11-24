@@ -1,0 +1,11 @@
+{
+	"users": [
+		{
+			"personas": [
+				"support"
+			],
+			"FederationIdentifier": "A001",
+			"LastName": "User"
+		}
+	]
+}

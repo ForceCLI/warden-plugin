@@ -1,0 +1,8 @@
+{
+  "error": {
+    "name": "Error",
+    "message": "Both user and against are required in user mode."
+  },
+  "queries": [],
+  "changes": []
+}

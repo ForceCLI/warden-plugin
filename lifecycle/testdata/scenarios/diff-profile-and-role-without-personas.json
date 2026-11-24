@@ -1,0 +1,95 @@
+{
+	"source": "diff.test.ts: supports users-def without personas-def for profile and role drift",
+	"command": "diff",
+	"options": {
+		"mode": "persona",
+		"usersDoc": {
+			"users": [
+				{
+					"match": "Username",
+					"Username": "plain@example.com",
+					"profile": "Support Profile",
+					"role": "SupportRole"
+				}
+			]
+		}
+	},
+	"describe": [
+		{
+			"name": "Username",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "FederationIdentifier",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": true
+		},
+		{
+			"name": "ProfileId",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "UserRoleId",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "LastName",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		},
+		{
+			"name": "FirstName",
+			"createable": true,
+			"updateable": true,
+			"filterable": true,
+			"externalId": false
+		}
+	],
+	"queries": [
+		{
+			"contains": "FROM Profile",
+			"records": [
+				{
+					"Id": "00eProfileTarget1",
+					"Name": "Support Profile"
+				}
+			]
+		},
+		{
+			"contains": "FROM UserRole",
+			"records": [
+				{
+					"Id": "00ERoleTarget001",
+					"DeveloperName": "SupportRole",
+					"Name": "Support Role"
+				}
+			]
+		},
+		{
+			"contains": "FROM User WHERE Username IN",
+			"records": [
+				{
+					"Id": "005Plain0000001",
+					"IsActive": true,
+					"Name": "Plain User",
+					"Username": "plain@example.com",
+					"ProfileId": "00eProfileOld",
+					"UserRoleId": null
+				}
+			]
+		}
+	]
+}

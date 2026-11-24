@@ -1,0 +1,71 @@
+{
+	"source": "lifecycle.test.ts: reports only successful strip items when delete DML is partially successful",
+	"command": "strip",
+	"options": {
+		"user": "username:partial-strip@example.com",
+		"noFreeze": true,
+		"noDeactivate": true,
+		"keepLicenses": true,
+		"keepPublicGroups": true,
+		"keepQueues": true
+	},
+	"queries": [
+		{
+			"contains": "FROM User WHERE Username IN ('partial-strip@example.com')",
+			"records": [
+				{
+					"Id": "005xx0000000700AAA",
+					"IsActive": true,
+					"Username": "partial-strip@example.com"
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSetAssignment",
+			"records": [
+				{
+					"Id": "0PSAFirst",
+					"AssigneeId": "005xx0000000700AAA",
+					"PermissionSetId": "0PSFirst",
+					"PermissionSet": {
+						"IsOwnedByProfile": false,
+						"Name": "First_Perms",
+						"Label": "First Permissions"
+					}
+				},
+				{
+					"Id": "0PSASecond",
+					"AssigneeId": "005xx0000000700AAA",
+					"PermissionSetId": "0PSSecond",
+					"PermissionSet": {
+						"IsOwnedByProfile": false,
+						"Name": "Second_Perms",
+						"Label": "Second Permissions"
+					}
+				}
+			]
+		}
+	],
+	"saves": [
+		{
+			"operation": "delete",
+			"sobject": "PermissionSetAssignment",
+			"results": [
+				{
+					"success": true,
+					"id": "0PSAFirst",
+					"errors": []
+				},
+				{
+					"success": false,
+					"errors": [
+						{
+							"message": "Second removal failed"
+						}
+					]
+				}
+			]
+		}
+	],
+	"apply": true
+}

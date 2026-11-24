@@ -1,0 +1,786 @@
+{
+  "result": {
+    "summary": {
+      "total": 7,
+      "compared": 2,
+      "wouldCreate": 1,
+      "failed": 4,
+      "changed": 2
+    },
+    "users": [
+      {
+        "key": "new.hire@example.com",
+        "userName": "New Hire",
+        "username": "new.hire@example.com",
+        "personas": [
+          "support"
+        ],
+        "matchedBy": "Username",
+        "status": "would-create",
+        "profile": {
+          "current": null,
+          "intended": "00eProfileTarget1",
+          "matches": false
+        },
+        "role": {
+          "current": null,
+          "intended": "00ERoleTarget001",
+          "matches": false
+        },
+        "assignments": {
+          "permissionSets": {
+            "adds": [
+              "0PSPermKeep0001",
+              "0PSPermAdd0002"
+            ],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": [],
+            "mode": "sync"
+          },
+          "permissionSetGroups": {
+            "adds": [
+              "0PGGroupAdd0001"
+            ],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": [],
+            "mode": "additive"
+          },
+          "publicGroups": {
+            "adds": [
+              "00GPublicKeep01"
+            ],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": [],
+            "mode": "sync"
+          },
+          "queues": {
+            "adds": [
+              "00GQueueKeep001",
+              "00GQueueAdd0002"
+            ],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": [],
+            "mode": "additive"
+          }
+        },
+        "errors": []
+      },
+      {
+        "key": "nopersonas@example.com",
+        "userName": "NoPersonas",
+        "username": "nopersonas@example.com",
+        "personas": [],
+        "matchedBy": null,
+        "status": "failed",
+        "profile": {
+          "matches": true
+        },
+        "role": {
+          "matches": true
+        },
+        "assignments": {
+          "permissionSets": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          },
+          "permissionSetGroups": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          },
+          "publicGroups": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          },
+          "queues": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          }
+        },
+        "errors": [
+          "errorNoPersonas"
+        ]
+      },
+      {
+        "key": "A404",
+        "userName": "Unknown",
+        "personas": [
+          "unknown"
+        ],
+        "matchedBy": null,
+        "status": "failed",
+        "profile": {
+          "matches": true
+        },
+        "role": {
+          "matches": true
+        },
+        "assignments": {
+          "permissionSets": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          },
+          "permissionSetGroups": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          },
+          "publicGroups": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          },
+          "queues": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          }
+        },
+        "errors": [
+          "errorUnknownPersona"
+        ]
+      },
+      {
+        "key": "A002",
+        "id": "005Sales0000001",
+        "userName": "Sales User",
+        "username": "sales@example.com",
+        "personas": [
+          "sales"
+        ],
+        "matchedBy": "FederationIdentifier",
+        "status": "failed",
+        "profile": {
+          "current": null,
+          "intended": null,
+          "matches": true
+        },
+        "role": {
+          "current": null,
+          "intended": null,
+          "matches": true
+        },
+        "assignments": {
+          "permissionSets": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          },
+          "permissionSetGroups": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          },
+          "publicGroups": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          },
+          "queues": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          }
+        },
+        "errors": [
+          "Required Profile reference \"Missing Profile\" was not found."
+        ]
+      },
+      {
+        "key": "A001",
+        "id": "005User00000001",
+        "userName": "Existing User",
+        "username": "existing@example.com",
+        "personas": [
+          "support"
+        ],
+        "matchedBy": "FederationIdentifier",
+        "status": "compared",
+        "profile": {
+          "current": "00eProfileCurrent",
+          "intended": "00eProfileTarget1",
+          "matches": false
+        },
+        "role": {
+          "current": "00ERoleTarget001",
+          "intended": "00ERoleTarget001",
+          "matches": true
+        },
+        "assignments": {
+          "permissionSets": {
+            "adds": [
+              "0PSPermAdd0002"
+            ],
+            "removes": [
+              "0PSPermRemove"
+            ],
+            "inBoth": [
+              "0PSPermKeep0001"
+            ],
+            "onlyInOrg": [],
+            "mode": "sync"
+          },
+          "permissionSetGroups": {
+            "adds": [
+              "0PGGroupAdd0001"
+            ],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": [],
+            "mode": "additive"
+          },
+          "publicGroups": {
+            "adds": [],
+            "removes": [
+              "00GPublicExtra"
+            ],
+            "inBoth": [
+              "00GPublicKeep01"
+            ],
+            "onlyInOrg": [],
+            "mode": "sync"
+          },
+          "queues": {
+            "adds": [
+              "00GQueueKeep001",
+              "00GQueueAdd0002"
+            ],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": [
+              "00GQueueExtra"
+            ],
+            "mode": "additive"
+          }
+        },
+        "errors": []
+      },
+      {
+        "key": "DUP1",
+        "personas": [
+          "support"
+        ],
+        "matchedBy": "FederationIdentifier",
+        "status": "failed",
+        "profile": {
+          "current": null,
+          "intended": "00eProfileTarget1",
+          "matches": false
+        },
+        "role": {
+          "current": null,
+          "intended": "00ERoleTarget001",
+          "matches": false
+        },
+        "assignments": {
+          "permissionSets": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          },
+          "permissionSetGroups": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          },
+          "publicGroups": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          },
+          "queues": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": []
+          }
+        },
+        "errors": [
+          "Multiple users matched FederationIdentifier=\"DUP1\"."
+        ]
+      },
+      {
+        "key": "ok@example.com",
+        "id": "005Ok0000000001",
+        "userName": "Ok User",
+        "username": "ok@example.com",
+        "personas": [
+          "conformant"
+        ],
+        "matchedBy": "Username",
+        "status": "compared",
+        "profile": {
+          "current": "00eProfileCurrent",
+          "intended": null,
+          "matches": true
+        },
+        "role": {
+          "current": null,
+          "intended": null,
+          "matches": true
+        },
+        "assignments": {
+          "permissionSets": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [
+              "0PSPermKeep0001"
+            ],
+            "onlyInOrg": [],
+            "mode": "additive"
+          },
+          "permissionSetGroups": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": [],
+            "mode": "additive"
+          },
+          "publicGroups": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": [],
+            "mode": "additive"
+          },
+          "queues": {
+            "adds": [],
+            "removes": [],
+            "inBoth": [],
+            "onlyInOrg": [],
+            "mode": "additive"
+          }
+        },
+        "errors": []
+      }
+    ],
+    "rows": [
+      {
+        "userKey": "new.hire@example.com",
+        "userId": "",
+        "userName": "New Hire",
+        "username": "new.hire@example.com",
+        "category": "permissionSets",
+        "kind": "add",
+        "value": "0PSPermKeep0001",
+        "mode": "sync"
+      },
+      {
+        "userKey": "new.hire@example.com",
+        "userId": "",
+        "userName": "New Hire",
+        "username": "new.hire@example.com",
+        "category": "permissionSets",
+        "kind": "add",
+        "value": "0PSPermAdd0002",
+        "mode": "sync"
+      },
+      {
+        "userKey": "new.hire@example.com",
+        "userId": "",
+        "userName": "New Hire",
+        "username": "new.hire@example.com",
+        "category": "permissionSetGroups",
+        "kind": "add",
+        "value": "0PGGroupAdd0001",
+        "mode": "additive"
+      },
+      {
+        "userKey": "new.hire@example.com",
+        "userId": "",
+        "userName": "New Hire",
+        "username": "new.hire@example.com",
+        "category": "publicGroups",
+        "kind": "add",
+        "value": "00GPublicKeep01",
+        "mode": "sync"
+      },
+      {
+        "userKey": "new.hire@example.com",
+        "userId": "",
+        "userName": "New Hire",
+        "username": "new.hire@example.com",
+        "category": "queues",
+        "kind": "add",
+        "value": "00GQueueKeep001",
+        "mode": "additive"
+      },
+      {
+        "userKey": "new.hire@example.com",
+        "userId": "",
+        "userName": "New Hire",
+        "username": "new.hire@example.com",
+        "category": "queues",
+        "kind": "add",
+        "value": "00GQueueAdd0002",
+        "mode": "additive"
+      },
+      {
+        "userKey": "new.hire@example.com",
+        "userId": "",
+        "userName": "New Hire",
+        "username": "new.hire@example.com",
+        "category": "profile",
+        "kind": "profile",
+        "value": " -> 00eProfileTarget1",
+        "valueBefore": "",
+        "valueAfter": "00eProfileTarget1"
+      },
+      {
+        "userKey": "new.hire@example.com",
+        "userId": "",
+        "userName": "New Hire",
+        "username": "new.hire@example.com",
+        "category": "role",
+        "kind": "role",
+        "value": " -> 00ERoleTarget001",
+        "valueBefore": "",
+        "valueAfter": "00ERoleTarget001"
+      },
+      {
+        "userName": "NoPersonas",
+        "username": "nopersonas@example.com",
+        "userKey": "nopersonas@example.com",
+        "userId": "",
+        "category": "error",
+        "kind": "error",
+        "value": "errorNoPersonas"
+      },
+      {
+        "userName": "Unknown",
+        "username": "",
+        "userKey": "A404",
+        "userId": "",
+        "category": "error",
+        "kind": "error",
+        "value": "errorUnknownPersona"
+      },
+      {
+        "userName": "Sales User",
+        "username": "sales@example.com",
+        "userKey": "A002",
+        "userId": "005Sales0000001",
+        "category": "error",
+        "kind": "error",
+        "value": "Required Profile reference \"Missing Profile\" was not found."
+      },
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "Existing User",
+        "username": "existing@example.com",
+        "category": "permissionSets",
+        "kind": "add",
+        "value": "0PSPermAdd0002",
+        "mode": "sync"
+      },
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "Existing User",
+        "username": "existing@example.com",
+        "category": "permissionSets",
+        "kind": "remove",
+        "value": "0PSPermRemove",
+        "mode": "sync"
+      },
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "Existing User",
+        "username": "existing@example.com",
+        "category": "permissionSets",
+        "kind": "inBoth",
+        "value": "0PSPermKeep0001",
+        "mode": "sync"
+      },
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "Existing User",
+        "username": "existing@example.com",
+        "category": "permissionSetGroups",
+        "kind": "add",
+        "value": "0PGGroupAdd0001",
+        "mode": "additive"
+      },
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "Existing User",
+        "username": "existing@example.com",
+        "category": "publicGroups",
+        "kind": "remove",
+        "value": "00GPublicExtra",
+        "mode": "sync"
+      },
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "Existing User",
+        "username": "existing@example.com",
+        "category": "publicGroups",
+        "kind": "inBoth",
+        "value": "00GPublicKeep01",
+        "mode": "sync"
+      },
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "Existing User",
+        "username": "existing@example.com",
+        "category": "queues",
+        "kind": "add",
+        "value": "00GQueueKeep001",
+        "mode": "additive"
+      },
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "Existing User",
+        "username": "existing@example.com",
+        "category": "queues",
+        "kind": "add",
+        "value": "00GQueueAdd0002",
+        "mode": "additive"
+      },
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "Existing User",
+        "username": "existing@example.com",
+        "category": "queues",
+        "kind": "onlyInOrg",
+        "value": "00GQueueExtra",
+        "mode": "additive"
+      },
+      {
+        "userKey": "A001",
+        "userId": "005User00000001",
+        "userName": "Existing User",
+        "username": "existing@example.com",
+        "category": "profile",
+        "kind": "profile",
+        "value": "00eProfileCurrent -> 00eProfileTarget1",
+        "valueBefore": "00eProfileCurrent",
+        "valueAfter": "00eProfileTarget1"
+      },
+      {
+        "userKey": "DUP1",
+        "userId": "",
+        "userName": "",
+        "username": "",
+        "category": "profile",
+        "kind": "profile",
+        "value": " -> 00eProfileTarget1",
+        "valueBefore": "",
+        "valueAfter": "00eProfileTarget1"
+      },
+      {
+        "userKey": "DUP1",
+        "userId": "",
+        "userName": "",
+        "username": "",
+        "category": "role",
+        "kind": "role",
+        "value": " -> 00ERoleTarget001",
+        "valueBefore": "",
+        "valueAfter": "00ERoleTarget001"
+      },
+      {
+        "userName": "",
+        "username": "",
+        "userKey": "DUP1",
+        "userId": "",
+        "category": "error",
+        "kind": "error",
+        "value": "Multiple users matched FederationIdentifier=\"DUP1\"."
+      },
+      {
+        "userKey": "ok@example.com",
+        "userId": "005Ok0000000001",
+        "userName": "Ok User",
+        "username": "ok@example.com",
+        "category": "permissionSets",
+        "kind": "inBoth",
+        "value": "0PSPermKeep0001",
+        "mode": "additive"
+      }
+    ],
+    "warnings": [
+      "Profile reference \"Missing Profile\" was not found.",
+      "PermissionSet reference \"Nonexistent_Perms\" was not found."
+    ],
+    "labels": {
+      "00eProfileTarget1": {
+        "id": "00eProfileTarget1",
+        "apiName": "Support Profile",
+        "label": "Support Profile",
+        "type": "Profile"
+      },
+      "00ERoleTarget001": {
+        "id": "00ERoleTarget001",
+        "apiName": "SupportRole",
+        "label": "Support Role",
+        "type": "UserRole"
+      },
+      "0PSPermKeep0001": {
+        "id": "0PSPermKeep0001",
+        "apiName": "KeepPerm",
+        "label": "Keep Perm",
+        "type": "PermissionSet"
+      },
+      "0PSPermAdd0002": {
+        "id": "0PSPermAdd0002",
+        "apiName": "AddPerm",
+        "label": "Add Perm",
+        "type": "PermissionSet"
+      },
+      "0PGGroupAdd0001": {
+        "id": "0PGGroupAdd0001",
+        "apiName": "AddGroup",
+        "label": "Add Group",
+        "type": "PermissionSetGroup"
+      },
+      "00GPublicKeep01": {
+        "id": "00GPublicKeep01",
+        "apiName": "KeepPublic",
+        "label": "Keep Public",
+        "type": "PublicGroup"
+      },
+      "00GQueueKeep001": {
+        "id": "00GQueueKeep001",
+        "apiName": "KeepQueue",
+        "label": "KeepQueue",
+        "type": "Queue"
+      },
+      "00GQueueAdd0002": {
+        "id": "00GQueueAdd0002",
+        "apiName": "AddQueue",
+        "label": "Add Queue",
+        "type": "Queue"
+      },
+      "0PSPermRemove": {
+        "id": "0PSPermRemove",
+        "apiName": "Shared_Perms",
+        "label": "Shared Permissions",
+        "type": "PermissionSet"
+      },
+      "00GPublicExtra": {
+        "id": "00GPublicExtra",
+        "apiName": "ExtraPublic",
+        "label": "Extra Public",
+        "type": "PublicGroup"
+      },
+      "00GQueueExtra": {
+        "id": "00GQueueExtra",
+        "apiName": "ExtraQueue",
+        "label": "Extra Queue",
+        "type": "Queue"
+      },
+      "00eProfileCurrent": {
+        "id": "00eProfileCurrent",
+        "label": "Current Profile",
+        "type": "Profile"
+      }
+    }
+  },
+  "human": "Compared 7 users: 2 with drift, 4 failed.\nwarning: Profile reference \"Missing Profile\" was not found.\nwarning: PermissionSet reference \"Nonexistent_Perms\" was not found.\n\nnew.hire@example.com: would-create\n  profile:  -> Support Profile\n  role:  -> SupportRole (Support Role)\n  permissionSets (sync):\n    + KeepPerm (Keep Perm)\n    + AddPerm (Add Perm)\n  permissionSetGroups (additive):\n    + AddGroup (Add Group)\n  publicGroups (sync):\n    + KeepPublic (Keep Public)\n  queues (additive):\n    + KeepQueue\n    + AddQueue (Add Queue)\n\nnopersonas@example.com: failed\n  error: errorNoPersonas\n\nA404: failed\n  error: errorUnknownPersona\n\nA002 (005Sales0000001): failed\n  error: Required Profile reference \"Missing Profile\" was not found.\n\nA001 (005User00000001): compared\n  profile: Current Profile -> Support Profile\n  permissionSets (sync):\n    + AddPerm (Add Perm)\n    - Shared_Perms (Shared Permissions)\n  permissionSetGroups (additive):\n    + AddGroup (Add Group)\n  publicGroups (sync):\n    - ExtraPublic (Extra Public)\n  queues (additive):\n    + KeepQueue\n    + AddQueue (Add Queue)\n    extra ExtraQueue (Extra Queue)\n\nDUP1: failed\n  error: Multiple users matched FederationIdentifier=\"DUP1\".\n  profile:  -> Support Profile\n  role:  -> SupportRole (Support Role)\n\nok@example.com (005Ok0000000001): compared\n  permissionSets (additive):",
+  "humanVerbose": "Compared 7 users: 2 with drift, 4 failed.\nwarning: Profile reference \"Missing Profile\" was not found.\nwarning: PermissionSet reference \"Nonexistent_Perms\" was not found.\n\nnew.hire@example.com: would-create\n  profile:  -> Support Profile\n  role:  -> SupportRole (Support Role)\n  permissionSets (sync):\n    + KeepPerm (Keep Perm)\n    + AddPerm (Add Perm)\n  permissionSetGroups (additive):\n    + AddGroup (Add Group)\n  publicGroups (sync):\n    + KeepPublic (Keep Public)\n  queues (additive):\n    + KeepQueue\n    + AddQueue (Add Queue)\n\nnopersonas@example.com: failed\n  error: errorNoPersonas\n\nA404: failed\n  error: errorUnknownPersona\n\nA002 (005Sales0000001): failed\n  error: Required Profile reference \"Missing Profile\" was not found.\n\nA001 (005User00000001): compared\n  profile: Current Profile -> Support Profile\n  permissionSets (sync):\n    + AddPerm (Add Perm)\n    - Shared_Perms (Shared Permissions)\n    = KeepPerm (Keep Perm)\n  permissionSetGroups (additive):\n    + AddGroup (Add Group)\n  publicGroups (sync):\n    - ExtraPublic (Extra Public)\n    = KeepPublic (Keep Public)\n  queues (additive):\n    + KeepQueue\n    + AddQueue (Add Queue)\n    extra ExtraQueue (Extra Queue)\n\nDUP1: failed\n  error: Multiple users matched FederationIdentifier=\"DUP1\".\n  profile:  -> Support Profile\n  role:  -> SupportRole (Support Role)\n\nok@example.com (005Ok0000000001): compared\n  permissionSets (additive):\n    = KeepPerm (Keep Perm)",
+  "csv": "userKey,userId,category,kind,value,mode,userName,username,valueApiName,valueLabel,valueType,valueBefore,valueAfter\nnew.hire@example.com,,permissionSets,add,0PSPermKeep0001,sync,New Hire,new.hire@example.com,KeepPerm,Keep Perm,PermissionSet,,\nnew.hire@example.com,,permissionSets,add,0PSPermAdd0002,sync,New Hire,new.hire@example.com,AddPerm,Add Perm,PermissionSet,,\nnew.hire@example.com,,permissionSetGroups,add,0PGGroupAdd0001,additive,New Hire,new.hire@example.com,AddGroup,Add Group,PermissionSetGroup,,\nnew.hire@example.com,,publicGroups,add,00GPublicKeep01,sync,New Hire,new.hire@example.com,KeepPublic,Keep Public,PublicGroup,,\nnew.hire@example.com,,queues,add,00GQueueKeep001,additive,New Hire,new.hire@example.com,KeepQueue,KeepQueue,Queue,,\nnew.hire@example.com,,queues,add,00GQueueAdd0002,additive,New Hire,new.hire@example.com,AddQueue,Add Queue,Queue,,\nnew.hire@example.com,,profile,profile, -> 00eProfileTarget1,,New Hire,new.hire@example.com,Support Profile,Support Profile,Profile,,00eProfileTarget1\nnew.hire@example.com,,role,role, -> 00ERoleTarget001,,New Hire,new.hire@example.com,SupportRole,Support Role,UserRole,,00ERoleTarget001\nnopersonas@example.com,,error,error,errorNoPersonas,,NoPersonas,nopersonas@example.com,,,,,\nA404,,error,error,errorUnknownPersona,,Unknown,,,,,,\nA002,005Sales0000001,error,error,\"Required Profile reference \"\"Missing Profile\"\" was not found.\",,Sales User,sales@example.com,,,,,\nA001,005User00000001,permissionSets,add,0PSPermAdd0002,sync,Existing User,existing@example.com,AddPerm,Add Perm,PermissionSet,,\nA001,005User00000001,permissionSets,remove,0PSPermRemove,sync,Existing User,existing@example.com,Shared_Perms,Shared Permissions,PermissionSet,,\nA001,005User00000001,permissionSets,inBoth,0PSPermKeep0001,sync,Existing User,existing@example.com,KeepPerm,Keep Perm,PermissionSet,,\nA001,005User00000001,permissionSetGroups,add,0PGGroupAdd0001,additive,Existing User,existing@example.com,AddGroup,Add Group,PermissionSetGroup,,\nA001,005User00000001,publicGroups,remove,00GPublicExtra,sync,Existing User,existing@example.com,ExtraPublic,Extra Public,PublicGroup,,\nA001,005User00000001,publicGroups,inBoth,00GPublicKeep01,sync,Existing User,existing@example.com,KeepPublic,Keep Public,PublicGroup,,\nA001,005User00000001,queues,add,00GQueueKeep001,additive,Existing User,existing@example.com,KeepQueue,KeepQueue,Queue,,\nA001,005User00000001,queues,add,00GQueueAdd0002,additive,Existing User,existing@example.com,AddQueue,Add Queue,Queue,,\nA001,005User00000001,queues,onlyInOrg,00GQueueExtra,additive,Existing User,existing@example.com,ExtraQueue,Extra Queue,Queue,,\nA001,005User00000001,profile,profile,00eProfileCurrent -> 00eProfileTarget1,,Existing User,existing@example.com,Support Profile,Support Profile,Profile,00eProfileCurrent,00eProfileTarget1\nDUP1,,profile,profile, -> 00eProfileTarget1,,,,Support Profile,Support Profile,Profile,,00eProfileTarget1\nDUP1,,role,role, -> 00ERoleTarget001,,,,SupportRole,Support Role,UserRole,,00ERoleTarget001\nDUP1,,error,error,\"Multiple users matched FederationIdentifier=\"\"DUP1\"\".\",,,,,,,,\nok@example.com,005Ok0000000001,permissionSets,inBoth,0PSPermKeep0001,additive,Ok User,ok@example.com,KeepPerm,Keep Perm,PermissionSet,,",
+  "verified": {
+    "verdicts": [
+      {
+        "key": "new.hire@example.com",
+        "conformant": false,
+        "violations": [
+          "user not found"
+        ]
+      },
+      {
+        "key": "nopersonas@example.com",
+        "conformant": false,
+        "violations": [
+          "error: errorNoPersonas"
+        ]
+      },
+      {
+        "key": "A404",
+        "conformant": false,
+        "violations": [
+          "error: errorUnknownPersona"
+        ]
+      },
+      {
+        "key": "A002",
+        "conformant": false,
+        "violations": [
+          "error: Required Profile reference \"Missing Profile\" was not found."
+        ]
+      },
+      {
+        "key": "A001",
+        "conformant": false,
+        "violations": [
+          "profile mismatch: Current Profile -> Support Profile",
+          "permissionSets missing: AddPerm (Add Perm)",
+          "permissionSets extra (sync): Shared_Perms (Shared Permissions)",
+          "permissionSetGroups missing: AddGroup (Add Group)",
+          "publicGroups extra (sync): ExtraPublic (Extra Public)",
+          "queues missing: KeepQueue, AddQueue (Add Queue)"
+        ]
+      },
+      {
+        "key": "DUP1",
+        "conformant": false,
+        "violations": [
+          "error: Multiple users matched FederationIdentifier=\"DUP1\"."
+        ]
+      },
+      {
+        "key": "ok@example.com",
+        "conformant": true,
+        "violations": []
+      }
+    ],
+    "human": "Verified 7 users: 1 conformant, 6 non-conformant.\n\nnew.hire@example.com: non-conformant\n  - user not found\n\nnopersonas@example.com: non-conformant\n  - error: errorNoPersonas\n\nA404: non-conformant\n  - error: errorUnknownPersona\n\nA002: non-conformant\n  - error: Required Profile reference \"Missing Profile\" was not found.\n\nA001: non-conformant\n  - profile mismatch: Current Profile -> Support Profile\n  - permissionSets missing: AddPerm (Add Perm)\n  - permissionSets extra (sync): Shared_Perms (Shared Permissions)\n  - permissionSetGroups missing: AddGroup (Add Group)\n  - publicGroups extra (sync): ExtraPublic (Extra Public)\n  - queues missing: KeepQueue, AddQueue (Add Queue)\n\nDUP1: non-conformant\n  - error: Multiple users matched FederationIdentifier=\"DUP1\".",
+    "csv": "key,conformant,violations\nnew.hire@example.com,false,user not found\nnopersonas@example.com,false,error: errorNoPersonas\nA404,false,error: errorUnknownPersona\nA002,false,\"error: Required Profile reference \"\"Missing Profile\"\" was not found.\"\nA001,false,\"profile mismatch: Current Profile -> Support Profile; permissionSets missing: AddPerm (Add Perm); permissionSets extra (sync): Shared_Perms (Shared Permissions); permissionSetGroups missing: AddGroup (Add Group); publicGroups extra (sync): ExtraPublic (Extra Public); queues missing: KeepQueue, AddQueue (Add Queue)\"\nDUP1,false,\"error: Multiple users matched FederationIdentifier=\"\"DUP1\"\".\"\nok@example.com,true,"
+  },
+  "queries": [
+    "SELECT Id, Name FROM Profile WHERE Name IN ('Support Profile','Missing Profile')",
+    "SELECT Id, DeveloperName, Name FROM UserRole WHERE DeveloperName IN ('SupportRole') OR Name IN ('SupportRole')",
+    "SELECT Id, Name, Label FROM PermissionSet WHERE Name IN ('KeepPerm','AddPerm','Nonexistent_Perms')",
+    "SELECT Id, DeveloperName, MasterLabel FROM PermissionSetGroup WHERE DeveloperName IN ('AddGroup')",
+    "SELECT Id, DeveloperName, Name FROM Group WHERE DeveloperName IN ('KeepPublic') AND Type = 'Regular'",
+    "SELECT Id, DeveloperName, Name FROM Group WHERE DeveloperName IN ('KeepQueue','AddQueue') AND Type = 'Queue'",
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('new.hire@example.com','ok@example.com')",
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name, FederationIdentifier FROM User WHERE FederationIdentifier IN ('A002','A001','DUP1')",
+    "SELECT Id, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Id IN ('005Ok0000000001','005Sales0000001','005User00000001')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005Ok0000000001','005Sales0000001','005User00000001')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005Ok0000000001','005Sales0000001','005User00000001') AND Group.Type IN ('Regular', 'Queue')"
+  ],
+  "changes": []
+}

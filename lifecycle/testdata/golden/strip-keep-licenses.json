@@ -1,0 +1,512 @@
+{
+  "plan": {
+    "states": [
+      {
+        "target": {
+          "key": "Username:strip@example.com",
+          "Id": "005xx0000000003AAA",
+          "IsActive": true,
+          "username": "strip@example.com",
+          "field": "Username",
+          "value": "strip@example.com",
+          "order": 0
+        },
+        "result": {
+          "key": "Username:strip@example.com",
+          "id": "005xx0000000003AAA",
+          "username": "strip@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [
+            {
+              "key": "skippedProfileOwnedPermissionSets",
+              "count": 1
+            },
+            {
+              "key": "skippedPermissionSetLicenses",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PLic1",
+                  "apiName": "SalesConsoleUser",
+                  "label": "Sales Console User",
+                  "type": "PermissionSetLicense"
+                }
+              ]
+            }
+          ],
+          "warnings": [],
+          "errors": []
+        },
+        "steps": [
+          {
+            "kind": "update",
+            "sobject": "UserLogin",
+            "row": {
+              "Id": "0LLxx0000000003AAA",
+              "IsFrozen": true
+            },
+            "actionKey": "frozen"
+          },
+          {
+            "kind": "delete",
+            "sobject": "PermissionSetAssignment",
+            "ids": [
+              "0PSA1",
+              "0PSA4"
+            ],
+            "actionKey": "removedPermissionSet",
+            "items": [
+              {
+                "id": "0PS1",
+                "apiName": "Sales_Perms",
+                "label": "Sales Permissions",
+                "type": "PermissionSet"
+              },
+              {
+                "id": "0PS4",
+                "apiName": "admin_perms",
+                "label": "admin_perms",
+                "type": "PermissionSet"
+              }
+            ]
+          },
+          {
+            "kind": "delete",
+            "sobject": "PermissionSetAssignment",
+            "ids": [
+              "0PSA3"
+            ],
+            "actionKey": "removedPermissionSetGroup",
+            "items": [
+              {
+                "id": "0PG1",
+                "apiName": "Sales_Group",
+                "label": "Sales Group",
+                "type": "PermissionSetGroup"
+              }
+            ]
+          },
+          {
+            "kind": "delete",
+            "sobject": "GroupMember",
+            "ids": [
+              "0GM1"
+            ],
+            "actionKey": "removedPublicGroupMember",
+            "items": [
+              {
+                "id": "00G1",
+                "apiName": "Public_Group",
+                "label": "Public Group",
+                "type": "PublicGroup"
+              }
+            ]
+          },
+          {
+            "kind": "delete",
+            "sobject": "GroupMember",
+            "ids": [
+              "0GM2"
+            ],
+            "actionKey": "removedQueueMember",
+            "items": [
+              {
+                "id": "00G2",
+                "apiName": "Case_Queue",
+                "label": "Case Queue",
+                "type": "Queue"
+              }
+            ]
+          },
+          {
+            "kind": "update",
+            "sobject": "User",
+            "row": {
+              "Id": "005xx0000000003AAA",
+              "IsActive": false
+            },
+            "actionKey": "deactivated"
+          }
+        ],
+        "hasDml": true
+      }
+    ],
+    "errors": [],
+    "preview": {
+      "summary": {
+        "total": 1,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:strip@example.com",
+          "id": "005xx0000000003AAA",
+          "username": "strip@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldFreeze"
+            },
+            {
+              "key": "wouldRemovePermissionSet",
+              "count": 2,
+              "items": [
+                {
+                  "id": "0PS4",
+                  "apiName": "admin_perms",
+                  "label": "admin_perms",
+                  "type": "PermissionSet"
+                },
+                {
+                  "id": "0PS1",
+                  "apiName": "Sales_Perms",
+                  "label": "Sales Permissions",
+                  "type": "PermissionSet"
+                }
+              ]
+            },
+            {
+              "key": "wouldRemovePermissionSetGroup",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PG1",
+                  "apiName": "Sales_Group",
+                  "label": "Sales Group",
+                  "type": "PermissionSetGroup"
+                }
+              ]
+            },
+            {
+              "key": "wouldRemovePublicGroupMember",
+              "count": 1,
+              "items": [
+                {
+                  "id": "00G1",
+                  "apiName": "Public_Group",
+                  "label": "Public Group",
+                  "type": "PublicGroup"
+                }
+              ]
+            },
+            {
+              "key": "wouldRemoveQueueMember",
+              "count": 1,
+              "items": [
+                {
+                  "id": "00G2",
+                  "apiName": "Case_Queue",
+                  "label": "Case Queue",
+                  "type": "Queue"
+                }
+              ]
+            },
+            {
+              "key": "wouldDeactivate"
+            }
+          ],
+          "skipped": [
+            {
+              "key": "skippedProfileOwnedPermissionSets",
+              "count": 1
+            },
+            {
+              "key": "skippedPermissionSetLicenses",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PLic1",
+                  "apiName": "SalesConsoleUser",
+                  "label": "Sales Console User",
+                  "type": "PermissionSetLicense"
+                }
+              ]
+            }
+          ],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "warnings": []
+  },
+  "preview": {
+    "result": {
+      "summary": {
+        "total": 1,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:strip@example.com",
+          "id": "005xx0000000003AAA",
+          "username": "strip@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldFreeze"
+            },
+            {
+              "key": "wouldRemovePermissionSet",
+              "count": 2,
+              "items": [
+                {
+                  "id": "0PS4",
+                  "apiName": "admin_perms",
+                  "label": "admin_perms",
+                  "type": "PermissionSet"
+                },
+                {
+                  "id": "0PS1",
+                  "apiName": "Sales_Perms",
+                  "label": "Sales Permissions",
+                  "type": "PermissionSet"
+                }
+              ]
+            },
+            {
+              "key": "wouldRemovePermissionSetGroup",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PG1",
+                  "apiName": "Sales_Group",
+                  "label": "Sales Group",
+                  "type": "PermissionSetGroup"
+                }
+              ]
+            },
+            {
+              "key": "wouldRemovePublicGroupMember",
+              "count": 1,
+              "items": [
+                {
+                  "id": "00G1",
+                  "apiName": "Public_Group",
+                  "label": "Public Group",
+                  "type": "PublicGroup"
+                }
+              ]
+            },
+            {
+              "key": "wouldRemoveQueueMember",
+              "count": 1,
+              "items": [
+                {
+                  "id": "00G2",
+                  "apiName": "Case_Queue",
+                  "label": "Case Queue",
+                  "type": "Queue"
+                }
+              ]
+            },
+            {
+              "key": "wouldDeactivate"
+            }
+          ],
+          "skipped": [
+            {
+              "key": "skippedProfileOwnedPermissionSets",
+              "count": 1
+            },
+            {
+              "key": "skippedPermissionSetLicenses",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PLic1",
+                  "apiName": "SalesConsoleUser",
+                  "label": "Sales Console User",
+                  "type": "PermissionSetLicense"
+                }
+              ]
+            }
+          ],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 1 user: 1 changed, 0 unchanged, 0 failed.\n\nUsername:strip@example.com (005xx0000000003AAA): planned\n  skipped: Skipped 1 profile-owned permission set assignments.\n  skipped: Skipped permission set license removals.\n    · SalesConsoleUser (Sales Console User)\n  action: Would freeze.\n  action: Would remove 2 permission set assignments.\n    · admin_perms\n    · Sales_Perms (Sales Permissions)\n  action: Would remove 1 permission set group assignments.\n    · Sales_Group (Sales Group)\n  action: Would remove 1 public group memberships.\n    · Public_Group (Public Group)\n  action: Would remove 1 queue memberships.\n    · Case_Queue (Case Queue)\n  action: Would deactivate.",
+    "csv": "userKey,userId,userName,username,status,action,category,itemId,itemApiName,error\nUsername:strip@example.com,005xx0000000003AAA,,strip@example.com,planned,wouldFreeze,,,,\nUsername:strip@example.com,005xx0000000003AAA,,strip@example.com,planned,wouldRemovePermissionSet,PermissionSet,0PS4,admin_perms,\nUsername:strip@example.com,005xx0000000003AAA,,strip@example.com,planned,wouldRemovePermissionSet,PermissionSet,0PS1,Sales_Perms,\nUsername:strip@example.com,005xx0000000003AAA,,strip@example.com,planned,wouldRemovePermissionSetGroup,PermissionSetGroup,0PG1,Sales_Group,\nUsername:strip@example.com,005xx0000000003AAA,,strip@example.com,planned,wouldRemovePublicGroupMember,PublicGroup,00G1,Public_Group,\nUsername:strip@example.com,005xx0000000003AAA,,strip@example.com,planned,wouldRemoveQueueMember,Queue,00G2,Case_Queue,\nUsername:strip@example.com,005xx0000000003AAA,,strip@example.com,planned,wouldDeactivate,,,,"
+  },
+  "applied": {
+    "result": {
+      "summary": {
+        "total": 1,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:strip@example.com",
+          "id": "005xx0000000003AAA",
+          "username": "strip@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "changed",
+          "actions": [
+            {
+              "key": "frozen"
+            },
+            {
+              "key": "removedPermissionSet",
+              "count": 2,
+              "items": [
+                {
+                  "id": "0PS4",
+                  "apiName": "admin_perms",
+                  "label": "admin_perms",
+                  "type": "PermissionSet"
+                },
+                {
+                  "id": "0PS1",
+                  "apiName": "Sales_Perms",
+                  "label": "Sales Permissions",
+                  "type": "PermissionSet"
+                }
+              ]
+            },
+            {
+              "key": "removedPermissionSetGroup",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PG1",
+                  "apiName": "Sales_Group",
+                  "label": "Sales Group",
+                  "type": "PermissionSetGroup"
+                }
+              ]
+            },
+            {
+              "key": "removedPublicGroupMember",
+              "count": 1,
+              "items": [
+                {
+                  "id": "00G1",
+                  "apiName": "Public_Group",
+                  "label": "Public Group",
+                  "type": "PublicGroup"
+                }
+              ]
+            },
+            {
+              "key": "removedQueueMember",
+              "count": 1,
+              "items": [
+                {
+                  "id": "00G2",
+                  "apiName": "Case_Queue",
+                  "label": "Case Queue",
+                  "type": "Queue"
+                }
+              ]
+            },
+            {
+              "key": "deactivated"
+            }
+          ],
+          "skipped": [
+            {
+              "key": "skippedProfileOwnedPermissionSets",
+              "count": 1
+            },
+            {
+              "key": "skippedPermissionSetLicenses",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PLic1",
+                  "apiName": "SalesConsoleUser",
+                  "label": "Sales Console User",
+                  "type": "PermissionSetLicense"
+                }
+              ]
+            }
+          ],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 1 user: 1 changed, 0 unchanged, 0 failed.\n\nUsername:strip@example.com (005xx0000000003AAA): changed\n  skipped: Skipped 1 profile-owned permission set assignments.\n  skipped: Skipped permission set license removals.\n    · SalesConsoleUser (Sales Console User)\n  action: Froze.\n  action: Removed 2 permission set assignments.\n    · admin_perms\n    · Sales_Perms (Sales Permissions)\n  action: Removed 1 permission set group assignments.\n    · Sales_Group (Sales Group)\n  action: Removed 1 public group memberships.\n    · Public_Group (Public Group)\n  action: Removed 1 queue memberships.\n    · Case_Queue (Case Queue)\n  action: Deactivated.",
+    "csv": "userKey,userId,userName,username,status,action,category,itemId,itemApiName,error\nUsername:strip@example.com,005xx0000000003AAA,,strip@example.com,changed,frozen,,,,\nUsername:strip@example.com,005xx0000000003AAA,,strip@example.com,changed,removedPermissionSet,PermissionSet,0PS4,admin_perms,\nUsername:strip@example.com,005xx0000000003AAA,,strip@example.com,changed,removedPermissionSet,PermissionSet,0PS1,Sales_Perms,\nUsername:strip@example.com,005xx0000000003AAA,,strip@example.com,changed,removedPermissionSetGroup,PermissionSetGroup,0PG1,Sales_Group,\nUsername:strip@example.com,005xx0000000003AAA,,strip@example.com,changed,removedPublicGroupMember,PublicGroup,00G1,Public_Group,\nUsername:strip@example.com,005xx0000000003AAA,,strip@example.com,changed,removedQueueMember,Queue,00G2,Case_Queue,\nUsername:strip@example.com,005xx0000000003AAA,,strip@example.com,changed,deactivated,,,,"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('strip@example.com')",
+    "SELECT Id, UserId, IsFrozen FROM UserLogin WHERE UserId IN ('005xx0000000003AAA')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005xx0000000003AAA')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005xx0000000003AAA') AND Group.Type IN ('Regular', 'Queue')",
+    "SELECT Id, AssigneeId, PermissionSetLicenseId, PermissionSetLicense.DeveloperName, PermissionSetLicense.MasterLabel FROM PermissionSetLicenseAssign WHERE AssigneeId IN ('005xx0000000003AAA')"
+  ],
+  "changes": [
+    {
+      "operation": "update",
+      "sobject": "UserLogin",
+      "records": [
+        {
+          "Id": "0LLxx0000000003AAA",
+          "IsFrozen": true
+        }
+      ],
+      "allOrNone": false
+    },
+    {
+      "operation": "delete",
+      "sobject": "PermissionSetAssignment",
+      "ids": [
+        "0PSA1",
+        "0PSA4"
+      ],
+      "allOrNone": false
+    },
+    {
+      "operation": "delete",
+      "sobject": "PermissionSetAssignment",
+      "ids": [
+        "0PSA3"
+      ],
+      "allOrNone": false
+    },
+    {
+      "operation": "delete",
+      "sobject": "GroupMember",
+      "ids": [
+        "0GM1"
+      ],
+      "allOrNone": false
+    },
+    {
+      "operation": "delete",
+      "sobject": "GroupMember",
+      "ids": [
+        "0GM2"
+      ],
+      "allOrNone": false
+    },
+    {
+      "operation": "update",
+      "sobject": "User",
+      "records": [
+        {
+          "Id": "005xx0000000003AAA",
+          "IsActive": false
+        }
+      ],
+      "allOrNone": false
+    }
+  ]
+}

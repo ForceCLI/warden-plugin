@@ -1,0 +1,636 @@
+{
+  "plan": {
+    "users": [
+      {
+        "userId": "005xx0000000200AAA",
+        "result": {
+          "key": "Username:restore@example.com",
+          "id": "005xx0000000200AAA",
+          "name": "Resolved User",
+          "username": "restore@example.com",
+          "isActive": false,
+          "isFrozen": true,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [],
+          "warnings": [
+            "Snapshot name \"Snapshot User\" differs from org \"Resolved User\".",
+            "Snapshot profile \"Old Profile\" differs from org \"New Profile\"."
+          ],
+          "errors": [],
+          "identityReview": {
+            "snapshot": {
+              "name": "Snapshot User",
+              "username": "restore@example.com",
+              "email": "restore@example.com",
+              "profile": "Old Profile",
+              "role": "Support"
+            },
+            "org": {
+              "name": "Resolved User",
+              "username": "restore@example.com",
+              "email": "restore@example.com",
+              "profile": "New Profile",
+              "role": "Support",
+              "userId": "005xx0000000200AAA"
+            },
+            "match": {
+              "field": "Username",
+              "value": "restore@example.com"
+            }
+          }
+        },
+        "preview": {
+          "key": "Username:restore@example.com",
+          "id": "005xx0000000200AAA",
+          "name": "Resolved User",
+          "username": "restore@example.com",
+          "isActive": false,
+          "isFrozen": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldActivate"
+            },
+            {
+              "key": "wouldUnfreeze"
+            },
+            {
+              "key": "wouldAssignPermissionSet",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PSMissing",
+                  "apiName": "Missing_Perms",
+                  "type": "PermissionSet"
+                }
+              ]
+            },
+            {
+              "key": "wouldAssignPermissionSetGroup",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PGMissing",
+                  "apiName": "Missing_Group",
+                  "type": "PermissionSetGroup"
+                }
+              ]
+            },
+            {
+              "key": "wouldAddPublicGroupMember",
+              "count": 1,
+              "items": [
+                {
+                  "id": "00GMissingPublic",
+                  "apiName": "Missing_Public",
+                  "type": "PublicGroup"
+                }
+              ]
+            },
+            {
+              "key": "wouldAddQueueMember",
+              "count": 1,
+              "items": [
+                {
+                  "id": "00GMissingQueue",
+                  "apiName": "Missing_Queue",
+                  "type": "Queue"
+                }
+              ]
+            },
+            {
+              "key": "wouldAssignPermissionSetLicense",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PLicMissing",
+                  "apiName": "MissingLicense",
+                  "type": "PermissionSetLicense"
+                }
+              ]
+            }
+          ],
+          "skipped": [],
+          "warnings": [
+            "Snapshot name \"Snapshot User\" differs from org \"Resolved User\".",
+            "Snapshot profile \"Old Profile\" differs from org \"New Profile\"."
+          ],
+          "errors": [],
+          "identityReview": {
+            "snapshot": {
+              "name": "Snapshot User",
+              "username": "restore@example.com",
+              "email": "restore@example.com",
+              "profile": "Old Profile",
+              "role": "Support"
+            },
+            "org": {
+              "name": "Resolved User",
+              "username": "restore@example.com",
+              "email": "restore@example.com",
+              "profile": "New Profile",
+              "role": "Support",
+              "userId": "005xx0000000200AAA"
+            },
+            "match": {
+              "field": "Username",
+              "value": "restore@example.com"
+            }
+          }
+        },
+        "userUpdate": {
+          "Id": "005xx0000000200AAA",
+          "IsActive": true
+        },
+        "loginUpdates": [
+          {
+            "Id": "0LL200",
+            "IsFrozen": false
+          }
+        ],
+        "permissionSetAdds": [
+          "0PSMissing"
+        ],
+        "permissionSetGroupAdds": [
+          "0PGMissing"
+        ],
+        "publicGroupAdds": [
+          "00GMissingPublic"
+        ],
+        "queueAdds": [
+          "00GMissingQueue"
+        ],
+        "licenseAdds": [
+          "0PLicMissing"
+        ],
+        "permissionSetItems": [
+          {
+            "id": "0PSMissing",
+            "apiName": "Missing_Perms",
+            "type": "PermissionSet"
+          }
+        ],
+        "permissionSetGroupItems": [
+          {
+            "id": "0PGMissing",
+            "apiName": "Missing_Group",
+            "type": "PermissionSetGroup"
+          }
+        ],
+        "publicGroupItems": [
+          {
+            "id": "00GMissingPublic",
+            "apiName": "Missing_Public",
+            "type": "PublicGroup"
+          }
+        ],
+        "queueItems": [
+          {
+            "id": "00GMissingQueue",
+            "apiName": "Missing_Queue",
+            "type": "Queue"
+          }
+        ],
+        "licenseItems": [
+          {
+            "id": "0PLicMissing",
+            "apiName": "MissingLicense",
+            "type": "PermissionSetLicense"
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "warnings": [
+      "Snapshot name \"Snapshot User\" differs from org \"Resolved User\".",
+      "Snapshot profile \"Old Profile\" differs from org \"New Profile\"."
+    ],
+    "preview": {
+      "summary": {
+        "total": 1,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:restore@example.com",
+          "id": "005xx0000000200AAA",
+          "name": "Resolved User",
+          "username": "restore@example.com",
+          "isActive": false,
+          "isFrozen": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldActivate"
+            },
+            {
+              "key": "wouldUnfreeze"
+            },
+            {
+              "key": "wouldAssignPermissionSet",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PSMissing",
+                  "apiName": "Missing_Perms",
+                  "type": "PermissionSet"
+                }
+              ]
+            },
+            {
+              "key": "wouldAssignPermissionSetGroup",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PGMissing",
+                  "apiName": "Missing_Group",
+                  "type": "PermissionSetGroup"
+                }
+              ]
+            },
+            {
+              "key": "wouldAddPublicGroupMember",
+              "count": 1,
+              "items": [
+                {
+                  "id": "00GMissingPublic",
+                  "apiName": "Missing_Public",
+                  "type": "PublicGroup"
+                }
+              ]
+            },
+            {
+              "key": "wouldAddQueueMember",
+              "count": 1,
+              "items": [
+                {
+                  "id": "00GMissingQueue",
+                  "apiName": "Missing_Queue",
+                  "type": "Queue"
+                }
+              ]
+            },
+            {
+              "key": "wouldAssignPermissionSetLicense",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PLicMissing",
+                  "apiName": "MissingLicense",
+                  "type": "PermissionSetLicense"
+                }
+              ]
+            }
+          ],
+          "skipped": [],
+          "warnings": [
+            "Snapshot name \"Snapshot User\" differs from org \"Resolved User\".",
+            "Snapshot profile \"Old Profile\" differs from org \"New Profile\"."
+          ],
+          "errors": [],
+          "identityReview": {
+            "snapshot": {
+              "name": "Snapshot User",
+              "username": "restore@example.com",
+              "email": "restore@example.com",
+              "profile": "Old Profile",
+              "role": "Support"
+            },
+            "org": {
+              "name": "Resolved User",
+              "username": "restore@example.com",
+              "email": "restore@example.com",
+              "profile": "New Profile",
+              "role": "Support",
+              "userId": "005xx0000000200AAA"
+            },
+            "match": {
+              "field": "Username",
+              "value": "restore@example.com"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "preview": {
+    "result": {
+      "summary": {
+        "total": 1,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:restore@example.com",
+          "id": "005xx0000000200AAA",
+          "name": "Resolved User",
+          "username": "restore@example.com",
+          "isActive": false,
+          "isFrozen": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldActivate"
+            },
+            {
+              "key": "wouldUnfreeze"
+            },
+            {
+              "key": "wouldAssignPermissionSet",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PSMissing",
+                  "apiName": "Missing_Perms",
+                  "type": "PermissionSet"
+                }
+              ]
+            },
+            {
+              "key": "wouldAssignPermissionSetGroup",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PGMissing",
+                  "apiName": "Missing_Group",
+                  "type": "PermissionSetGroup"
+                }
+              ]
+            },
+            {
+              "key": "wouldAddPublicGroupMember",
+              "count": 1,
+              "items": [
+                {
+                  "id": "00GMissingPublic",
+                  "apiName": "Missing_Public",
+                  "type": "PublicGroup"
+                }
+              ]
+            },
+            {
+              "key": "wouldAddQueueMember",
+              "count": 1,
+              "items": [
+                {
+                  "id": "00GMissingQueue",
+                  "apiName": "Missing_Queue",
+                  "type": "Queue"
+                }
+              ]
+            },
+            {
+              "key": "wouldAssignPermissionSetLicense",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PLicMissing",
+                  "apiName": "MissingLicense",
+                  "type": "PermissionSetLicense"
+                }
+              ]
+            }
+          ],
+          "skipped": [],
+          "warnings": [
+            "Snapshot name \"Snapshot User\" differs from org \"Resolved User\".",
+            "Snapshot profile \"Old Profile\" differs from org \"New Profile\"."
+          ],
+          "errors": [],
+          "identityReview": {
+            "snapshot": {
+              "name": "Snapshot User",
+              "username": "restore@example.com",
+              "email": "restore@example.com",
+              "profile": "Old Profile",
+              "role": "Support"
+            },
+            "org": {
+              "name": "Resolved User",
+              "username": "restore@example.com",
+              "email": "restore@example.com",
+              "profile": "New Profile",
+              "role": "Support",
+              "userId": "005xx0000000200AAA"
+            },
+            "match": {
+              "field": "Username",
+              "value": "restore@example.com"
+            }
+          }
+        }
+      ]
+    },
+    "human": "Processed 1 user: 1 changed, 0 unchanged, 0 failed.\n\nResolved User <restore@example.com> · 005xx0000000200AAA\n  matched Username = restore@example.com · was frozen\n  snapshot: Snapshot User <restore@example.com>  (Username = restore@example.com)\n  org:      Resolved User <restore@example.com>  005xx0000000200AAA\n  profile: Old Profile → New Profile  (reported, not applied)\n  role: Support → Support  (reported, not applied)\n  warning: Snapshot name \"Snapshot User\" differs from org \"Resolved User\".\n  warning: Snapshot profile \"Old Profile\" differs from org \"New Profile\".\n  action: Would activate.\n  action: Would unfreeze.\n  action: Would assign 1 permission sets.\n    · Missing_Perms\n  action: Would assign 1 permission set groups.\n    · Missing_Group\n  action: Would add 1 public group memberships.\n    · Missing_Public\n  action: Would add 1 queue memberships.\n    · Missing_Queue\n  action: Would assign 1 permission set licenses.\n    · MissingLicense",
+    "csv": "userKey,userId,userName,username,status,action,category,name,error\nUsername:restore@example.com,005xx0000000200AAA,Resolved User,restore@example.com,planned,wouldActivate,,,\nUsername:restore@example.com,005xx0000000200AAA,Resolved User,restore@example.com,planned,wouldUnfreeze,,,\nUsername:restore@example.com,005xx0000000200AAA,Resolved User,restore@example.com,planned,wouldAssignPermissionSet,PermissionSet,Missing_Perms,\nUsername:restore@example.com,005xx0000000200AAA,Resolved User,restore@example.com,planned,wouldAssignPermissionSetGroup,PermissionSetGroup,Missing_Group,\nUsername:restore@example.com,005xx0000000200AAA,Resolved User,restore@example.com,planned,wouldAddPublicGroupMember,PublicGroup,Missing_Public,\nUsername:restore@example.com,005xx0000000200AAA,Resolved User,restore@example.com,planned,wouldAddQueueMember,Queue,Missing_Queue,\nUsername:restore@example.com,005xx0000000200AAA,Resolved User,restore@example.com,planned,wouldAssignPermissionSetLicense,PermissionSetLicense,MissingLicense,"
+  },
+  "applied": {
+    "result": {
+      "summary": {
+        "total": 1,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:restore@example.com",
+          "id": "005xx0000000200AAA",
+          "name": "Resolved User",
+          "username": "restore@example.com",
+          "isActive": false,
+          "isFrozen": true,
+          "status": "changed",
+          "actions": [
+            {
+              "key": "activated"
+            },
+            {
+              "key": "unfrozen"
+            },
+            {
+              "key": "assignedPermissionSet",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PSMissing",
+                  "apiName": "Missing_Perms",
+                  "type": "PermissionSet"
+                }
+              ]
+            },
+            {
+              "key": "assignedPermissionSetGroup",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PGMissing",
+                  "apiName": "Missing_Group",
+                  "type": "PermissionSetGroup"
+                }
+              ]
+            },
+            {
+              "key": "addedPublicGroupMember",
+              "count": 1,
+              "items": [
+                {
+                  "id": "00GMissingPublic",
+                  "apiName": "Missing_Public",
+                  "type": "PublicGroup"
+                }
+              ]
+            },
+            {
+              "key": "addedQueueMember",
+              "count": 1,
+              "items": [
+                {
+                  "id": "00GMissingQueue",
+                  "apiName": "Missing_Queue",
+                  "type": "Queue"
+                }
+              ]
+            },
+            {
+              "key": "assignedPermissionSetLicense",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PLicMissing",
+                  "apiName": "MissingLicense",
+                  "type": "PermissionSetLicense"
+                }
+              ]
+            }
+          ],
+          "skipped": [],
+          "warnings": [
+            "Snapshot name \"Snapshot User\" differs from org \"Resolved User\".",
+            "Snapshot profile \"Old Profile\" differs from org \"New Profile\"."
+          ],
+          "errors": [],
+          "identityReview": {
+            "snapshot": {
+              "name": "Snapshot User",
+              "username": "restore@example.com",
+              "email": "restore@example.com",
+              "profile": "Old Profile",
+              "role": "Support"
+            },
+            "org": {
+              "name": "Resolved User",
+              "username": "restore@example.com",
+              "email": "restore@example.com",
+              "profile": "New Profile",
+              "role": "Support",
+              "userId": "005xx0000000200AAA"
+            },
+            "match": {
+              "field": "Username",
+              "value": "restore@example.com"
+            }
+          }
+        }
+      ]
+    },
+    "human": "Processed 1 user: 1 changed, 0 unchanged, 0 failed.\n\nResolved User <restore@example.com> · 005xx0000000200AAA\n  matched Username = restore@example.com · was frozen\n  snapshot: Snapshot User <restore@example.com>  (Username = restore@example.com)\n  org:      Resolved User <restore@example.com>  005xx0000000200AAA\n  profile: Old Profile → New Profile  (reported, not applied)\n  role: Support → Support  (reported, not applied)\n  warning: Snapshot name \"Snapshot User\" differs from org \"Resolved User\".\n  warning: Snapshot profile \"Old Profile\" differs from org \"New Profile\".\n  action: Activated.\n  action: Unfroze.\n  action: Assigned 1 permission sets.\n    · Missing_Perms\n  action: Assigned 1 permission set groups.\n    · Missing_Group\n  action: Added 1 public group memberships.\n    · Missing_Public\n  action: Added 1 queue memberships.\n    · Missing_Queue\n  action: Assigned 1 permission set licenses.\n    · MissingLicense",
+    "csv": "userKey,userId,userName,username,status,action,category,name,error\nUsername:restore@example.com,005xx0000000200AAA,Resolved User,restore@example.com,changed,activated,,,\nUsername:restore@example.com,005xx0000000200AAA,Resolved User,restore@example.com,changed,unfrozen,,,\nUsername:restore@example.com,005xx0000000200AAA,Resolved User,restore@example.com,changed,assignedPermissionSet,PermissionSet,Missing_Perms,\nUsername:restore@example.com,005xx0000000200AAA,Resolved User,restore@example.com,changed,assignedPermissionSetGroup,PermissionSetGroup,Missing_Group,\nUsername:restore@example.com,005xx0000000200AAA,Resolved User,restore@example.com,changed,addedPublicGroupMember,PublicGroup,Missing_Public,\nUsername:restore@example.com,005xx0000000200AAA,Resolved User,restore@example.com,changed,addedQueueMember,Queue,Missing_Queue,\nUsername:restore@example.com,005xx0000000200AAA,Resolved User,restore@example.com,changed,assignedPermissionSetLicense,PermissionSetLicense,MissingLicense,"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('restore@example.com')",
+    "SELECT Id, UserId, IsFrozen FROM UserLogin WHERE UserId IN ('005xx0000000200AAA')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005xx0000000200AAA')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005xx0000000200AAA') AND Group.Type IN ('Regular', 'Queue')",
+    "SELECT Id, AssigneeId, PermissionSetLicenseId, PermissionSetLicense.DeveloperName, PermissionSetLicense.MasterLabel FROM PermissionSetLicenseAssign WHERE AssigneeId IN ('005xx0000000200AAA')",
+    "SELECT Id, Name FROM PermissionSet WHERE Name IN ('Existing_Perms','Missing_Perms')",
+    "SELECT Id, DeveloperName FROM PermissionSetGroup WHERE DeveloperName IN ('Missing_Group')",
+    "SELECT Id, DeveloperName FROM Group WHERE DeveloperName IN ('Existing_Public','Missing_Public') AND Type = 'Regular'",
+    "SELECT Id, DeveloperName FROM Group WHERE DeveloperName IN ('Missing_Queue') AND Type = 'Queue'",
+    "SELECT Id, DeveloperName FROM PermissionSetLicense WHERE DeveloperName IN ('MissingLicense')"
+  ],
+  "changes": [
+    {
+      "operation": "update",
+      "sobject": "User",
+      "records": [
+        {
+          "Id": "005xx0000000200AAA",
+          "IsActive": true
+        }
+      ],
+      "allOrNone": false
+    },
+    {
+      "operation": "update",
+      "sobject": "UserLogin",
+      "records": [
+        {
+          "Id": "0LL200",
+          "IsFrozen": false
+        }
+      ],
+      "allOrNone": false
+    },
+    {
+      "operation": "create",
+      "sobject": "PermissionSetAssignment",
+      "records": [
+        {
+          "AssigneeId": "005xx0000000200AAA",
+          "PermissionSetId": "0PSMissing"
+        }
+      ],
+      "allOrNone": false
+    },
+    {
+      "operation": "create",
+      "sobject": "PermissionSetAssignment",
+      "records": [
+        {
+          "AssigneeId": "005xx0000000200AAA",
+          "PermissionSetGroupId": "0PGMissing"
+        }
+      ],
+      "allOrNone": false
+    },
+    {
+      "operation": "create",
+      "sobject": "GroupMember",
+      "records": [
+        {
+          "GroupId": "00GMissingPublic",
+          "UserOrGroupId": "005xx0000000200AAA"
+        }
+      ],
+      "allOrNone": false
+    },
+    {
+      "operation": "create",
+      "sobject": "GroupMember",
+      "records": [
+        {
+          "GroupId": "00GMissingQueue",
+          "UserOrGroupId": "005xx0000000200AAA"
+        }
+      ],
+      "allOrNone": false
+    },
+    {
+      "operation": "create",
+      "sobject": "PermissionSetLicenseAssign",
+      "records": [
+        {
+          "AssigneeId": "005xx0000000200AAA",
+          "PermissionSetLicenseId": "0PLicMissing"
+        }
+      ],
+      "allOrNone": false
+    }
+  ]
+}

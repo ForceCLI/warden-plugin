@@ -1,0 +1,256 @@
+{
+	"source": "written for this port",
+	"command": "strip",
+	"options": {
+		"usersDoc": {
+			"users": [
+				{
+					"match": "Username",
+					"Username": "multi@example.com",
+					"personas": [
+						"support",
+						"sales"
+					]
+				},
+				{
+					"match": "Username",
+					"Username": "solo@example.com",
+					"personas": [
+						"sales"
+					]
+				}
+			]
+		},
+		"personasDoc": {
+			"personas": {
+				"support": {
+					"permissionSets": [
+						"Support_Read",
+						"Shared_Perms",
+						"Absent_Perms",
+						"Unknown_Perms"
+					],
+					"permissionSetGroups": [
+						"Support_Group"
+					],
+					"publicGroups": [
+						"Support_Public"
+					],
+					"queues": [
+						"Support_Queue",
+						"Shared_Queue"
+					]
+				},
+				"sales": {
+					"permissionSets": [
+						"Shared_Perms",
+						"Sales_Perms"
+					],
+					"queues": [
+						"Shared_Queue"
+					]
+				}
+			}
+		},
+		"personas": [
+			"support"
+		],
+		"freeze": true,
+		"deactivate": true,
+		"ledgerTargets": [
+			{
+				"userId": "005multi",
+				"persona": "support",
+				"targetId": "0PSsupport"
+			},
+			{
+				"userId": "005multi",
+				"persona": "support",
+				"targetId": "00Gqueue"
+			},
+			{
+				"userId": "005solo",
+				"persona": "support",
+				"targetId": "0PSsales"
+			}
+		]
+	},
+	"queries": [
+		{
+			"contains": "FROM User WHERE Username IN",
+			"records": [
+				{
+					"Id": "005multi",
+					"IsActive": true,
+					"Name": "Multi User",
+					"Username": "multi@example.com"
+				},
+				{
+					"Id": "005solo",
+					"IsActive": true,
+					"Name": "Solo User",
+					"Username": "solo@example.com"
+				}
+			]
+		},
+		{
+			"contains": "FROM UserLogin",
+			"records": [
+				{
+					"Id": "0LLmulti",
+					"UserId": "005multi",
+					"IsFrozen": false
+				},
+				{
+					"Id": "0LLsolo",
+					"UserId": "005solo",
+					"IsFrozen": false
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSet WHERE Name IN",
+			"records": [
+				{
+					"Id": "0PSsupport",
+					"Name": "Support_Read",
+					"Label": "Support Read"
+				},
+				{
+					"Id": "0PSshared",
+					"Name": "Shared_Perms",
+					"Label": "Shared Permissions"
+				},
+				{
+					"Id": "0PSabsent",
+					"Name": "Absent_Perms",
+					"Label": "Absent Permissions"
+				},
+				{
+					"Id": "0PSsales",
+					"Name": "Sales_Perms",
+					"Label": "Sales_Perms"
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSetGroup WHERE DeveloperName IN",
+			"records": [
+				{
+					"Id": "0PGsupport",
+					"DeveloperName": "Support_Group",
+					"MasterLabel": "Support Group"
+				}
+			]
+		},
+		{
+			"contains": "FROM Group WHERE DeveloperName IN ('Support_Public')",
+			"records": [
+				{
+					"Id": "00Gpublic",
+					"DeveloperName": "Support_Public",
+					"Name": "Support Public"
+				}
+			]
+		},
+		{
+			"contains": "FROM Group WHERE DeveloperName IN ('Support_Queue','Shared_Queue')",
+			"records": [
+				{
+					"Id": "00Gqueue",
+					"DeveloperName": "Support_Queue",
+					"Name": "Support Queue"
+				},
+				{
+					"Id": "00Gshared",
+					"DeveloperName": "Shared_Queue",
+					"Name": "Shared Queue"
+				}
+			]
+		},
+		{
+			"contains": "FROM PermissionSetAssignment",
+			"records": [
+				{
+					"Id": "0PAsupport",
+					"AssigneeId": "005multi",
+					"PermissionSetId": "0PSsupport",
+					"PermissionSetGroupId": null,
+					"PermissionSet": {
+						"IsOwnedByProfile": false,
+						"Name": "Support_Read",
+						"Label": "Support Read"
+					}
+				},
+				{
+					"Id": "0PAshared",
+					"AssigneeId": "005multi",
+					"PermissionSetId": "0PSshared",
+					"PermissionSetGroupId": null,
+					"PermissionSet": {
+						"IsOwnedByProfile": false,
+						"Name": "Shared_Perms",
+						"Label": "Shared Permissions"
+					}
+				},
+				{
+					"Id": "0PAgroup",
+					"AssigneeId": "005multi",
+					"PermissionSetId": "0PSgroupps",
+					"PermissionSetGroupId": "0PGsupport",
+					"PermissionSetGroup": {
+						"DeveloperName": "Support_Group",
+						"MasterLabel": "Support Group"
+					}
+				},
+				{
+					"Id": "0PAsolo",
+					"AssigneeId": "005solo",
+					"PermissionSetId": "0PSsales",
+					"PermissionSetGroupId": null,
+					"PermissionSet": {
+						"IsOwnedByProfile": false,
+						"Name": "Sales_Perms",
+						"Label": "Sales_Perms"
+					}
+				}
+			]
+		},
+		{
+			"contains": "FROM GroupMember",
+			"records": [
+				{
+					"Id": "0GMpublic",
+					"GroupId": "00Gpublic",
+					"UserOrGroupId": "005multi",
+					"Group": {
+						"Type": "Regular",
+						"DeveloperName": "Support_Public",
+						"Name": "Support Public"
+					}
+				},
+				{
+					"Id": "0GMqueue",
+					"GroupId": "00Gqueue",
+					"UserOrGroupId": "005multi",
+					"Group": {
+						"Type": "Queue",
+						"DeveloperName": "Support_Queue",
+						"Name": "Support Queue"
+					}
+				},
+				{
+					"Id": "0GMshared",
+					"GroupId": "00Gshared",
+					"UserOrGroupId": "005multi",
+					"Group": {
+						"Type": "Queue",
+						"DeveloperName": "Shared_Queue",
+						"Name": "Shared Queue"
+					}
+				}
+			]
+		}
+	],
+	"apply": true
+}

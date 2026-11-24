@@ -1,0 +1,114 @@
+{
+  "plan": {
+    "direction": "freeze",
+    "users": [
+      {
+        "key": "Username:freeze@example.com",
+        "id": "005xx0000000001AAA",
+        "name": "Freeze User",
+        "username": "freeze@example.com",
+        "isActive": true,
+        "isFrozen": false,
+        "status": "planned",
+        "actions": [
+          {
+            "key": "wouldFreeze"
+          }
+        ],
+        "skipped": [],
+        "warnings": [],
+        "errors": []
+      }
+    ],
+    "updates": [
+      {
+        "resultIndex": 0,
+        "row": {
+          "Id": "0LLxx0000000001AAA",
+          "IsFrozen": true
+        },
+        "actionKey": "frozen"
+      }
+    ],
+    "warnings": []
+  },
+  "preview": {
+    "result": {
+      "summary": {
+        "total": 1,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:freeze@example.com",
+          "id": "005xx0000000001AAA",
+          "name": "Freeze User",
+          "username": "freeze@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldFreeze"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 1 user: 1 changed, 0 unchanged, 0 failed.\n\nFreeze User <freeze@example.com> · 005xx0000000001AAA\n  matched Username = freeze@example.com · was active\n  action: Would freeze.",
+    "csv": "userKey,userId,userName,username,wasFrozen,status,action,error\nUsername:freeze@example.com,005xx0000000001AAA,Freeze User,freeze@example.com,false,planned,wouldFreeze,"
+  },
+  "applied": {
+    "result": {
+      "summary": {
+        "total": 1,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:freeze@example.com",
+          "id": "005xx0000000001AAA",
+          "name": "Freeze User",
+          "username": "freeze@example.com",
+          "isActive": true,
+          "isFrozen": false,
+          "status": "changed",
+          "actions": [
+            {
+              "key": "frozen"
+            }
+          ],
+          "skipped": [],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 1 user: 1 changed, 0 unchanged, 0 failed.\n\nFreeze User <freeze@example.com> · 005xx0000000001AAA\n  matched Username = freeze@example.com · was active\n  action: Froze.",
+    "csv": "userKey,userId,userName,username,wasFrozen,status,action,error\nUsername:freeze@example.com,005xx0000000001AAA,Freeze User,freeze@example.com,false,changed,frozen,"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('freeze@example.com')",
+    "SELECT Id, UserId, IsFrozen FROM UserLogin WHERE UserId IN ('005xx0000000001AAA')"
+  ],
+  "changes": [
+    {
+      "operation": "update",
+      "sobject": "UserLogin",
+      "records": [
+        {
+          "Id": "0LLxx0000000001AAA",
+          "IsFrozen": true
+        }
+      ],
+      "allOrNone": false
+    }
+  ]
+}

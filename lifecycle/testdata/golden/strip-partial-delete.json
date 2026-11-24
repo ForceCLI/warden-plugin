@@ -1,0 +1,226 @@
+{
+  "plan": {
+    "states": [
+      {
+        "target": {
+          "key": "Username:partial-strip@example.com",
+          "Id": "005xx0000000700AAA",
+          "IsActive": true,
+          "username": "partial-strip@example.com",
+          "field": "Username",
+          "value": "partial-strip@example.com",
+          "order": 0
+        },
+        "result": {
+          "key": "Username:partial-strip@example.com",
+          "id": "005xx0000000700AAA",
+          "username": "partial-strip@example.com",
+          "isActive": true,
+          "status": "unchanged",
+          "actions": [],
+          "skipped": [
+            {
+              "key": "skippedFreeze"
+            },
+            {
+              "key": "skippedDeactivate"
+            }
+          ],
+          "warnings": [],
+          "errors": []
+        },
+        "steps": [
+          {
+            "kind": "delete",
+            "sobject": "PermissionSetAssignment",
+            "ids": [
+              "0PSAFirst",
+              "0PSASecond"
+            ],
+            "actionKey": "removedPermissionSet",
+            "items": [
+              {
+                "id": "0PSFirst",
+                "apiName": "First_Perms",
+                "label": "First Permissions",
+                "type": "PermissionSet"
+              },
+              {
+                "id": "0PSSecond",
+                "apiName": "Second_Perms",
+                "label": "Second Permissions",
+                "type": "PermissionSet"
+              }
+            ]
+          }
+        ],
+        "hasDml": true
+      }
+    ],
+    "errors": [],
+    "preview": {
+      "summary": {
+        "total": 1,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:partial-strip@example.com",
+          "id": "005xx0000000700AAA",
+          "username": "partial-strip@example.com",
+          "isActive": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldRemovePermissionSet",
+              "count": 2,
+              "items": [
+                {
+                  "id": "0PSFirst",
+                  "apiName": "First_Perms",
+                  "label": "First Permissions",
+                  "type": "PermissionSet"
+                },
+                {
+                  "id": "0PSSecond",
+                  "apiName": "Second_Perms",
+                  "label": "Second Permissions",
+                  "type": "PermissionSet"
+                }
+              ]
+            }
+          ],
+          "skipped": [
+            {
+              "key": "skippedFreeze"
+            },
+            {
+              "key": "skippedDeactivate"
+            }
+          ],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "warnings": []
+  },
+  "preview": {
+    "result": {
+      "summary": {
+        "total": 1,
+        "changed": 1,
+        "unchanged": 0,
+        "failed": 0
+      },
+      "users": [
+        {
+          "key": "Username:partial-strip@example.com",
+          "id": "005xx0000000700AAA",
+          "username": "partial-strip@example.com",
+          "isActive": true,
+          "status": "planned",
+          "actions": [
+            {
+              "key": "wouldRemovePermissionSet",
+              "count": 2,
+              "items": [
+                {
+                  "id": "0PSFirst",
+                  "apiName": "First_Perms",
+                  "label": "First Permissions",
+                  "type": "PermissionSet"
+                },
+                {
+                  "id": "0PSSecond",
+                  "apiName": "Second_Perms",
+                  "label": "Second Permissions",
+                  "type": "PermissionSet"
+                }
+              ]
+            }
+          ],
+          "skipped": [
+            {
+              "key": "skippedFreeze"
+            },
+            {
+              "key": "skippedDeactivate"
+            }
+          ],
+          "warnings": [],
+          "errors": []
+        }
+      ]
+    },
+    "human": "Processed 1 user: 1 changed, 0 unchanged, 0 failed.\n\nUsername:partial-strip@example.com (005xx0000000700AAA): planned\n  skipped: Skipped freeze step.\n  skipped: Skipped deactivation step.\n  action: Would remove 2 permission set assignments.\n    · First_Perms (First Permissions)\n    · Second_Perms (Second Permissions)",
+    "csv": "userKey,userId,userName,username,status,action,category,itemId,itemApiName,error\nUsername:partial-strip@example.com,005xx0000000700AAA,,partial-strip@example.com,planned,wouldRemovePermissionSet,PermissionSet,0PSFirst,First_Perms,\nUsername:partial-strip@example.com,005xx0000000700AAA,,partial-strip@example.com,planned,wouldRemovePermissionSet,PermissionSet,0PSSecond,Second_Perms,"
+  },
+  "applied": {
+    "result": {
+      "summary": {
+        "total": 1,
+        "changed": 0,
+        "unchanged": 0,
+        "failed": 1
+      },
+      "users": [
+        {
+          "key": "Username:partial-strip@example.com",
+          "id": "005xx0000000700AAA",
+          "username": "partial-strip@example.com",
+          "isActive": true,
+          "status": "failed",
+          "actions": [
+            {
+              "key": "removedPermissionSet",
+              "count": 1,
+              "items": [
+                {
+                  "id": "0PSFirst",
+                  "apiName": "First_Perms",
+                  "label": "First Permissions",
+                  "type": "PermissionSet"
+                }
+              ]
+            }
+          ],
+          "skipped": [
+            {
+              "key": "skippedFreeze"
+            },
+            {
+              "key": "skippedDeactivate"
+            }
+          ],
+          "warnings": [],
+          "errors": [
+            "Second removal failed"
+          ]
+        }
+      ]
+    },
+    "human": "Processed 1 user: 0 changed, 0 unchanged, 1 failed.\n\nUsername:partial-strip@example.com (005xx0000000700AAA): failed\n  skipped: Skipped freeze step.\n  skipped: Skipped deactivation step.\n  action: Removed 1 permission set assignments.\n    · First_Perms (First Permissions)\n  error: Second removal failed",
+    "csv": "userKey,userId,userName,username,status,action,category,itemId,itemApiName,error\nUsername:partial-strip@example.com,005xx0000000700AAA,,partial-strip@example.com,failed,removedPermissionSet,PermissionSet,0PSFirst,First_Perms,\nUsername:partial-strip@example.com,005xx0000000700AAA,,partial-strip@example.com,failed,,,,,Second removal failed"
+  },
+  "queries": [
+    "SELECT Id, IsActive, Name, Username, Email, ProfileId, Profile.Name, UserRoleId, UserRole.Name FROM User WHERE Username IN ('partial-strip@example.com')",
+    "SELECT Id, UserId, IsFrozen FROM UserLogin WHERE UserId IN ('005xx0000000700AAA')",
+    "SELECT Id, AssigneeId, PermissionSetId, PermissionSetGroupId, PermissionSet.IsOwnedByProfile, PermissionSet.Name, PermissionSet.Label, PermissionSetGroup.DeveloperName, PermissionSetGroup.MasterLabel FROM PermissionSetAssignment WHERE AssigneeId IN ('005xx0000000700AAA')",
+    "SELECT Id, GroupId, UserOrGroupId, Group.Type, Group.DeveloperName, Group.Name FROM GroupMember WHERE UserOrGroupId IN ('005xx0000000700AAA') AND Group.Type IN ('Regular', 'Queue')",
+    "SELECT Id, AssigneeId, PermissionSetLicenseId, PermissionSetLicense.DeveloperName, PermissionSetLicense.MasterLabel FROM PermissionSetLicenseAssign WHERE AssigneeId IN ('005xx0000000700AAA')"
+  ],
+  "changes": [
+    {
+      "operation": "delete",
+      "sobject": "PermissionSetAssignment",
+      "ids": [
+        "0PSAFirst",
+        "0PSASecond"
+      ],
+      "allOrNone": false
+    }
+  ]
+}
